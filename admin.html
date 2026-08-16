@@ -10,7 +10,6 @@
 :root{
   --bg:#020705;
   --panel:#07120c;
-  --panel2:#0b1a11;
   --green:#19f08a;
   --green2:#9bffc9;
   --text:#f1f8f3;
@@ -26,53 +25,56 @@ body{
     radial-gradient(circle at 80% 0%,rgba(25,240,138,.09),transparent 30%),
     #020705;
   color:var(--text);
-  font-family:Inter,Arial,sans-serif;
-  min-height:100vh
+  font-family:Arial,sans-serif;
+  min-height:100vh;
 }
 
 button,input{font:inherit}
 
 .wrap{
   width:min(1180px,calc(100% - 24px));
-  margin:auto
+  margin:auto;
 }
 
 .top{
   padding:16px 0;
   border-bottom:1px solid var(--line);
+}
+
+.top-inner{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  gap:12px
+  gap:12px;
 }
 
 .brand{
   display:flex;
   align-items:center;
-  gap:10px
+  gap:10px;
 }
 
 .mark{
-  width:38px;
-  height:38px;
+  width:40px;
+  height:40px;
   border:1px solid var(--green);
   border-radius:11px;
   display:grid;
   place-items:center;
   color:var(--green);
-  font:22px Georgia
+  font:23px Georgia;
 }
 
 .brand b{
   display:block;
   letter-spacing:.14em;
-  font:700 14px Georgia
+  font:700 14px Georgia;
 }
 
 .brand small{
   color:#769082;
   letter-spacing:.2em;
-  font-size:7px
+  font-size:7px;
 }
 
 .logout{
@@ -81,42 +83,41 @@ button,input{font:inherit}
   color:var(--green2);
   padding:9px 13px;
   border-radius:999px;
-  cursor:pointer
+  cursor:pointer;
 }
 
 .login{
   max-width:420px;
-  margin:12vh auto;
+  margin:10vh auto;
   padding:28px;
   border:1px solid var(--line);
   border-radius:24px;
-  background:
-    linear-gradient(
-      145deg,
-      rgba(12,37,24,.9),
-      rgba(4,11,7,.96)
-    );
-  box-shadow:0 24px 80px rgba(0,0,0,.45)
+  background:linear-gradient(
+    145deg,
+    rgba(12,37,24,.9),
+    rgba(4,11,7,.96)
+  );
+  box-shadow:0 24px 80px rgba(0,0,0,.45);
 }
 
 h1,h2{
-  font-family:Georgia,serif
+  font-family:Georgia,serif;
 }
 
 .login h1{
-  margin:0 0 8px;
-  font-size:34px
+  margin:22px 0 8px;
+  font-size:34px;
 }
 
 .login p,
 .muted{
   color:var(--muted);
   font-size:12px;
-  line-height:1.6
+  line-height:1.6;
 }
 
 .field{
-  margin:14px 0
+  margin:14px 0;
 }
 
 .field label{
@@ -124,7 +125,7 @@ h1,h2{
   color:#a9b9af;
   font-size:10px;
   font-weight:800;
-  margin-bottom:6px
+  margin-bottom:6px;
 }
 
 .field input{
@@ -134,11 +135,11 @@ h1,h2{
   border-radius:12px;
   padding:13px;
   color:white;
-  outline:none
+  outline:none;
 }
 
 .field input:focus{
-  border-color:var(--green)
+  border-color:var(--green);
 }
 
 .primary{
@@ -149,15 +150,14 @@ h1,h2{
   background:var(--green);
   color:#031108;
   font-weight:900;
-  cursor:pointer
+  cursor:pointer;
 }
 
 .primary:disabled{
   opacity:.6;
-  cursor:wait
+  cursor:wait;
 }
 
-/* DETAILED FIREBASE ERROR */
 .error{
   display:none;
   color:#ffb0b0;
@@ -168,97 +168,96 @@ h1,h2{
   border-radius:10px;
   background:rgba(255,80,80,.07);
   border:1px solid rgba(255,120,120,.18);
-  word-break:break-word
+  word-break:break-word;
 }
 
 .error.show{
-  display:block
+  display:block;
 }
 
 .dashboard{
-  display:none
+  display:none;
 }
 
 .dashboard.open{
-  display:block
+  display:block;
 }
 
 .stats{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:10px;
-  margin:22px 0
+  margin:22px 0;
 }
 
 .stat{
   padding:16px;
   border:1px solid var(--line);
   border-radius:16px;
-  background:rgba(7,18,12,.8)
+  background:rgba(7,18,12,.8);
 }
 
 .stat small{
   display:block;
   color:var(--muted);
-  font-size:9px
+  font-size:9px;
 }
 
 .stat b{
   display:block;
   color:var(--green);
   font-size:25px;
-  margin-top:5px
+  margin-top:5px;
 }
 
 .layout{
   display:grid;
   grid-template-columns:380px minmax(0,1fr);
-  gap:14px
+  gap:14px;
 }
 
 .panel{
   border:1px solid var(--line);
   border-radius:20px;
-  background:
-    linear-gradient(
-      145deg,
-      rgba(9,27,17,.9),
-      rgba(3,9,6,.95)
-    );
-  overflow:hidden
+  background:linear-gradient(
+    145deg,
+    rgba(9,27,17,.9),
+    rgba(3,9,6,.95)
+  );
+  overflow:hidden;
 }
 
 .panel-head{
   padding:15px 17px;
   border-bottom:1px solid var(--line);
-  font-weight:900
+  font-weight:900;
 }
 
 .apps{
   max-height:650px;
-  overflow:auto
+  overflow:auto;
 }
 
 .app{
   padding:15px 17px;
   border-bottom:1px solid rgba(141,255,194,.08);
-  cursor:pointer
+  cursor:pointer;
 }
 
 .app:hover,
 .app.active{
-  background:rgba(25,240,138,.07)
+  background:rgba(25,240,138,.07);
 }
 
 .app b{
-  font-size:13px
+  font-size:13px;
 }
 
 .app small{
   display:block;
   color:var(--muted);
   margin-top:5px;
-  font-size:10px
+  font-size:10px;
 }
 
 .tag{
@@ -268,56 +267,56 @@ h1,h2{
   font-size:9px;
   border:1px solid var(--line);
   padding:4px 7px;
-  border-radius:999px
+  border-radius:999px;
 }
 
 .empty{
   padding:25px;
   color:var(--muted);
-  font-size:12px
+  font-size:12px;
 }
 
 .detail{
-  padding:18px
+  padding:18px;
 }
 
 .detail-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
   gap:8px;
-  margin-bottom:18px
+  margin-bottom:18px;
 }
 
 .info{
   background:#020805;
   border:1px solid rgba(141,255,194,.09);
   border-radius:12px;
-  padding:11px
+  padding:11px;
 }
 
 .info small{
   display:block;
   color:#6f8177;
   font-size:8px;
-  text-transform:uppercase
+  text-transform:uppercase;
 }
 
 .info b{
   display:block;
   font-size:11px;
   margin-top:4px;
-  word-break:break-word
+  word-break:break-word;
 }
 
 .chat{
   border-top:1px solid var(--line);
-  margin:0 -18px -18px
+  margin:0 -18px -18px;
 }
 
 .messages{
   height:340px;
   overflow:auto;
-  padding:15px
+  padding:15px;
 }
 
 .msg{
@@ -327,25 +326,25 @@ h1,h2{
   margin-bottom:9px;
   font-size:12px;
   line-height:1.45;
-  white-space:pre-wrap
+  white-space:pre-wrap;
 }
 
 .msg.user{
   margin-left:auto;
   background:var(--green);
-  color:#031108
+  color:#031108;
 }
 
 .msg.agency{
   background:#0b1a11;
-  border:1px solid var(--line)
+  border:1px solid var(--line);
 }
 
 .send{
   display:flex;
   gap:8px;
   padding:12px;
-  border-top:1px solid var(--line)
+  border-top:1px solid var(--line);
 }
 
 .send input{
@@ -356,7 +355,7 @@ h1,h2{
   border-radius:11px;
   padding:12px;
   color:white;
-  outline:none
+  outline:none;
 }
 
 .send button{
@@ -365,17 +364,17 @@ h1,h2{
   background:var(--green);
   color:#031108;
   font-weight:900;
-  padding:0 18px
+  padding:0 18px;
 }
 
 .selected-title{
   margin:0 0 12px;
-  font-size:24px
+  font-size:24px;
 }
 
 .phone{
   color:var(--green2);
-  font-size:11px
+  font-size:11px;
 }
 
 .application-message{
@@ -386,33 +385,56 @@ h1,h2{
   border:1px solid var(--line);
   color:#b8c8bf;
   font-size:11px;
-  line-height:1.5
+  line-height:1.5;
 }
 
 @media(max-width:850px){
-  .layout{grid-template-columns:1fr}
-  .apps{max-height:360px}
-  .stats{grid-template-columns:repeat(3,1fr)}
-  .detail-grid{grid-template-columns:1fr 1fr}
+  .layout{
+    grid-template-columns:1fr;
+  }
+
+  .apps{
+    max-height:360px;
+  }
 }
 
 @media(max-width:480px){
-  .stats{grid-template-columns:1fr 1fr}
-  .stats .stat:last-child{grid-column:1/-1}
-  .login{margin:8vh auto}
-  .detail{padding:14px}
-  .chat{margin:0 -14px -14px}
-  .messages{height:320px}
+  .stats{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .stats .stat:last-child{
+    grid-column:1/-1;
+  }
+
+  .login{
+    margin:7vh auto;
+  }
+
+  .detail{
+    padding:14px;
+  }
+
+  .chat{
+    margin:0 -14px -14px;
+  }
+
+  .messages{
+    height:320px;
+  }
 }
 </style>
 </head>
 
 <body>
 
+<!-- LOGIN -->
+
 <div id="loginView" class="wrap login">
 
   <div class="brand">
     <span class="mark">M</span>
+
     <span>
       <b>MERLIN</b>
       <small>AGENCY ADMIN</small>
@@ -422,11 +444,12 @@ h1,h2{
   <h1>Admin Login</h1>
 
   <p>
-    Private dashboard for Merlin Agency applications and live chat.
+    Private dashboard for Merlin Agency live applications and chat.
   </p>
 
   <div class="field">
     <label>ADMIN EMAIL</label>
+
     <input
       id="email"
       type="email"
@@ -437,6 +460,7 @@ h1,h2{
 
   <div class="field">
     <label>PASSWORD</label>
+
     <input
       id="password"
       type="password"
@@ -454,14 +478,13 @@ h1,h2{
 </div>
 
 
+<!-- DASHBOARD -->
+
 <div id="dashboard" class="dashboard">
 
 <header class="top">
 
-  <div
-    class="wrap"
-    style="display:flex;justify-content:space-between;align-items:center;gap:12px"
-  >
+  <div class="wrap top-inner">
 
     <div class="brand">
 
@@ -514,9 +537,11 @@ h1,h2{
       </div>
 
       <div id="apps" class="apps">
+
         <div class="empty">
           Loading applications...
         </div>
+
       </div>
 
     </section>
@@ -564,10 +589,16 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 
+/*
+==================================================
+FIREBASE CONFIG
+==================================================
+*/
+
 const firebaseConfig = {
 
   apiKey:
-    "AIzaSyCnwNpsliuNJdgSoWFxP0xAqH5P8yVisKA",
+    "AIzaSyCnwNpsliuNJdgFoSWxP0xAqH5P8yVisKA",
 
   authDomain:
     "merlin-live-chat.firebaseapp.com",
@@ -603,6 +634,12 @@ const auth =
   getAuth(app);
 
 
+/*
+==================================================
+ELEMENTS
+==================================================
+*/
+
 const loginView =
   document.getElementById("loginView");
 
@@ -637,11 +674,18 @@ const selectedStatus =
 let applications = {};
 let selectedId = null;
 let currentMessagesRef = null;
+let applicationsStarted = false;
 
 
-function esc(v){
+/*
+==================================================
+ESCAPE HTML
+==================================================
+*/
 
-  return String(v ?? "")
+function esc(value){
+
+  return String(value ?? "")
     .replace(
       /[&<>"']/g,
       m => ({
@@ -656,37 +700,39 @@ function esc(v){
 }
 
 
+/*
+==================================================
+LOGIN / LOGOUT UI
+==================================================
+*/
+
 function showDashboard(){
 
-  loginView.style.display =
-    "none";
+  loginView.style.display = "none";
 
-  dashboard.classList.add(
-    "open"
-  );
+  dashboard.classList.add("open");
 
 }
 
 
 function showLogin(){
 
-  dashboard.classList.remove(
-    "open"
-  );
+  dashboard.classList.remove("open");
 
-  loginView.style.display =
-    "block";
+  loginView.style.display = "block";
 
 }
 
 
-/* LOGIN */
+/*
+==================================================
+LOGIN
+==================================================
+*/
 
 loginBtn.onclick = async () => {
 
-  loginError.classList.remove(
-    "show"
-  );
+  loginError.classList.remove("show");
 
   loginError.textContent = "";
 
@@ -705,11 +751,9 @@ loginBtn.onclick = async () => {
   if(!email || !password){
 
     loginError.textContent =
-      "Please enter both email and password.";
+      "Email aur password dono enter karo.";
 
-    loginError.classList.add(
-      "show"
-    );
+    loginError.classList.add("show");
 
     return;
 
@@ -730,36 +774,69 @@ loginBtn.onclick = async () => {
       password
     );
 
-  }catch(e){
+  }
 
-    console.error(
-      "Firebase Login Error:",
-      e
-    );
+  catch(error){
+
+    console.error(error);
 
 
-    /*
-      IMPORTANT:
-      Instead of hiding the Firebase error,
-      we show the actual Firebase error code.
-    */
+    let message =
+      error.message || "Login failed.";
+
+
+    if(error.code === "auth/api-key-not-valid"){
+
+      message =
+        "Firebase API key invalid hai. " +
+        "Firebase Project Settings → Your apps → Web app se latest firebaseConfig copy karo.";
+
+    }
+
+    else if(
+      error.code === "auth/invalid-credential" ||
+      error.code === "auth/invalid-login-credentials"
+    ){
+
+      message =
+        "Email ya password galat hai.";
+
+    }
+
+    else if(
+      error.code === "auth/user-not-found"
+    ){
+
+      message =
+        "Is email ka Firebase user nahi mila.";
+
+    }
+
+    else if(
+      error.code === "auth/wrong-password"
+    ){
+
+      message =
+        "Password galat hai.";
+
+    }
+
 
     loginError.innerHTML =
-      "<b>Firebase Login Error</b><br>" +
-      esc(e.code || "Unknown error") +
+      "<b>Login Error</b><br>" +
+      esc(message) +
       "<br><small>" +
-      esc(e.message || "") +
+      esc(error.code || "") +
       "</small>";
 
 
-    loginError.classList.add(
-      "show"
-    );
+    loginError.classList.add("show");
 
-  }finally{
+  }
 
-    loginBtn.disabled =
-      false;
+  finally{
+
+    loginBtn.disabled = false;
 
     loginBtn.textContent =
       "Login to Admin Panel";
@@ -769,13 +846,24 @@ loginBtn.onclick = async () => {
 };
 
 
-/* LOGOUT */
+/*
+==================================================
+LOGOUT
+==================================================
+*/
 
-logout.onclick = () =>
+logout.onclick = () => {
+
   signOut(auth);
 
+};
 
-/* AUTH STATE */
+
+/*
+==================================================
+AUTH STATE
+==================================================
+*/
 
 onAuthStateChanged(
   auth,
@@ -787,7 +875,9 @@ onAuthStateChanged(
 
       startApplications();
 
-    }else{
+    }
+
+    else{
 
       showLogin();
 
@@ -797,27 +887,35 @@ onAuthStateChanged(
 );
 
 
-/* APPLICATIONS */
+/*
+==================================================
+APPLICATIONS
+==================================================
+*/
 
 function startApplications(){
 
+  if(applicationsStarted)
+    return;
+
+  applicationsStarted = true;
+
+
   onValue(
     ref(db,"applications"),
-    snap => {
+    snapshot => {
 
       applications =
-        snap.val() || {};
+        snapshot.val() || {};
 
 
       const ids =
-        Object.keys(
-          applications
-        )
-        .sort(
-          (a,b) =>
-            (applications[b].createdAt || 0) -
-            (applications[a].createdAt || 0)
-        );
+        Object.keys(applications)
+          .sort(
+            (a,b) =>
+              (applications[b]?.createdAt || 0) -
+              (applications[a]?.createdAt || 0)
+          );
 
 
       appCount.textContent =
@@ -843,6 +941,7 @@ function startApplications(){
 
 
             return `
+
               <div
                 class="app ${id === selectedId ? "active" : ""}"
                 data-id="${esc(id)}"
@@ -859,8 +958,8 @@ function startApplications(){
                   📍 ${esc(
                     a.location || "—"
                   )}
-                  ·
-                  📱 ${esc(
+
+                  · 📱 ${esc(
                     a.phone || "—"
                   )}
                 </small>
@@ -873,6 +972,7 @@ function startApplications(){
                 </span>
 
               </div>
+
             `;
 
           }
@@ -882,14 +982,17 @@ function startApplications(){
 
       appsEl
         .querySelectorAll(".app")
-        .forEach(
-          x =>
-            x.onclick =
-              () =>
-                selectApplication(
-                  x.dataset.id
-                )
-        );
+        .forEach(item => {
+
+          item.onclick = () => {
+
+            selectApplication(
+              item.dataset.id
+            );
+
+          };
+
+        });
 
 
       if(
@@ -897,19 +1000,31 @@ function startApplications(){
         applications[selectedId]
       ){
 
-        selectApplication(
-          selectedId
-        );
+        selectApplication(selectedId);
 
       }
 
+    },
+
+    error => {
+
+      appsEl.innerHTML =
+        '<div class="empty">Database access error. Firebase Rules check karo.</div>';
+
+      console.error(error);
+
     }
+
   );
 
 }
 
 
-/* SELECT APPLICATION */
+/*
+==================================================
+SELECT APPLICATION
+==================================================
+*/
 
 function selectApplication(id){
 
@@ -918,7 +1033,8 @@ function selectApplication(id){
   const a =
     applications[id];
 
-  if(!a)return;
+  if(!a)
+    return;
 
 
   selectedStatus.textContent =
@@ -927,13 +1043,14 @@ function selectApplication(id){
 
   appsEl
     .querySelectorAll(".app")
-    .forEach(
-      x =>
-        x.classList.toggle(
-          "active",
-          x.dataset.id === id
-        )
-    );
+    .forEach(item => {
+
+      item.classList.toggle(
+        "active",
+        item.dataset.id === id
+      );
+
+    });
 
 
   detailEl.innerHTML = `
@@ -944,6 +1061,7 @@ function selectApplication(id){
         "Applicant"
       )}
     </h2>
+
 
     <div class="phone">
       📱 ${esc(
@@ -968,6 +1086,7 @@ function selectApplication(id){
         </b>
       </div>
 
+
       <div class="info">
         <small>LOCATION</small>
         <b>
@@ -977,6 +1096,7 @@ function selectApplication(id){
           )}
         </b>
       </div>
+
 
       <div class="info">
         <small>EXPERIENCE</small>
@@ -988,6 +1108,7 @@ function selectApplication(id){
         </b>
       </div>
 
+
       <div class="info">
         <small>TARGET</small>
         <b>
@@ -998,15 +1119,6 @@ function selectApplication(id){
         </b>
       </div>
 
-      <div class="info">
-        <small>CONTACT TIME</small>
-        <b>
-          ${esc(
-            a.contactTime ||
-            "Not specified"
-          )}
-        </b>
-      </div>
 
       <div class="info">
         <small>APPLICATION ID</small>
@@ -1020,9 +1132,7 @@ function selectApplication(id){
 
     <div class="application-message">
 
-      <b>
-        Application message:
-      </b>
+      <b>Application message:</b>
 
       <br>
 
@@ -1040,10 +1150,12 @@ function selectApplication(id){
         💬 Live Chat
       </div>
 
+
       <div
         id="messages"
         class="messages"
       ></div>
+
 
       <form
         id="sendForm"
@@ -1057,7 +1169,7 @@ function selectApplication(id){
           autocomplete="off"
         >
 
-        <button>
+        <button type="submit">
           Send
         </button>
 
@@ -1074,60 +1186,70 @@ function selectApplication(id){
   document
     .getElementById("sendForm")
     .onsubmit =
-      async e => {
+      async event => {
 
-        e.preventDefault();
+        event.preventDefault();
 
 
         const input =
-          document
-            .getElementById(
-              "replyInput"
-            );
+          document.getElementById(
+            "replyInput"
+          );
 
 
         const text =
           input.value.trim();
 
 
-        if(!text)return;
+        if(!text)
+          return;
 
 
         input.value = "";
 
 
-        await push(
-          ref(
-            db,
-            `chats/${id}/messages`
-          ),
-          {
+        try{
 
-            text,
+          await push(
+            ref(
+              db,
+              `chats/${id}/messages`
+            ),
+            {
+              text: text,
+              sender: "agency",
+              time: Date.now()
+            }
+          );
 
-            sender:
-              "agency",
+        }
 
-            time:
-              Date.now()
+        catch(error){
 
-          }
-        );
+          console.error(error);
+
+          alert(
+            "Message send nahi hua. Firebase Rules check karo."
+          );
+
+        }
 
       };
 
 }
 
 
-/* CHAT */
+/*
+==================================================
+LIVE CHAT
+==================================================
+*/
 
 function loadMessages(id){
 
   if(currentMessagesRef){
 
-    off(
-      currentMessagesRef
-    );
+    off(currentMessagesRef);
 
   }
 
@@ -1145,37 +1267,38 @@ function loadMessages(id){
     );
 
 
-  if(!box)return;
+  if(!box)
+    return;
 
 
   box.innerHTML = "";
 
+  chatCount.textContent = "0";
+
 
   onChildAdded(
     currentMessagesRef,
-    snap => {
+    snapshot => {
 
-      const m =
-        snap.val() || {};
+      const message =
+        snapshot.val() || {};
 
 
       const div =
-        document.createElement(
-          "div"
-        );
+        document.createElement("div");
 
 
       div.className =
         "msg " +
         (
-          m.sender === "agency"
+          message.sender === "agency"
             ? "agency"
             : "user"
         );
 
 
       div.textContent =
-        m.text || "";
+        message.text || "";
 
 
       box.appendChild(div);
@@ -1186,11 +1309,19 @@ function loadMessages(id){
 
 
       chatCount.textContent =
-        String(
-          box.children.length
-        );
+        String(box.children.length);
+
+    },
+
+    error => {
+
+      console.error(error);
+
+      box.innerHTML =
+        '<div class="empty">Chat load nahi ho pa raha. Firebase Rules check karo.</div>';
 
     }
+
   );
 
 }
