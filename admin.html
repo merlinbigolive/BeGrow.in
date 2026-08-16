@@ -108,92 +108,111 @@ function startApplications(){
   if(rootListenerStarted) return;
   rootListenerStarted = true;
 
-  onValue(ref(db,"/"), snapshot => {
-    const root = snapshot.val() || {};
+  // apply.html stores each application ONLY as:
+  // chats/{chatId}/messages/{messageId}
+  // with type:"application".
+  onValue(ref(db,"/chats"), snapshot => {
+    const chats = snapshot.val() || {};
     applications = {};
-    scanForApplications(root, "");
-    renderApplications();
-  }, error => {
-    console.error("Database read error", error);
-    $("apps").innerHTML = '<div class="empty">Database access error. Firebase Realtime Database Rules check karo.</div>';
-  });
-}
 
-function scanForApplications(node, path){
-  if(!node || typeof node !== "object" || Array.isArray(node)) return;
+    Object.entries(chats).forEach(([chatId, chat]) => {
+      if(!chat || typeof chat !== "object" || !chat.messages) return;
 
-  const looksLikeApplication = Boolean(
-    node.name &&
-    (node.phone || node.whatsapp || node.bigoId || node.location || node.experience || node.target || node.contactTime)
-  );
+      let applicationMessage = null;
+      let userMessages = 0;
+      let latestTime = 0;
 
-  if(looksLikeApplication){
-    const cleanPath = path.replace(/^\/+|\/+$/g, "");
-    const parts = cleanPath ? cleanPath.split("/") : [];
-    const lastId = parts.length ? parts[parts.length-1] : "";
-    const chatIndex = parts.indexOf("chats");
+      Object.values(chat.messages).forEach(message => {
+        if(!message || typeof message !== "object") return;
 
-    const inferredChatId =
-      node.chatId ||
-      (chatIndex >= 0 ? parts[chatIndex+1] : "") ||
-      (parts[0] === "applications" ? lastId : "");
+        const t = Number(message.time) || 0;
+        if(t > latestTime) latestTime = t;
 
-    const id =
-      node.chatId ||
-      (parts[0] === "applications" ? lastId : cleanPath) ||
-      (node.bigoId || node.phone || node.name);
+        if(message.sender === "user") userMessages++;
 
-    if(id){
-      applications[id] = {
-        ...node,
-        _id: id,
-        _path: cleanPath,
-        _chatId: inferredChatId
+        if(message.type === "application" && message.text) {
+          if(!applicationMessage || t > (Number(applicationMessage.time)||0)) {
+            applicationMessage = message;
+          }
+        }
+      });
+
+      if(!applicationMessage) return;
+
+      const text = String(applicationMessage.text || "");
+      if(!text.includes("NEW HOST APPLICATION")) return;
+
+      const field = label => {
+        const labels = ["Name","WhatsApp","BIGO ID","City / State","Experience","Preferred Target","Message"];
+        const escaped = labels.map(x=>x.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")).join("|");
+        const re = new RegExp(
+          "\\n\\s*" + label.replace(/[.*+?^${}()|[\]\\]/g,"\\$&") +
+          "\\s*:\\s*([\\s\\S]*?)(?=\\n\\s*(?:" + escaped + ")\\s*:|$)","i"
+        );
+        const m = text.match(re);
+        return m ? m[1].trim() : "";
       };
-    }
-  }
 
-  Object.entries(node).forEach(([key,value]) => {
-    const next = path ? `${path}/${key}` : key;
+      applications[chatId] = {
+        _id: chatId,
+        _chatId: chatId,
+        name: field("Name"),
+        phone: field("WhatsApp"),
+        bigoId: field("BIGO ID"),
+        location: field("City / State"),
+        experience: field("Experience"),
+        target: field("Preferred Target"),
+        message: field("Message"),
+        createdAt: Number(applicationMessage.time)||0,
+        lastMessageTime: latestTime,
+        userMessageCount: userMessages
+      };
+    });
 
-    /*
-      Do NOT skip "messages" anymore.
-      A new application can be created in a branch that also contains chat data.
-      However, normal individual messages don't satisfy looksLikeApplication,
-      so they are not added to the Applications list.
-    */
-    if(value && typeof value === "object") {
-      scanForApplications(value, next);
-    }
+    renderApplications();
+    if(selectedId && applications[selectedId]) updateSelectedMessageCount(selectedId);
+  }, error => {
+    console.error("Chats read error", error);
+    $("apps").innerHTML='<div class="empty">Database access error. Firebase Realtime Database Rules check karo.</div>';
   });
 }
 
 function renderApplications(){
-  const ids = Object.keys(applications).sort((a,b) =>
-    (Number(applications[b]?.createdAt)||0) - (Number(applications[a]?.createdAt)||0)
+  const ids=Object.keys(applications).sort((a,b)=>
+    (Number(applications[b].lastMessageTime)||Number(applications[b].createdAt)||0)-
+    (Number(applications[a].lastMessageTime)||Number(applications[a].createdAt)||0)
   );
 
-  $("appCount").textContent = ids.length;
+  $("appCount").textContent=ids.length;
 
   if(!ids.length){
-    $("apps").innerHTML = '<div class="empty">No applications found in this Firebase database.</div>';
+    $("apps").innerHTML='<div class="empty">No applications found in this Firebase database.</div>';
     return;
   }
 
-  $("apps").innerHTML = ids.map(id => {
-    const a = applications[id] || {};
+  $("apps").innerHTML=ids.map(id=>{
+    const a=applications[id];
+    const hasUserMessages=Number(a.userMessageCount)>0;
     return `<div class="app ${id===selectedId?"active":""}" data-id="${esc(id)}">
+      ${hasUserMessages?'<span class="new-dot"></span>':''}
       <b>${esc(a.name||"Unknown applicant")}</b>
-      <small>📍 ${esc(a.location||"—")} · 📱 ${esc(a.phone||a.whatsapp||"—")}</small>
+      <small>📍 ${esc(a.location||"—")} · 📱 ${esc(a.phone||"—")}</small>
       <span class="tag">${esc(a.target||"Application")}</span>
     </div>`;
   }).join("");
 
-  $("apps").querySelectorAll(".app").forEach(item =>
-    item.addEventListener("click", () => selectApplication(item.dataset.id))
+  $("apps").querySelectorAll(".app").forEach(x=>
+    x.addEventListener("click",()=>selectApplication(x.dataset.id))
   );
+}
 
-  if(selectedId && applications[selectedId]) selectApplication(selectedId);
+function updateSelectedMessageCount(id){
+  const a=applications[id];
+  if(!a)return;
+  const count=Number(a.userMessageCount)||0;
+  $("chatCount").textContent=String(count);
+  const stat=$("selectedMsgStat");
+  if(stat) stat.textContent=String(count);
 }
 
 function selectApplication(id){
@@ -217,6 +236,7 @@ function selectApplication(id){
       <div class="info"><small>TARGET</small><b>${esc(a.target||"—")}</b></div>
       <div class="info"><small>CONTACT TIME</small><b>${esc(a.contactTime||"Not specified")}</b></div>
       <div class="info"><small>APPLICATION ID</small><b>${esc(a._chatId||a._id||"—")}</b></div>
+      <div class="info"><small>USER MESSAGES</small><b id="selectedMsgStat">${esc(a.userMessageCount||0)}</b></div>
     </div>
 
     <div class="application-message">
@@ -266,7 +286,7 @@ function loadMessages(id){
   if(currentMessagesRef) off(currentMessagesRef);
 
   const box=$("messages");
-  if(!box) return;
+  if(!box)return;
 
   if(!id){
     box.innerHTML='<div class="empty">No chat ID available for this application.</div>';
@@ -275,19 +295,30 @@ function loadMessages(id){
 
   currentMessagesRef=ref(db,`chats/${id}/messages`);
   box.innerHTML="";
-  $("chatCount").textContent="0";
 
-  onChildAdded(currentMessagesRef,snapshot=>{
-    const message=snapshot.val()||{};
-    const div=document.createElement("div");
+  onValue(currentMessagesRef,snapshot=>{
+    const messages=snapshot.val()||{};
+    box.innerHTML="";
 
-    div.className="msg "+(message.sender==="agency"?"agency":"user");
-    div.textContent=message.text||"";
+    Object.entries(messages)
+      .sort((a,b)=>(Number(a[1]?.time)||0)-(Number(b[1]?.time)||0))
+      .forEach(([key,message])=>{
+        if(!message)return;
+        if(message.expiresAt && Date.now()>Number(message.expiresAt))return;
 
-    box.appendChild(div);
+        const div=document.createElement("div");
+        div.className="msg "+(message.sender==="agency"?"agency":"user");
+        div.textContent=message.text||"";
+        box.appendChild(div);
+      });
+
     box.scrollTop=box.scrollHeight;
 
-    $("chatCount").textContent=String(box.children.length);
+    const userCount=Object.values(messages).filter(m=>m&&m.sender==="user").length;
+    $("chatCount").textContent=String(userCount);
+
+    const stat=$("selectedMsgStat");
+    if(stat)stat.textContent=String(userCount);
   },error=>{
     console.error(error);
     box.innerHTML='<div class="empty">Chat access error. Firebase Database Rules check karo.</div>';
