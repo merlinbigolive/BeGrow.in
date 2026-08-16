@@ -52,18 +52,19 @@
 }
 
 .chat-messages{
-  height:300px;
+  height:360px;
   overflow-y:auto;
   padding:18px;
 }
 
 .chat-message{
-  max-width:85%;
+  max-width:90%;
   padding:11px 14px;
   margin-bottom:10px;
   border-radius:15px;
   font-size:12px;
-  line-height:1.5;
+  line-height:1.6;
+  white-space:pre-wrap;
 }
 
 .chat-message.agency{
@@ -104,6 +105,18 @@
   color:#031108;
   font-weight:900;
   cursor:pointer;
+}
+
+.chat-expired{
+  display:none;
+  text-align:center;
+  padding:30px 20px;
+  color:#9bffc9;
+  font-size:12px;
+}
+
+.chat-expired.show{
+  display:block;
 }
 
 .success-note{
@@ -168,6 +181,7 @@
 
     <label>
       Full Name
+
       <input
         name="name"
         required
@@ -179,6 +193,7 @@
 
     <label>
       WhatsApp Number
+
       <input
         name="phone"
         required
@@ -229,40 +244,26 @@
     </div>
 
 
-    <div class="two">
+    <label>
+      Preferred Target
 
-      <label>
-        Preferred Target
+      <select name="target">
 
-        <select name="target">
+        <option>5K Beans</option>
+        <option>10K Beans</option>
+        <option>20K Beans</option>
+        <option>50K Beans</option>
+        <option>100K Beans</option>
+        <option>150K Beans</option>
+        <option>200K Beans</option>
+        <option>400K Beans</option>
+        <option>700K Beans</option>
+        <option>1M Beans</option>
+        <option>2M Beans</option>
 
-          <option>5K Beans</option>
-          <option>10K Beans</option>
-          <option>20K Beans</option>
-          <option>50K Beans</option>
-          <option>100K Beans</option>
-          <option>150K Beans</option>
-          <option>200K Beans</option>
-          <option>400K Beans</option>
-          <option>700K Beans</option>
-          <option>1M Beans</option>
-          <option>2M Beans</option>
+      </select>
 
-        </select>
-
-      </label>
-
-
-      <label>
-        Best Time to Contact
-
-        <input
-          name="contactTime"
-          placeholder="e.g. 7 PM – 10 PM"
-        >
-      </label>
-
-    </div>
+    </label>
 
 
     <label>
@@ -283,18 +284,18 @@
       type="submit"
       id="submitApplication"
     >
-      Submit Application <b>↗</b>
+      Start Live Chat <b>↗</b>
     </button>
 
     <p class="form-note">
-      Your application will be securely submitted to Merlin Agency.
+      After submitting, your details will appear in the Merlin Agency live chat.
     </p>
 
   </form>
 
 
   <div id="successNote" class="success-note">
-    ✓ Application received. Your live chat is now open.
+    ✓ Details received. Your live chat is now open.
   </div>
 
 
@@ -316,13 +317,11 @@
     <div
       id="chatMessages"
       class="chat-messages"
-    >
+    ></div>
 
-      <div class="chat-message agency">
-        Welcome to Merlin Agency! 👋<br>
-        Your application has been received. Our team will connect with you here.
-      </div>
 
+    <div id="chatExpired" class="chat-expired">
+      This chat session has expired after 15 minutes.
     </div>
 
 
@@ -366,8 +365,6 @@
 </footer>
 
 
-<!-- Firebase + Merlin Chat -->
-
 <script type="module">
 
 import { initializeApp }
@@ -377,7 +374,6 @@ import {
   getDatabase,
   ref,
   push,
-  set,
   onChildAdded
 }
 from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
@@ -385,7 +381,7 @@ from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
 const firebaseConfig = {
 
-  apiKey: "AIzaSyCnwNpsliuNJdgSoWFxP0Axqh5P8yVisKA",
+  apiKey: "AIzaSyCnwNpsliuNJdgSWoP0xFpqh5P8yVisKA",
 
   authDomain: "merlin-live-chat.firebaseapp.com",
 
@@ -408,32 +404,48 @@ const firebaseConfig = {
 
 
 const app = initializeApp(firebaseConfig);
-
 const db = getDatabase(app);
 
 
-const form = document.getElementById("applyForm");
+const form =
+  document.getElementById("applyForm");
 
-const chatBox = document.getElementById("chatBox");
+const chatBox =
+  document.getElementById("chatBox");
 
-const chatForm = document.getElementById("chatForm");
+const chatForm =
+  document.getElementById("chatForm");
 
-const chatInput = document.getElementById("chatInput");
+const chatInput =
+  document.getElementById("chatInput");
 
-const chatMessages = document.getElementById("chatMessages");
+const chatMessages =
+  document.getElementById("chatMessages");
 
-const successNote = document.getElementById("successNote");
+const successNote =
+  document.getElementById("successNote");
 
 const submitButton =
   document.getElementById("submitApplication");
 
+const chatExpired =
+  document.getElementById("chatExpired");
 
-let chatId = localStorage.getItem("merlinChatId");
 
+let chatId =
+  localStorage.getItem("merlinChatId");
+
+let chatLoaded = false;
+let chatExpiresAt =
+  Number(localStorage.getItem("merlinChatExpiresAt") || 0);
+
+
+/* ADD MESSAGE TO SCREEN */
 
 function addMessage(text, type){
 
-  const div = document.createElement("div");
+  const div =
+    document.createElement("div");
 
   div.className =
     "chat-message " + type;
@@ -447,128 +459,196 @@ function addMessage(text, type){
 }
 
 
+/* CREATE APPLICATION DETAILS MESSAGE */
+
+function createDetailsMessage(data){
+
+  return `NEW HOST APPLICATION
+
+Name: ${data.get("name") || ""}
+WhatsApp: ${data.get("phone") || ""}
+BIGO ID: ${data.get("bigoId") || "Not provided"}
+City / State: ${data.get("location") || ""}
+Experience: ${data.get("experience") || ""}
+Preferred Target: ${data.get("target") || ""}
+
+Message:
+${data.get("message") || "No additional message."}`;
+}
+
+
+/* OPEN CHAT */
+
+function openChat(){
+
+  form.style.display = "none";
+
+  successNote.classList.add("show");
+
+  chatBox.classList.add("open");
+
+  chatInput.focus();
+}
+
+
+/* 15 MINUTE LOCAL CHAT EXPIRY */
+
+function startExpiryTimer(){
+
+  if(!chatExpiresAt){
+    chatExpiresAt =
+      Date.now() + (15 * 60 * 1000);
+
+    localStorage.setItem(
+      "merlinChatExpiresAt",
+      String(chatExpiresAt)
+    );
+  }
+
+  const remaining =
+    chatExpiresAt - Date.now();
+
+  if(remaining <= 0){
+    expireChat();
+    return;
+  }
+
+  setTimeout(
+    expireChat,
+    remaining
+  );
+}
+
+
+/* EXPIRE CURRENT CHAT */
+
+function expireChat(){
+
+  chatMessages.innerHTML = "";
+
+  chatForm.style.display = "none";
+
+  chatExpired.classList.add("show");
+
+  localStorage.removeItem("merlinChatId");
+  localStorage.removeItem("merlinChatExpiresAt");
+
+  chatId = null;
+}
+
+
 /* APPLICATION SUBMIT */
 
-form.addEventListener("submit", async (e) => {
+form.addEventListener(
+  "submit",
+  async e => {
 
-  e.preventDefault();
+    e.preventDefault();
 
-  submitButton.disabled = true;
+    submitButton.disabled = true;
 
-  submitButton.innerHTML =
-    "Submitting...";
-
-
-  try {
-
-    const data = new FormData(form);
+    submitButton.innerHTML =
+      "Opening Chat...";
 
 
-    if(!chatId){
+    try{
 
-      chatId =
-        "chat_" +
-        Date.now() +
-        "_" +
-        Math.random()
-          .toString(36)
-          .substring(2,9);
+      const data =
+        new FormData(form);
 
-      localStorage.setItem(
-        "merlinChatId",
-        chatId
+
+      if(!chatId){
+
+        chatId =
+          "chat_" +
+          Date.now() +
+          "_" +
+          Math.random()
+            .toString(36)
+            .substring(2,9);
+
+        localStorage.setItem(
+          "merlinChatId",
+          chatId
+        );
+
+        chatExpiresAt =
+          Date.now() +
+          (15 * 60 * 1000);
+
+        localStorage.setItem(
+          "merlinChatExpiresAt",
+          String(chatExpiresAt)
+        );
+
+      }
+
+
+      const detailsMessage =
+        createDetailsMessage(data);
+
+
+      /*
+        IMPORTANT:
+        Application details are sent ONLY
+        into the chat.
+        No separate applications database
+        is created.
+      */
+
+      await push(
+        ref(
+          db,
+          "chats/" +
+          chatId +
+          "/messages"
+        ),
+        {
+          text:
+            detailsMessage,
+
+          sender:
+            "agency",
+
+          type:
+            "application",
+
+          time:
+            Date.now(),
+
+          expiresAt:
+            chatExpiresAt
+        }
       );
+
+
+      openChat();
+
+      loadChat();
+
+      startExpiryTimer();
+
+
+    }catch(error){
+
+      console.error(error);
+
+      alert(
+        "Something went wrong. Please try again."
+      );
+
+      submitButton.disabled = false;
+
+      submitButton.innerHTML =
+        "Start Live Chat <b>↗</b>";
 
     }
 
-
-    const application = {
-
-      name:
-        (data.get("name") || "").trim(),
-
-      phone:
-        (data.get("phone") || "").trim(),
-
-      bigoId:
-        (data.get("bigoId") || "").trim(),
-
-      location:
-        (data.get("location") || "").trim(),
-
-      experience:
-        data.get("experience") || "",
-
-      target:
-        data.get("target") || "",
-
-      contactTime:
-        (data.get("contactTime") || "").trim(),
-
-      message:
-        (data.get("message") || "").trim(),
-
-      chatId: chatId,
-
-      createdAt: Date.now()
-
-    };
-
-
-    await set(
-      ref(db, "applications/" + chatId),
-      application
-    );
-
-
-    await push(
-      ref(db, "chats/" + chatId + "/messages"),
-      {
-
-        text:
-          "New application received. Welcome to Merlin Agency! 👋",
-
-        sender:
-          "agency",
-
-        time:
-          Date.now()
-
-      }
-    );
-
-
-    form.style.display = "none";
-
-    successNote.classList.add("show");
-
-    chatBox.classList.add("open");
-
-    loadChat();
-
-
-  } catch(error) {
-
-    console.error(error);
-
-    alert(
-      "Something went wrong. Please try again."
-    );
-
-    submitButton.disabled = false;
-
-    submitButton.innerHTML =
-      "Submit Application <b>↗</b>";
-
   }
+);
 
-});
 
-
-/* CHAT */
-
-let chatLoaded = false;
-
+/* LOAD CHAT */
 
 function loadChat(){
 
@@ -599,14 +679,14 @@ function loadChat(){
 
 
       if(
-        message.text ===
-        "New application received. Welcome to Merlin Agency! 👋"
+        message.expiresAt &&
+        Date.now() > message.expiresAt
       )
         return;
 
 
       addMessage(
-        message.text,
+        message.text || "",
         message.sender === "agency"
           ? "agency"
           : "user"
@@ -618,16 +698,29 @@ function loadChat(){
 }
 
 
+/* SEND CHAT MESSAGE */
+
 chatForm.addEventListener(
   "submit",
   async e => {
 
     e.preventDefault();
 
+    if(
+      !chatId ||
+      Date.now() >= chatExpiresAt
+    ){
+
+      expireChat();
+      return;
+
+    }
+
+
     const text =
       chatInput.value.trim();
 
-    if(!text || !chatId)
+    if(!text)
       return;
 
 
@@ -643,11 +736,17 @@ chatForm.addEventListener(
       ),
       {
 
-        text: text,
+        text:
+          text,
 
-        sender: "user",
+        sender:
+          "user",
 
-        time: Date.now()
+        time:
+          Date.now(),
+
+        expiresAt:
+          chatExpiresAt
 
       }
     );
@@ -656,7 +755,37 @@ chatForm.addEventListener(
 );
 
 
+/* RESTORE CHAT IF USER REFRESHES */
+
+if(
+  chatId &&
+  chatExpiresAt &&
+  Date.now() < chatExpiresAt
+){
+
+  openChat();
+
+  loadChat();
+
+  startExpiryTimer();
+
+}
+
+
+/* IF SESSION ALREADY EXPIRED */
+
+if(
+  chatId &&
+  chatExpiresAt &&
+  Date.now() >= chatExpiresAt
+){
+
+  expireChat();
+
+}
+
 </script>
+
 
 <script src="script.js"></script>
 
