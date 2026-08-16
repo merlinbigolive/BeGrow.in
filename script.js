@@ -52,5 +52,3 @@ if(modal){
   modal.querySelector('.modal-close').addEventListener('click',close);modal.addEventListener('click',e=>{if(e.target===modal)close()});document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
 }
 
-const form=document.getElementById('applyForm');
-if(form) form.addEventListener('submit',e=>{e.preventDefault();const d=new FormData(form),v=k=>(d.get(k)||'').toString().trim();const text=['✨ MERLIN AGENCY — BIGO LIVE APPLICATION','',`Name: ${v('name')}`,`Applicant WhatsApp: ${v('phone')}`,`BIGO ID: ${v('bigoId')||'Optional / Not provided'}`,`City / State: ${v('location')}`,`Experience: ${v('experience')}`,`Preferred Target: ${v('target')}`,`Best Time to Contact: ${v('contactTime')||'Not specified'}`,`Message: ${v('message')||'None'}`,'','Sent from JoinMerlin website.'].join('\n');window.location.href=`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`});
