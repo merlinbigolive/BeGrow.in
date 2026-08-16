@@ -9,40 +9,40 @@
 <link rel="stylesheet" href="styles.css">
 
 <style>
-/* Dragon animation in the upper center */
-.header {
-  position: relative;
-}
-
-.brand-wrap{
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  flex-shrink:0;
-}
-.buy-diamond-header{
+/* Buy Diamond CTA above the hero eyebrow */
+.buy-diamond-hero{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  margin:7px 0 0 50px;
-  width:132px;
-  min-height:32px;
-  padding:7px 11px;
-  border:1px solid rgba(25,240,138,.48);
-  border-radius:9px;
-  background:rgba(25,240,138,.08);
+  width:220px;
+  min-height:48px;
+  padding:12px 20px;
+  margin:0 auto 22px;
+  border:1px solid rgba(25,240,138,.72);
+  border-radius:13px;
+  background:linear-gradient(135deg,rgba(25,240,138,.16),rgba(25,240,138,.06));
+  box-shadow:0 0 24px rgba(25,240,138,.10);
   color:#9bffc9;
-  font-size:10px;
+  font-size:13px;
   font-weight:900;
-  letter-spacing:.05em;
+  letter-spacing:.06em;
   text-decoration:none;
   white-space:nowrap;
   transition:.2s ease;
 }
-.buy-diamond-header:hover{
-  background:rgba(25,240,138,.16);
+.buy-diamond-hero:hover{
+  background:rgba(25,240,138,.18);
   border-color:#19f08a;
+  box-shadow:0 0 30px rgba(25,240,138,.18);
   transform:translateY(-1px);
+}
+@media(max-width:700px){
+  .buy-diamond-hero{
+    width:210px;
+    min-height:46px;
+    margin-bottom:20px;
+    font-size:12px;
+  }
 }
 
 .header-dragon {
@@ -103,7 +103,6 @@
         <small>AGENCY</small>
       </span>
     </a>
-    <a class="buy-diamond-header" href="buy-bigo-diamond.html">💎 BUY DIAMOND</a>
   </div>
 
   <nav>
@@ -132,6 +131,8 @@
 <section class="hero wrap">
 
   <div class="hero-copy reveal">
+    <a class="buy-diamond-hero" href="buy-bigo-diamond.html">💎 BUY DIAMOND</a>
+
     <div class="eyebrow">
       <i></i> BIGO LIVE INDIA · HOST RECRUITMENT
     </div>
