@@ -1,10 +1,1355 @@
+Merlin Agency — Admin.html
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#06110b">
+<title>Merlin Agency | Admin</title>
+
+<style>
+:root{
+  --bg:#020705;
+  --panel:#07120c;
+  --green:#19f08a;
+  --green2:#9bffc9;
+  --text:#f1f8f3;
+  --muted:#8fa197;
+  --line:rgba(141,255,194,.16)
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at 80% 0%,rgba(25,240,138,.09),transparent 30%),
+    var(--bg);
+  color:var(--text);
+  font-family:Arial,sans-serif;
+  min-height:100vh;
+}
+
+button,input{font:inherit}
+
+.wrap{
+  width:min(1180px,calc(100% - 24px));
+  margin:auto;
+}
+
+.top{
+  padding:16px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.top-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.mark{
+  width:38px;
+  height:38px;
+  border:1px solid var(--green);
+  border-radius:11px;
+  display:grid;
+  place-items:center;
+  color:var(--green);
+  font:22px Georgia;
+}
+
+.brand b{
+  display:block;
+  letter-spacing:.14em;
+  font:700 14px Georgia;
+}
+
+.brand small{
+  color:#769082;
+  letter-spacing:.2em;
+  font-size:7px;
+}
+
+.logout{
+  background:transparent;
+  border:1px solid var(--line);
+  color:var(--green2);
+  padding:9px 13px;
+  border-radius:999px;
+  cursor:pointer;
+}
+
+.login{
+  max-width:420px;
+  margin:10vh auto;
+  padding:28px;
+  border:1px solid var(--line);
+  border-radius:24px;
+  background:linear-gradient(
+    145deg,
+    rgba(12,37,24,.9),
+    rgba(4,11,7,.96)
+  );
+  box-shadow:0 24px 80px rgba(0,0,0,.45);
+}
+
+h1,h2{
+  font-family:Georgia,serif;
+}
+
+.login h1{
+  margin:22px 0 8px;
+  font-size:34px;
+}
+
+.login p,
+.muted{
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.6;
+}
+
+.field{
+  margin:14px 0;
+}
+
+.field label{
+  display:block;
+  color:#a9b9af;
+  font-size:10px;
+  font-weight:800;
+  margin-bottom:6px;
+}
+
+.field input{
+  width:100%;
+  background:#020805;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:13px;
+  color:white;
+  outline:none;
+}
+
+.field input:focus{
+  border-color:var(--green);
+}
+
+.primary{
+  width:100%;
+  border:0;
+  border-radius:12px;
+  padding:14px;
+  background:var(--green);
+  color:#031108;
+  font-weight:900;
+  cursor:pointer;
+  margin-top:5px;
+}
+
+.primary:disabled{
+  opacity:.6;
+  cursor:wait;
+}
+
+.error{
+  display:none;
+  color:#ffb0b0;
+  font-size:11px;
+  line-height:1.6;
+  margin-top:12px;
+  padding:11px;
+  border-radius:10px;
+  background:rgba(255,80,80,.07);
+  border:1px solid rgba(255,120,120,.18);
+  word-break:break-word;
+}
+
+.error.show{
+  display:block;
+}
+
+.dashboard{
+  display:none;
+}
+
+.dashboard.open{
+  display:block;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin:22px 0;
+}
+
+.stat{
+  padding:16px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:rgba(7,18,12,.8);
+}
+
+.stat small{
+  display:block;
+  color:var(--muted);
+  font-size:9px;
+}
+
+.stat b{
+  display:block;
+  color:var(--green);
+  font-size:25px;
+  margin-top:5px;
+}
+
+.layout{
+  display:grid;
+  grid-template-columns:380px minmax(0,1fr);
+  gap:14px;
+}
+
+.panel{
+  border:1px solid var(--line);
+  border-radius:20px;
+  background:linear-gradient(
+    145deg,
+    rgba(9,27,17,.9),
+    rgba(3,9,6,.95)
+  );
+  overflow:hidden;
+}
+
+.panel-head{
+  padding:15px 17px;
+  border-bottom:1px solid var(--line);
+  font-weight:900;
+}
+
+.apps{
+  max-height:650px;
+  overflow:auto;
+}
+
+.app{
+  padding:15px 17px;
+  border-bottom:1px solid rgba(141,255,194,.08);
+  cursor:pointer;
+}
+
+.app:hover,
+.app.active{
+  background:rgba(25,240,138,.07);
+}
+
+.app b{
+  font-size:13px;
+}
+
+.app small{
+  display:block;
+  color:var(--muted);
+  margin-top:5px;
+  font-size:10px;
+}
+
+.tag{
+  display:inline-block;
+  margin-top:7px;
+  color:var(--green2);
+  font-size:9px;
+  border:1px solid var(--line);
+  padding:4px 7px;
+  border-radius:999px;
+}
+
+.empty{
+  padding:25px;
+  color:var(--muted);
+  font-size:12px;
+}
+
+.detail{
+  padding:18px;
+}
+
+.detail-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:8px;
+  margin-bottom:18px;
+}
+
+.info{
+  background:#020805;
+  border:1px solid rgba(141,255,194,.09);
+  border-radius:12px;
+  padding:11px;
+}
+
+.info small{
+  display:block;
+  color:#6f8177;
+  font-size:8px;
+  text-transform:uppercase;
+}
+
+.info b{
+  display:block;
+  font-size:11px;
+  margin-top:4px;
+  word-break:break-word;
+}
+
+.chat{
+  border-top:1px solid var(--line);
+  margin:0 -18px -18px;
+}
+
+.messages{
+  height:340px;
+  overflow:auto;
+  padding:15px;
+}
+
+.msg{
+  max-width:82%;
+  padding:10px 12px;
+  border-radius:14px;
+  margin-bottom:9px;
+  font-size:12px;
+  line-height:1.45;
+  white-space:pre-wrap;
+}
+
+.msg.user{
+  margin-left:auto;
+  background:var(--green);
+  color:#031108;
+}
+
+.msg.agency{
+  background:#0b1a11;
+  border:1px solid var(--line);
+}
+
+.send{
+  display:flex;
+  gap:8px;
+  padding:12px;
+  border-top:1px solid var(--line);
+}
+
+.send input{
+  flex:1;
+  min-width:0;
+  background:#020805;
+  border:1px solid var(--line);
+  border-radius:11px;
+  padding:12px;
+  color:white;
+  outline:none;
+}
+
+.send button{
+  border:0;
+  border-radius:11px;
+  background:var(--green);
+  color:#031108;
+  font-weight:900;
+  padding:0 18px;
+  cursor:pointer;
+}
+
+.selected-title{
+  margin:0 0 12px;
+  font-size:24px;
+}
+
+.phone{
+  color:var(--green2);
+  font-size:11px;
+}
+
+.application-message{
+  margin:10px 0 16px;
+  padding:12px;
+  border-radius:12px;
+  background:rgba(25,240,138,.05);
+  border:1px solid var(--line);
+  color:#b8c8bf;
+  font-size:11px;
+  line-height:1.5;
+}
+
+@media(max-width:850px){
+  .layout{
+    grid-template-columns:1fr;
+  }
+
+  .apps{
+    max-height:360px;
+  }
+}
+
+@media(max-width:480px){
+  .stats{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .stats .stat:last-child{
+    grid-column:1/-1;
+  }
+
+  .login{
+    margin:7vh auto;
+  }
+
+  .detail{
+    padding:14px;
+  }
+
+  .chat{
+    margin:0 -14px -14px;
+  }
+
+  .messages{
+    height:320px;
+  }
+
+  .detail-grid{
+    grid-template-columns:1fr 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOGIN -->
+
+<div id="loginView" class="wrap login">
+
+  <div class="brand">
+    <span class="mark">M</span>
+
+    <span>
+      <b>MERLIN</b>
+      <small>AGENCY ADMIN</small>
+    </span>
+  </div>
+
+  <h1>Admin Login</h1>
+
+  <p>
+    Private dashboard for Merlin Agency applications and live chat.
+  </p>
+
+  <div class="field">
+    <label>ADMIN EMAIL</label>
+
+    <input
+      id="email"
+      type="email"
+      autocomplete="username"
+      placeholder="admin@email.com"
+    >
+  </div>
+
+  <div class="field">
+    <label>PASSWORD</label>
+
+    <input
+      id="password"
+      type="password"
+      autocomplete="current-password"
+      placeholder="Your password"
+    >
+  </div>
+
+  <button id="loginBtn" class="primary">
+    Login to Admin Panel
+  </button>
+
+  <div id="loginError" class="error"></div>
+
+</div>
+
+
+<!-- DASHBOARD -->
+
+<div id="dashboard" class="dashboard">
+
+<header class="top">
+
+  <div class="wrap top-inner">
+
+    <div class="brand">
+
+      <span class="mark">M</span>
+
+      <span>
+        <b>MERLIN</b>
+        <small>AGENCY ADMIN</small>
+      </span>
+
+    </div>
+
+    <button id="logout" class="logout">
+      Logout
+    </button>
+
+  </div>
+
+</header>
+
+
+<main class="wrap">
+
+  <div class="stats">
+
+    <div class="stat">
+      <small>APPLICATIONS</small>
+      <b id="appCount">0</b>
+    </div>
+
+    <div class="stat">
+      <small>MESSAGES</small>
+      <b id="chatCount">0</b>
+    </div>
+
+    <div class="stat">
+      <small>SELECTED</small>
+      <b id="selectedStatus">—</b>
+    </div>
+
+  </div>
+
+
+  <div class="layout">
+
+    <section class="panel">
+
+      <div class="panel-head">
+        📨 Applications
+      </div>
+
+      <div id="apps" class="apps">
+
+        <div class="empty">
+          Loading applications...
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="panel">
+
+      <div id="detail" class="detail">
+
+        <div class="empty">
+          Select an application to view details and live chat.
+        </div>
+
+      </div>
+
+    </section>
+
+  </div>
+
+</main>
+
+</div>
+
+
+<script type="module">
+
+import {
+  initializeApp
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+  getDatabase,
+  ref,
+  onValue,
+  onChildAdded,
+  push,
+  off
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+import {
+  getAuth,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signOut
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+
+/* =========================
+   FIREBASE CONFIG
+========================= */
+
 const firebaseConfig = {
-  apiKey: "AIzaSyCnwNpsliuNJdgSoWFxP0Axqh5P8yVisKA",
-  authDomain: "merlin-live-chat.firebaseapp.com",
-  databaseURL: "https://merlin-live-chat-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "merlin-live-chat",
-  storageBucket: "merlin-live-chat.firebasestorage.app",
-  messagingSenderId: "660028612124",
-  appId: "1:660028612124:web:37060b488ed47a0e6889d9",
-  measurementId: "G-3KHQQ75V6D"
+
+  apiKey:
+    "AIzaSyCnwNpsliuNJdgSoWFxP0xAqH5P8yVisKA",
+
+  authDomain:
+    "merlin-live-chat.firebaseapp.com",
+
+  databaseURL:
+    "https://merlin-live-chat-default-rtdb.asia-southeast1.firebasedatabase.app",
+
+  projectId:
+    "merlin-live-chat",
+
+  storageBucket:
+    "merlin-live-chat.firebasestorage.app",
+
+  messagingSenderId:
+    "660028612124",
+
+  appId:
+    "1:660028612124:web:37060b488ed47a0e6889d9",
+
+  measurementId:
+    "G-3KHQQ75V6D"
+
 };
+
+
+const app =
+  initializeApp(firebaseConfig);
+
+const db =
+  getDatabase(app);
+
+const auth =
+  getAuth(app);
+
+
+/* =========================
+   ELEMENTS
+========================= */
+
+const loginView =
+  document.getElementById("loginView");
+
+const dashboard =
+  document.getElementById("dashboard");
+
+const loginBtn =
+  document.getElementById("loginBtn");
+
+const logoutBtn =
+  document.getElementById("logout");
+
+const loginError =
+  document.getElementById("loginError");
+
+const appsEl =
+  document.getElementById("apps");
+
+const detailEl =
+  document.getElementById("detail");
+
+const appCount =
+  document.getElementById("appCount");
+
+const chatCount =
+  document.getElementById("chatCount");
+
+const selectedStatus =
+  document.getElementById("selectedStatus");
+
+
+let applications = {};
+
+let selectedId = null;
+
+let currentMessagesRef = null;
+
+
+/* =========================
+   SECURITY ESCAPE
+========================= */
+
+function esc(value){
+
+  return String(value ?? "")
+    .replace(
+      /[&<>"']/g,
+      function(m){
+
+        return {
+          "&":"&amp;",
+          "<":"&lt;",
+          ">":"&gt;",
+          '"':"&quot;",
+          "'":"&#039;"
+
+        }[m];
+
+      }
+    );
+
+}
+
+
+/* =========================
+   LOGIN VIEW
+========================= */
+
+function showDashboard(){
+
+  loginView.style.display =
+    "none";
+
+  dashboard.classList.add(
+    "open"
+  );
+
+}
+
+
+function showLogin(){
+
+  dashboard.classList.remove(
+    "open"
+  );
+
+  loginView.style.display =
+    "block";
+
+}
+
+
+/* =========================
+   LOGIN
+========================= */
+
+loginBtn.addEventListener(
+  "click",
+  async function(){
+
+    loginError.classList.remove(
+      "show"
+    );
+
+    loginError.textContent = "";
+
+
+    const email =
+      document
+        .getElementById("email")
+        .value
+        .trim();
+
+
+    const password =
+      document
+        .getElementById("password")
+        .value;
+
+
+    if(!email || !password){
+
+      loginError.innerHTML =
+        "Please enter both email and password.";
+
+      loginError.classList.add(
+        "show"
+      );
+
+      return;
+
+    }
+
+
+    loginBtn.disabled = true;
+
+    loginBtn.textContent =
+      "Signing in...";
+
+
+    try{
+
+      await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+    }
+
+    catch(error){
+
+      console.error(
+        "Firebase Auth Error:",
+        error
+      );
+
+
+      loginError.innerHTML =
+        "<b>Login failed</b><br>" +
+        esc(
+          error.code ||
+          "unknown-error"
+        ) +
+        "<br><small>" +
+        esc(
+          error.message ||
+          "Unknown Firebase error"
+        ) +
+        "</small>";
+
+
+      loginError.classList.add(
+        "show"
+      );
+
+    }
+
+    finally{
+
+      loginBtn.disabled =
+        false;
+
+      loginBtn.textContent =
+        "Login to Admin Panel";
+
+    }
+
+  }
+);
+
+
+/* =========================
+   ENTER KEY LOGIN
+========================= */
+
+document
+  .getElementById("password")
+  .addEventListener(
+    "keydown",
+    function(e){
+
+      if(e.key === "Enter"){
+
+        loginBtn.click();
+
+      }
+
+    }
+  );
+
+
+/* =========================
+   LOGOUT
+========================= */
+
+logoutBtn.addEventListener(
+  "click",
+  async function(){
+
+    await signOut(auth);
+
+  }
+);
+
+
+/* =========================
+   AUTH STATE
+========================= */
+
+onAuthStateChanged(
+  auth,
+  function(user){
+
+    if(user){
+
+      showDashboard();
+
+      startApplications();
+
+    }else{
+
+      showLogin();
+
+    }
+
+  }
+);
+
+
+/* =========================
+   APPLICATIONS
+========================= */
+
+function startApplications(){
+
+  onValue(
+    ref(
+      db,
+      "applications"
+    ),
+    function(snapshot){
+
+      applications =
+        snapshot.val() || {};
+
+
+      const ids =
+        Object.keys(
+          applications
+        ).sort(
+          function(a,b){
+
+            return (
+              applications[b]?.createdAt || 0
+            ) -
+            (
+              applications[a]?.createdAt || 0
+            );
+
+          }
+        );
+
+
+      appCount.textContent =
+        ids.length;
+
+
+      if(!ids.length){
+
+        appsEl.innerHTML =
+          '<div class="empty">No applications yet.</div>';
+
+        return;
+
+      }
+
+
+      appsEl.innerHTML =
+        ids.map(
+          function(id){
+
+            const a =
+              applications[id] || {};
+
+
+            return `
+              <div
+                class="app ${id === selectedId ? "active" : ""}"
+                data-id="${esc(id)}"
+              >
+
+                <b>
+                  ${esc(
+                    a.name ||
+                    "Unknown applicant"
+                  )}
+                </b>
+
+                <small>
+                  📍 ${esc(
+                    a.location ||
+                    "—"
+                  )}
+
+                  ·
+
+                  📱 ${esc(
+                    a.phone ||
+                    "—"
+                  )}
+                </small>
+
+                <span class="tag">
+                  ${esc(
+                    a.target ||
+                    "No target"
+                  )}
+                </span>
+
+              </div>
+            `;
+
+          }
+        ).join("");
+
+
+      appsEl
+        .querySelectorAll(".app")
+        .forEach(
+          function(item){
+
+            item.addEventListener(
+              "click",
+              function(){
+
+                selectApplication(
+                  item.dataset.id
+                );
+
+              }
+            );
+
+          }
+        );
+
+
+      if(
+        selectedId &&
+        applications[selectedId]
+      ){
+
+        selectApplication(
+          selectedId
+        );
+
+      }
+
+    }
+  );
+
+}
+
+
+/* =========================
+   SELECT APPLICATION
+========================= */
+
+function selectApplication(id){
+
+  selectedId = id;
+
+
+  const a =
+    applications[id];
+
+
+  if(!a)return;
+
+
+  selectedStatus.textContent =
+    a.name ||
+    "—";
+
+
+  appsEl
+    .querySelectorAll(".app")
+    .forEach(
+      function(item){
+
+        item.classList.toggle(
+          "active",
+          item.dataset.id === id
+        );
+
+      }
+    );
+
+
+  detailEl.innerHTML = `
+
+    <h2 class="selected-title">
+      ${esc(
+        a.name ||
+        "Applicant"
+      )}
+    </h2>
+
+
+    <div class="phone">
+      📱 ${esc(
+        a.phone ||
+        "Not provided"
+      )}
+    </div>
+
+
+    <div
+      class="detail-grid"
+      style="margin-top:15px"
+    >
+
+      <div class="info">
+
+        <small>BIGO ID</small>
+
+        <b>
+          ${esc(
+            a.bigoId ||
+            "Not provided"
+          )}
+        </b>
+
+      </div>
+
+
+      <div class="info">
+
+        <small>LOCATION</small>
+
+        <b>
+          ${esc(
+            a.location ||
+            "—"
+          )}
+        </b>
+
+      </div>
+
+
+      <div class="info">
+
+        <small>EXPERIENCE</small>
+
+        <b>
+          ${esc(
+            a.experience ||
+            "—"
+          )}
+        </b>
+
+      </div>
+
+
+      <div class="info">
+
+        <small>TARGET</small>
+
+        <b>
+          ${esc(
+            a.target ||
+            "—"
+          )}
+        </b>
+
+      </div>
+
+    </div>
+
+
+    <div class="application-message">
+
+      <b>
+        Application message:
+      </b>
+
+      <br>
+
+      ${esc(
+        a.message ||
+        "None"
+      )}
+
+    </div>
+
+
+    <div class="chat">
+
+      <div class="panel-head">
+        💬 Live Chat
+      </div>
+
+
+      <div
+        id="messages"
+        class="messages"
+      ></div>
+
+
+      <form
+        id="sendForm"
+        class="send"
+      >
+
+        <input
+          id="replyInput"
+          required
+          placeholder="Reply to applicant..."
+          autocomplete="off"
+        >
+
+        <button type="submit">
+          Send
+        </button>
+
+      </form>
+
+    </div>
+
+  `;
+
+
+  loadMessages(id);
+
+
+  document
+    .getElementById("sendForm")
+    .addEventListener(
+      "submit",
+      async function(e){
+
+        e.preventDefault();
+
+
+        const input =
+          document.getElementById(
+            "replyInput"
+          );
+
+
+        const text =
+          input.value.trim();
+
+
+        if(!text)return;
+
+
+        input.value = "";
+
+
+        try{
+
+          await push(
+            ref(
+              db,
+              "chats/" +
+              id +
+              "/messages"
+            ),
+            {
+
+              text:text,
+
+              sender:"agency",
+
+              time:Date.now()
+
+            }
+          );
+
+        }
+
+        catch(error){
+
+          console.error(
+            "Message send error:",
+            error
+          );
+
+          alert(
+            "Message send nahi ho paya."
+          );
+
+        }
+
+      }
+    );
+
+}
+
+
+/* =========================
+   LIVE CHAT
+========================= */
+
+function loadMessages(id){
+
+  if(currentMessagesRef){
+
+    off(
+      currentMessagesRef
+    );
+
+  }
+
+
+  currentMessagesRef =
+    ref(
+      db,
+      "chats/" +
+      id +
+      "/messages"
+    );
+
+
+  const box =
+    document.getElementById(
+      "messages"
+    );
+
+
+  if(!box)return;
+
+
+  box.innerHTML = "";
+
+
+  onChildAdded(
+    currentMessagesRef,
+    function(snapshot){
+
+      const message =
+        snapshot.val() || {};
+
+
+      const div =
+        document.createElement(
+          "div"
+        );
+
+
+      div.className =
+        "msg " +
+        (
+          message.sender === "agency"
+            ? "agency"
+            : "user"
+        );
+
+
+      div.textContent =
+        message.text || "";
+
+
+      box.appendChild(div);
+
+
+      box.scrollTop =
+        box.scrollHeight;
+
+
+      chatCount.textContent =
+        String(
+          box.children.length
+        );
+
+    }
+  );
+
+}
+
+</script>
+
+</body>
+</html>
+
+Bas is code se purani "admin.html" replace kar do.
+
+⚠️ Ek important baat: agar replace karne ke baad bhi exact same "auth/api-key-not-valid" error aaye, code ko baar-baar replace mat karna. Phir problem Firebase API key/restriction side par hogi, aur main tumhe Firebase Console mein exact setting bataunga jahan se usko fix karna hai.
