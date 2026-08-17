@@ -1,4 +1,4 @@
-# Merlin Live Agency
+# Bigo Live Agency
 
 Modern dark and emerald-green landing page for Merlin Live Agency.
 
