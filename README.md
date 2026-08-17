@@ -1,6 +1,6 @@
 # Bigo Live Agency
 
-Modern dark and emerald-green landing page for Merlin Live Agency.
+Modern dark and emerald-green landing page for Merlin Agency.
 
 ## Features
 - Premium dark/green visual theme
