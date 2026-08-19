@@ -92,10 +92,9 @@ function verifyAccessToken(orderId, token) {
     .update(`${tokenOrderId}.${expiresAt}`)
     .digest("base64url");
 
-  return crypto.timingSafeEqual(
-    Buffer.from(expected),
-    Buffer.from(sig)
-  );
+  const a = Buffer.from(expected);
+  const b = Buffer.from(sig);
+  return a.length === b.length && crypto.timingSafeEqual(a, b);
 }
 
 function verifyWebhookSignature(rawBody, signature, secret) {
