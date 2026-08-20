@@ -284,14 +284,15 @@
 
 <style id="merlin-intro-css">
 #merlin-intro-overlay{position:fixed;inset:0;z-index:2147483647;background:rgba(0,0,0,.58);display:flex;align-items:center;justify-content:center;overflow:hidden;opacity:1;visibility:visible;transition:opacity .45s ease,visibility .45s ease}
-#merlin-intro-overlay video{width:100vw;height:100vh;object-fit:cover;display:block;background:#000}
+#merlin-intro-overlay video{width:100vw;height:100vh;object-fit:cover;display:block;background:#000}#merlin-intro-play{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);padding:14px 24px;border:0;border-radius:999px;background:#fff;color:#111;font-size:16px;font-weight:700;display:none}#merlin-intro-overlay.merlin-show-play #merlin-intro-play{display:block}
 #merlin-intro-overlay.merlin-intro-hide{opacity:0;visibility:hidden;pointer-events:none}
 body.merlin-intro-active{overflow:hidden}
 </style>
 </head>
 <body>
 <div id="merlin-intro-overlay" aria-hidden="true">
-  <video id="merlin-intro-video" autoplay muted playsinline webkit-playsinline preload="auto" poster="./intro-poster.jpg">
+  <button id="merlin-intro-play" type="button" aria-label="Play intro video">Tap to play</button>
+  <video id="merlin-intro-video" autoplay muted playsinline webkit-playsinline preload="auto" poster="./intro-poster.jpg" controlslist="nodownload noplaybackrate">
     <source src="./intro.mp4" type="video/mp4">
   </video>
 </div>
@@ -299,62 +300,32 @@ body.merlin-intro-active{overflow:hidden}
 (function(){
   var overlay=document.getElementById('merlin-intro-overlay');
   var video=document.getElementById('merlin-intro-video');
+  var play=document.getElementById('merlin-intro-play');
   if(!overlay || !video) return;
 
   document.body.classList.add('merlin-intro-active');
+  video.muted=true; video.defaultMuted=true; video.volume=0;
 
-  var finished=false;
-  var timer=setTimeout(finish, 7000);
-
-  function prepare(){
-    video.muted=true;
-    video.defaultMuted=true;
-    video.volume=0;
-    video.setAttribute('muted','');
-    video.setAttribute('playsinline','');
-    video.setAttribute('webkit-playsinline','');
-  }
-
+  var done=false;
   function finish(){
-    if(finished) return;
-    finished=true;
-    clearTimeout(timer);
+    if(done) return; done=true;
     overlay.classList.add('merlin-intro-hide');
     document.body.classList.remove('merlin-intro-active');
-    setTimeout(function(){
-      if(overlay.parentNode) overlay.parentNode.removeChild(overlay);
-    }, 500);
+    setTimeout(function(){ if(overlay.parentNode) overlay.remove(); },500);
   }
-
   function start(){
-    prepare();
-    var promise=video.play();
-    if(promise && promise.catch){
-      promise.catch(function(){
-        // Try again after the browser has finished loading the media.
-        setTimeout(function(){
-          prepare();
-          video.play().catch(function(){});
-        }, 250);
-      });
-    }
+    video.muted=true; video.defaultMuted=true; video.volume=0;
+    var p=video.play();
+    if(p && p.catch) p.catch(function(){ overlay.classList.add('merlin-show-play'); });
   }
-
-  video.addEventListener('ended', finish, {once:true});
-  video.addEventListener('error', function(){ finish(); }, {once:true});
-  video.addEventListener('loadeddata', start, {once:true});
-  video.addEventListener('canplay', start, {once:true});
-
-  prepare();
-
-  // Start as soon as the document/media is ready.
-  if(video.readyState >= 2) start();
-  else video.load();
-
-  // If mobile Chrome/Samsung delays autoplay, the first tap starts it.
-  document.addEventListener('touchstart', function(){
-    if(!finished && video.paused) start();
-  }, {once:true, passive:true});
+  video.addEventListener('ended',finish);
+  video.addEventListener('error',finish);
+  if(play) play.addEventListener('click',function(){ overlay.classList.remove('merlin-show-play'); start(); });
+  video.addEventListener('loadedmetadata',start,{once:true});
+  video.addEventListener('canplay',start,{once:true});
+  setTimeout(function(){ if(!done && video.paused){ overlay.classList.add('merlin-show-play'); } },1800);
+  setTimeout(function(){ if(!done) finish(); },9000);
+  video.load();
 })();
 </script>
 <div class="bg-glow"></div>
