@@ -100,8 +100,8 @@ a{color:inherit}
     </div>
 
     <label>
-      Instagram ID / Profile Link
-      <input name="instagram" type="url" required placeholder="https://instagram.com/yourprofile" inputmode="url">
+      Instagram ID / Profile Link <small>Optional</small>
+      <input name="instagram" type="url" placeholder="https://instagram.com/yourprofile" inputmode="url">
     </label>
 
     <label>
@@ -141,7 +141,7 @@ a{color:inherit}
       Submit Application <b>↗</b>
     </button>
 
-    <p class="form-note">All required fields must be completed before WhatsApp can open.</p>
+    <p class="form-note">All required fields must be completed before WhatsApp can open. Instagram is optional.</p>
   </form>
 
   <div id="successNote" class="success-note">
@@ -195,8 +195,9 @@ form.addEventListener("submit", function(e){
   const category = data.get("category").trim();
   const experience = data.get("experience").trim();
   const bigoId = data.get("bigoId").trim() || "Not provided";
+  const instagramValue = instagram || "Not provided";
 
-  if(!name || !age || !gender || !instagram || !category || !experience){
+  if(!name || !age || !gender || !category || !experience){
     showError("Please complete all required fields before submitting.");
     return;
   }
@@ -206,11 +207,13 @@ form.addEventListener("submit", function(e){
     return;
   }
 
-  try{
-    new URL(instagram);
-  }catch{
-    showError("Please enter a valid Instagram profile link.");
-    return;
+  if(instagram){
+    try{
+      new URL(instagram);
+    }catch{
+      showError("Please enter a valid Instagram profile link.");
+      return;
+    }
   }
 
   const message =
@@ -221,7 +224,7 @@ I want to apply to join Merlin Agency.
 Full Name: ${name}
 Age: ${age}
 Gender: ${gender}
-Instagram: ${instagram}
+Instagram: ${instagramValue}
 Talent Category: ${category}
 Experience: ${experience}
 BIGO ID: ${bigoId}
@@ -233,7 +236,31 @@ Please review my application. Thank you.`;
   successNote.classList.add("show");
 
   // The only navigation happens after all validation above succeeds.
-  window.location.href = WHATSAPP_URL + "?text=" + encodeURIComponent(message);
+  const encoded = encodeURIComponent(message);
+  const appUrl = "whatsapp://send?text=" + encoded;
+  const webUrl = WHATSAPP_URL + "?text=" + encoded;
+
+  // Try the native WhatsApp app first.
+  const isAndroid = /Android/i.test(navigator.userAgent);
+  const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  if(isAndroid){
+    const fallbackTimer = setTimeout(() => {
+      window.location.href = webUrl;
+    }, 1800);
+    window.location.href =
+      "intent://send?text=" + encoded +
+      "#Intent;scheme=whatsapp;package=com.whatsapp;end";
+    window.addEventListener("pagehide", () => clearTimeout(fallbackTimer), {once:true});
+  }else if(isIOS){
+    const fallbackTimer = setTimeout(() => {
+      window.location.href = webUrl;
+    }, 1800);
+    window.location.href = appUrl;
+    window.addEventListener("pagehide", () => clearTimeout(fallbackTimer), {once:true});
+  }else{
+    window.location.href = webUrl;
+  }
 });
 </script>
 </body>
