@@ -6,1010 +6,217 @@
 <meta name="theme-color" content="#06110b">
 <title>Apply Now | Merlin Agency</title>
 <link rel="stylesheet" href="styles.css">
-
 <style>
-.fee-notice{
-  max-width:760px;
-  margin:22px auto 0;
-  padding:16px 18px;
-  border:1px solid rgba(141,255,194,.22);
-  border-radius:18px;
-  background:linear-gradient(145deg,rgba(12,37,24,.92),rgba(4,11,7,.96));
-  box-shadow:0 14px 45px rgba(0,0,0,.25);
-  text-align:center;
-}
-.fee-notice strong{
-  display:block;
-  color:#19f08a;
-  font-size:14px;
-  margin-bottom:6px;
-}
-.fee-notice span{
-  display:block;
-  color:#dce9e1;
-  font-size:11px;
-  line-height:1.6;
-}
-.chat-box{
-  display:none;
-  max-width:760px;
-  margin:30px auto 0;
-  border:1px solid rgba(141,255,194,.22);
-  border-radius:28px;
-  background:linear-gradient(145deg,rgba(12,37,24,.92),rgba(4,11,7,.96));
-  box-shadow:0 24px 80px rgba(0,0,0,.45);
-  overflow:hidden;
-}
-
-.chat-box.open{
-  display:block;
-}
-
-.chat-head{
-  padding:18px 20px;
-  border-bottom:1px solid rgba(141,255,194,.12);
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
-.chat-head b{
-  color:#f1f8f3;
-  font-size:14px;
-}
-
-.chat-status{
-  color:#19f08a;
-  font-size:10px;
-}
-
-.chat-status i{
-  display:inline-block;
-  width:7px;
-  height:7px;
-  border-radius:50%;
-  background:#19f08a;
-  margin-right:5px;
-  box-shadow:0 0 10px #19f08a;
-}
-
-.chat-messages{
-  height:360px;
-  overflow-y:auto;
-  padding:18px;
-}
-
-.chat-message{
-  max-width:90%;
-  padding:11px 14px;
-  margin-bottom:10px;
-  border-radius:15px;
-  font-size:12px;
-  line-height:1.6;
-  white-space:pre-wrap;
-}
-
-.chat-message.agency{
-  background:#0b1a11;
-  border:1px solid rgba(141,255,194,.12);
-  color:#dce9e1;
-}
-
-.chat-message.user{
-  margin-left:auto;
-  background:#19f08a;
-  color:#031108;
-}
-
-.chat-input{
-  display:flex;
-  gap:8px;
-  padding:14px;
-  border-top:1px solid rgba(141,255,194,.12);
-}
-
-.chat-input input{
-  flex:1;
-  min-width:0;
-  background:#020805;
-  border:1px solid rgba(141,255,194,.14);
-  border-radius:12px;
-  padding:12px;
-  color:white;
-  outline:none;
-}
-
-.chat-input button{
-  border:0;
-  border-radius:12px;
-  padding:0 18px;
-  background:#19f08a;
-  color:#031108;
-  font-weight:900;
-  cursor:pointer;
-}
-
-.chat-expired{
-  display:none;
-  text-align:center;
-  padding:30px 20px;
-  color:#9bffc9;
-  font-size:12px;
-}
-
-.chat-expired.show{
-  display:block;
-}
-
-.success-note{
-  display:none;
-  text-align:center;
-  color:#9bffc9;
-  font-size:12px;
-  margin-top:18px;
-}
-
-.success-note.show{
-  display:block;
-}
-
-.fee-payment-btn{
-  width:100%;
-  font:inherit;
-  color:#19f08a;
-  cursor:pointer;
-  border:1px solid rgba(141,255,194,.22);
-}
-.fee-payment-btn:active{transform:scale(.99);}
+*{box-sizing:border-box}
+.apply-page{min-height:100vh}
+.apply-wrap{width:min(760px,calc(100% - 28px));margin:0 auto;padding:60px 0}
+.apply-intro{text-align:center;margin-bottom:28px}
+.kicker{display:inline-block;color:#19f08a;font-size:11px;font-weight:800;letter-spacing:.18em}
+.apply-intro h1{margin:12px 0;font-size:clamp(30px,6vw,52px)}
+.apply-intro h1 em{color:#19f08a;font-style:normal}
+.apply-intro p{color:#9aa9a0;line-height:1.7;font-size:13px}
+.apply-pills{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:18px}
+.apply-pills span{padding:8px 11px;border:1px solid rgba(141,255,194,.16);border-radius:999px;color:#b8c8bf;font-size:10px}
+.apply-form{padding:24px;border:1px solid rgba(141,255,194,.18);border-radius:24px;background:linear-gradient(145deg,rgba(12,37,24,.92),rgba(4,11,7,.96));box-shadow:0 24px 80px rgba(0,0,0,.4)}
+.apply-form label{display:block;color:#dce9e1;font-size:11px;font-weight:800;margin:0 0 16px}
+.apply-form label small{color:#7e9187;font-weight:500}
+.apply-form input,.apply-form select,.apply-form textarea{display:block;width:100%;margin-top:7px;padding:13px 14px;border-radius:12px;border:1px solid rgba(141,255,194,.14);background:#020805;color:#fff;outline:none;font:inherit;font-size:12px}
+.apply-form input:focus,.apply-form select:focus,.apply-form textarea:focus{border-color:#19f08a;box-shadow:0 0 0 2px rgba(25,240,138,.08)}
+.apply-form input:invalid:not(:placeholder-shown),.apply-form select:invalid{border-color:#ff6b6b}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.btn.submit{width:100%;margin-top:4px}
+.form-note{text-align:center;color:#74847b;font-size:10px;line-height:1.5;margin:13px 0 0}
+.form-error{display:none;margin:0 0 15px;padding:11px 13px;border-radius:12px;background:rgba(255,70,70,.08);border:1px solid rgba(255,100,100,.2);color:#ffb3b3;font-size:11px;line-height:1.5}
+.form-error.show{display:block}
+.success-note{display:none;text-align:center;margin:18px 0;padding:16px;border-radius:16px;background:rgba(25,240,138,.07);border:1px solid rgba(141,255,194,.2);color:#9bffc9;font-size:12px}
+.success-note.show{display:block}
+@media(max-width:600px){.apply-wrap{padding:38px 0}.apply-form{padding:18px}.two{grid-template-columns:1fr}}
 </style>
 </head>
-
 <body class="apply-page">
 <div class="bg-glow"></div>
 
 <header class="header">
-
   <a class="logo" href="index.html">
     <span class="logo-m">M</span>
-
-    <span>
-      <b>MERLIN</b>
-      <small>AGENCY</small>
-    </span>
+    <span><b>MERLIN</b><small>AGENCY</small></span>
   </a>
-
   <a class="back" href="index.html">← Back to Website</a>
-
 </header>
 
-
 <main class="apply-wrap">
-
   <div class="apply-intro reveal">
-
     <span class="kicker">JOIN MERLIN AGENCY</span>
-
-    <h1>
-      Become an <em>official BIGO LIVE host.</em>
-    </h1>
-
-    <p>
-      Complete the form below. After submitting your application,
-      you can continue directly in our live chat.
-    </p>
-
+    <h1>Become an <em>official BIGO LIVE host.</em></h1>
+    <p>Complete the application form below. After successful submission, WhatsApp will open directly with your application details.</p>
     <div class="apply-pills">
       <span>✓ BIGO ID Optional</span>
-      <span>✓ Live Chat Support</span>
+      <span>✓ Direct WhatsApp</span>
       <span>✓ Mobile Friendly</span>
     </div>
-</div>
-<form id="applyForm" class="apply-form reveal">
+  </div>
+
+  <form id="applyForm" class="apply-form reveal" novalidate>
+    <div id="formError" class="form-error" role="alert"></div>
 
     <label>
       Full Name
-
-      <input
-        name="name"
-        required
-        placeholder="Your name"
-        autocomplete="name"
-      >
+      <input name="name" required placeholder="Your full name" autocomplete="name">
     </label>
 
+    <div class="two">
+      <label>
+        Age
+        <input name="age" type="number" required min="18" max="100" placeholder="Your age" inputmode="numeric">
+      </label>
+
+      <label>
+        Gender
+        <select name="gender" required>
+          <option value="" selected disabled>Select gender</option>
+          <option>Female</option>
+          <option>Male</option>
+          <option>Other</option>
+        </select>
+      </label>
+    </div>
 
     <label>
-      WhatsApp Number
-
-      <input
-        name="phone"
-        required
-        placeholder="+91 XXXXX XXXXX"
-        inputmode="tel"
-        autocomplete="tel"
-      >
+      Instagram ID / Profile Link
+      <input name="instagram" type="url" required placeholder="https://instagram.com/yourprofile" inputmode="url">
     </label>
 
+    <label>
+      Talent Category
+      <select name="category" required>
+        <option value="" selected disabled>Select your talent category</option>
+        <option>Influencer</option>
+        <option>Dancer</option>
+        <option>Singer</option>
+        <option>Model</option>
+        <option>Comedian</option>
+        <option>Artist</option>
+        <option>Housewife</option>
+        <option>Student</option>
+        <option>Streamer / Host</option>
+        <option>Other</option>
+      </select>
+    </label>
+
+    <label>
+      Experience
+      <select name="experience" required>
+        <option value="" selected disabled>Select your experience</option>
+        <option>New to live streaming</option>
+        <option>Beginner</option>
+        <option>Experienced Host</option>
+        <option>Professional Creator</option>
+      </select>
+    </label>
 
     <label>
       BIGO ID <small>Optional</small>
-
-      <input
-        name="bigoId"
-        placeholder="Your BIGO ID (optional)"
-      >
+      <input name="bigoId" placeholder="Your BIGO ID (optional)">
     </label>
 
-
-    <div class="two">
-
-      <label>
-        City / State
-
-        <input
-          name="location"
-          required
-          placeholder="e.g. Mumbai, Maharashtra"
-        >
-      </label>
-
-
-      <label>
-        Experience
-
-        <select name="experience">
-
-          <option>New to BIGO</option>
-          <option>Beginner</option>
-          <option>Experienced Host</option>
-          <option>Professional Creator</option>
-
-        </select>
-
-      </label>
-
-    </div>
-
-
-    <label>
-      Preferred Target
-
-      <select name="target">
-
-        <option>5K Beans</option>
-        <option>10K Beans</option>
-        <option>20K Beans</option>
-        <option>50K Beans</option>
-        <option>100K Beans</option>
-        <option>150K Beans</option>
-        <option>200K Beans</option>
-        <option>400K Beans</option>
-        <option>700K Beans</option>
-        <option>1M Beans</option>
-        <option>2M Beans</option>
-
-      </select>
-
-    </label>
-
-
-    <label>
-      Anything you want us to know?
-      <small>Optional</small>
-
-      <textarea
-        name="message"
-        rows="5"
-        placeholder="Tell us about your live experience, goals or questions..."
-      ></textarea>
-
-    </label>
-
-
-    <button
-      class="btn green submit"
-      type="submit"
-      id="submitApplication"
-    >
-      Apply Now <b>↗</b>
+    <button class="btn green submit" type="submit" id="submitApplication">
+      Submit Application <b>↗</b>
     </button>
 
-    <p class="form-note">Submit your application to continue.</p>
-
-  
-</form>
-
-<section id="paymentStep" class="payment-step" hidden>
-  <button type="button" id="feePaymentButton" class="fee-notice fee-payment-btn" aria-label="Placement Interview Fee ₹100">
-  Placement Interview Fee: ₹100
-</button>
-</section>
-
-<section id="supportStep" class="support-step" hidden aria-label="Support options">
-  <button type="button" id="liveChatButton" class="support-btn">💬 Live Chat</button>
-  <a class="support-btn" href="https://wa.me/message/6HTA6PCUSTCXP1" target="_self" rel="noopener">WhatsApp</a>
-</section>
-
-
+    <p class="form-note">All required fields must be completed before WhatsApp can open.</p>
+  </form>
 
   <div id="successNote" class="success-note">
-    ✓ Details received. Your live chat is now open.
+    ✓ Application prepared. Opening WhatsApp…
   </div>
-
-
-  <!-- LIVE CHAT -->
-
-  <section id="chatBox" class="chat-box">
-
-    <div class="chat-head">
-
-      <b>Merlin Agency Live Chat</b>
-
-      <span class="chat-status">
-        <i></i> ONLINE
-      </span>
-
-    </div>
-
-
-    <div
-      id="chatMessages"
-      class="chat-messages"
-    ></div>
-
-
-    <div id="chatExpired" class="chat-expired">
-      This chat session has expired after 15 minutes.
-    </div>
-
-
-    <form id="chatForm" class="chat-input">
-
-      <input
-        id="chatInput"
-        required
-        placeholder="Type your message..."
-        autocomplete="off"
-      >
-
-      <button type="submit">
-        Send
-      </button>
-
-    </form>
-
-  </section>
-
 </main>
 
-
 <footer class="footer compact">
-
   <div class="footer-bottom">
-
     <span>© 2026 Merlin Agency</span>
-
-    <a
-      class="snap"
-      href="https://www.snapchat.com/add/JoinMerlin"
-      target="_blank"
-      rel="noopener"
-    >
-      👻 Snapchat · JoinMerlin
-    </a>
-
+    <a class="snap" href="https://www.snapchat.com/add/JoinMerlin" target="_blank" rel="noopener">👻 Snapchat · JoinMerlin</a>
   </div>
-
 </footer>
-<script type="module">
 
-import { initializeApp }
-from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+<script>
+const form = document.getElementById("applyForm");
+const errorBox = document.getElementById("formError");
+const successNote = document.getElementById("successNote");
+const submitButton = document.getElementById("submitApplication");
 
-import {
-  getDatabase,
-  ref,
-  push,
-  onChildAdded
-}
-from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+const WHATSAPP_URL = "https://wa.me/message/6HTA6PCUSTCXP1";
 
-
-const firebaseConfig = {
-
-  apiKey: "AIzaSyCnwNpsliuNJdgSWoP0xFpqh5P8yVisKA",
-
-  authDomain: "merlin-live-chat.firebaseapp.com",
-
-  databaseURL:
-    "https://merlin-live-chat-default-rtdb.asia-southeast1.firebasedatabase.app",
-
-  projectId: "merlin-live-chat",
-
-  storageBucket:
-    "merlin-live-chat.firebasestorage.app",
-
-  messagingSenderId: "660028612124",
-
-  appId:
-    "1:660028612124:web:37060b488ed47a0e6889d9",
-
-  measurementId: "G-3KHQQ75V6D"
-
-};
-
-
-const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
-
-
-const form =
-  document.getElementById("applyForm");
-
-const chatBox =
-  document.getElementById("chatBox");
-
-const chatForm =
-  document.getElementById("chatForm");
-
-const chatInput =
-  document.getElementById("chatInput");
-
-const chatMessages =
-  document.getElementById("chatMessages");
-
-const successNote =
-  document.getElementById("successNote");
-
-const submitButton =
-  document.getElementById("submitApplication");
-
-const chatExpired =
-  document.getElementById("chatExpired");
-
-
-let chatId =
-  localStorage.getItem("merlinChatId");
-
-let chatLoaded = false;
-let chatExpiresAt =
-  Number(localStorage.getItem("merlinChatExpiresAt") || 0);
-
-
-/* ADD MESSAGE TO SCREEN */
-
-function addMessage(text, type){
-
-  const div =
-    document.createElement("div");
-
-  div.className =
-    "chat-message " + type;
-
-  div.textContent = text;
-
-  chatMessages.appendChild(div);
-
-  chatMessages.scrollTop =
-    chatMessages.scrollHeight;
+function showError(message){
+  errorBox.textContent = message;
+  errorBox.classList.add("show");
+  errorBox.scrollIntoView({behavior:"smooth",block:"center"});
 }
 
-
-/* CREATE APPLICATION DETAILS MESSAGE */
-
-function createDetailsMessage(data){
-
-  return `NEW HOST APPLICATION
-
-Name: ${data.get("name") || ""}
-WhatsApp: ${data.get("phone") || ""}
-BIGO ID: ${data.get("bigoId") || "Not provided"}
-City / State: ${data.get("location") || ""}
-Experience: ${data.get("experience") || ""}
-Preferred Target: ${data.get("target") || ""}
-
-Message:
-${data.get("message") || "No additional message."}`;
+function clearError(){
+  errorBox.textContent = "";
+  errorBox.classList.remove("show");
 }
 
+form.addEventListener("submit", function(e){
+  e.preventDefault();
+  clearError();
 
-/* OPEN CHAT */
+  // Do not allow WhatsApp to open unless every required field is valid.
+  if(!form.checkValidity()){
+    const firstInvalid = form.querySelector(":invalid");
+    showError("Please complete all required fields correctly before submitting.");
+    if(firstInvalid) firstInvalid.focus();
+    return;
+  }
 
-function openChat(){
+  const data = new FormData(form);
+  const name = data.get("name").trim();
+  const age = data.get("age").trim();
+  const gender = data.get("gender").trim();
+  const instagram = data.get("instagram").trim();
+  const category = data.get("category").trim();
+  const experience = data.get("experience").trim();
+  const bigoId = data.get("bigoId").trim() || "Not provided";
 
-  form.style.display = "none";
+  if(!name || !age || !gender || !instagram || !category || !experience){
+    showError("Please complete all required fields before submitting.");
+    return;
+  }
 
+  if(Number(age) < 18 || Number(age) > 100){
+    showError("Please enter a valid age (18 or above).");
+    return;
+  }
+
+  try{
+    new URL(instagram);
+  }catch{
+    showError("Please enter a valid Instagram profile link.");
+    return;
+  }
+
+  const message =
+`Hello Merlin Agency 👋
+
+I want to apply to join Merlin Agency.
+
+Full Name: ${name}
+Age: ${age}
+Gender: ${gender}
+Instagram: ${instagram}
+Talent Category: ${category}
+Experience: ${experience}
+BIGO ID: ${bigoId}
+
+Please review my application. Thank you.`;
+
+  submitButton.disabled = true;
+  submitButton.innerHTML = "Opening WhatsApp…";
   successNote.classList.add("show");
 
-  chatBox.classList.add("open");
-
-  chatInput.focus();
-}
-
-
-/* 15 MINUTE LOCAL CHAT EXPIRY */
-
-function startExpiryTimer(){
-
-  if(!chatExpiresAt){
-    chatExpiresAt =
-      Date.now() + (15 * 60 * 1000);
-
-    localStorage.setItem(
-      "merlinChatExpiresAt",
-      String(chatExpiresAt)
-    );
-  }
-
-  const remaining =
-    chatExpiresAt - Date.now();
-
-  if(remaining <= 0){
-    expireChat();
-    return;
-  }
-
-  setTimeout(
-    expireChat,
-    remaining
-  );
-}
-
-
-/* EXPIRE CURRENT CHAT */
-
-function expireChat(){
-
-  chatMessages.innerHTML = "";
-
-  chatForm.style.display = "none";
-
-  chatExpired.classList.add("show");
-
-  localStorage.removeItem("merlinChatId");
-  localStorage.removeItem("merlinChatExpiresAt");
-
-  chatId = null;
-}
-
-
-/* APPLICATION SUBMIT */
-
-form.addEventListener(
-  "submit",
-  async e => {
-
-    e.preventDefault();
-
-    submitButton.disabled = true;
-
-    submitButton.innerHTML =
-      "Opening Chat...";
-
-
-    try{
-
-      const data =
-        new FormData(form);
-
-
-      if(!chatId){
-
-        chatId =
-          "chat_" +
-          Date.now() +
-          "_" +
-          Math.random()
-            .toString(36)
-            .substring(2,9);
-
-        localStorage.setItem(
-          "merlinChatId",
-          chatId
-        );
-
-        chatExpiresAt =
-          Date.now() +
-          (15 * 60 * 1000);
-
-        localStorage.setItem(
-          "merlinChatExpiresAt",
-          String(chatExpiresAt)
-        );
-
-      }
-
-
-      const detailsMessage =
-        createDetailsMessage(data);
-
-
-      /*
-        IMPORTANT:
-        Application details are sent ONLY
-        into the chat.
-        No separate applications database
-        is created.
-      */
-
-      await push(
-        ref(
-          db,
-          "chats/" +
-          chatId +
-          "/messages"
-        ),
-        {
-          text:
-            detailsMessage,
-
-          sender:
-            "agency",
-
-          type:
-            "application",
-
-          time:
-            Date.now(),
-
-          expiresAt:
-            chatExpiresAt
-        }
-      );
-
-
-      loadChat();
-
-      startExpiryTimer();
-
-      const paymentStep = document.getElementById("paymentStep");
-      if (paymentStep) {
-        paymentStep.hidden = false;
-        paymentStep.scrollIntoView({ behavior: "smooth", block: "center" });
-      }
-
-
-    }catch(error){
-
-      console.error(error);
-
-      alert(
-        "Something went wrong. Please try again."
-      );
-
-      submitButton.disabled = false;
-
-      submitButton.innerHTML =
-        "Start Live Chat <b>↗</b>";
-
-    }
-
-  }
-);
-
-
-/* LOAD CHAT */
-
-function loadChat(){
-
-  if(chatLoaded || !chatId)
-    return;
-
-  chatLoaded = true;
-
-
-  const messagesRef =
-    ref(
-      db,
-      "chats/" +
-      chatId +
-      "/messages"
-    );
-
-
-  onChildAdded(
-    messagesRef,
-    snapshot => {
-
-      const message =
-        snapshot.val();
-
-      if(!message)
-        return;
-
-
-      if(
-        message.expiresAt &&
-        Date.now() > message.expiresAt
-      )
-        return;
-
-
-      addMessage(
-        message.text || "",
-        message.sender === "agency"
-          ? "agency"
-          : "user"
-      );
-
-    }
-  );
-
-}
-
-
-/* SEND CHAT MESSAGE */
-
-chatForm.addEventListener(
-  "submit",
-  async e => {
-
-    e.preventDefault();
-
-    if(
-      !chatId ||
-      Date.now() >= chatExpiresAt
-    ){
-
-      expireChat();
-      return;
-
-    }
-
-
-    const text =
-      chatInput.value.trim();
-
-    if(!text)
-      return;
-
-
-    chatInput.value = "";
-
-
-    await push(
-      ref(
-        db,
-        "chats/" +
-        chatId +
-        "/messages"
-      ),
-      {
-
-        text:
-          text,
-
-        sender:
-          "user",
-
-        time:
-          Date.now(),
-
-        expiresAt:
-          chatExpiresAt
-
-      }
-    );
-
-  }
-);
-
-
-/* RESTORE CHAT IF USER REFRESHES */
-
-if(
-  chatId &&
-  chatExpiresAt &&
-  Date.now() < chatExpiresAt
-){
-
-  openChat();
-
-  loadChat();
-
-  startExpiryTimer();
-
-}
-
-
-/* IF SESSION ALREADY EXPIRED */
-
-if(
-  chatId &&
-  chatExpiresAt &&
-  Date.now() >= chatExpiresAt
-){
-
-  expireChat();
-
-}
-
-</script>
-
-
-<script src="script.js"></script>
-
-<style>
-.payment-step,
-.support-step {
-  margin: 0 0 28px;
-}
-.payment-step[hidden],
-.support-step[hidden] {
-  display: none;
-}
-.fee-payment-btn {
-  display: block;
-  width: 100%;
-  margin: 0;
-  padding: 18px;
-  font: inherit;
-  font-weight: 800;
-  color: #19f08a;
-  cursor: pointer;
-  border: 1px solid rgba(141,255,194,.22);
-  border-radius: 18px;
-  background: linear-gradient(145deg,rgba(12,37,24,.92),rgba(4,11,7,.96));
-  box-shadow: 0 14px 45px rgba(0,0,0,.25);
-  text-align: center;
-}
-.support-step {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-.support-btn {
-  flex: 1 1 180px;
-  min-height: 52px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 14px;
-  border: 1px solid rgba(141,255,194,.22);
-  background: linear-gradient(145deg,rgba(12,37,24,.92),rgba(4,11,7,.96));
-  color: #19f08a;
-  font: inherit;
-  font-weight: 800;
-  text-decoration: none;
-  cursor: pointer;
-}
-</style>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const applyForm = document.getElementById("applyForm");
-  const paymentStep = document.getElementById("paymentStep");
-  const feeButton = document.getElementById("feePaymentButton");
-  const liveChatButton = document.getElementById("liveChatButton");
-
-  if (applyForm && paymentStep) {
-    applyForm.addEventListener("submit", function () {
-      setTimeout(function () {
-        paymentStep.hidden = false;
-        paymentStep.scrollIntoView({ behavior: "smooth", block: "center" });
-      }, 350);
-    });
-  }
-
-  if (feeButton) {
-    feeButton.addEventListener("click", function () {
-      const modal = document.getElementById("placementTerms");
-      if (modal) {
-        modal.hidden = false;
-        document.body.style.overflow = "hidden";
-      }
-    });
-  }
-
-  if (liveChatButton) {
-    liveChatButton.addEventListener("click", function () {
-      if (typeof openChat === "function") {
-        openChat();
-      } else {
-        const chatBox = document.getElementById("chatBox");
-        if (chatBox) chatBox.classList.add("open");
-      }
-    });
-  }
+  // The only navigation happens after all validation above succeeds.
+  window.location.href = WHATSAPP_URL + "?text=" + encodeURIComponent(message);
 });
-</script>
-
-<div id="placementTerms" class="placement-terms-modal" hidden>
-  <div class="placement-terms-card" role="dialog" aria-modal="true" aria-labelledby="placementTermsTitle">
-    <button type="button" id="closePlacementTerms" class="placement-terms-close" aria-label="Close">×</button>
-    <h2 id="placementTermsTitle">Placement Terms &amp; Conditions</h2>
-    <div class="placement-terms-content">
-      <p><strong>Minimum 2 months:</strong> Complete <strong>1,00,000 Beans</strong>, <strong>30 days</strong>, and <strong>120 hours</strong>.</p>
-      <p>After completing these terms, your <strong>₹100 placement fee</strong> will be fully refunded and you will receive an additional <strong>₹1,000 cash bonus</strong>.</p>
-    </div>
-    <button type="button" id="continuePlacementPayment" class="btn green placement-continue-btn">
-      Continue to ₹100 Payment
-    </button>
-  </div>
-</div>
-<style>
-.placement-terms-modal {
-  position: fixed;
-  inset: 0;
-  z-index: 99999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  background: rgba(0,0,0,.78);
-}
-.placement-terms-modal[hidden] { display: none; }
-.placement-terms-card {
-  position: relative;
-  width: min(520px, 100%);
-  max-height: 85vh;
-  overflow: auto;
-  padding: 26px;
-  border-radius: 20px;
-  background: #06130d;
-  border: 1px solid rgba(38, 240, 130, .35);
-  box-shadow: 0 20px 70px rgba(0,0,0,.55);
-}
-.placement-terms-card h2 {
-  margin: 0 38px 20px 0;
-}
-.placement-terms-content p {
-  margin: 0 0 14px;
-  line-height: 1.6;
-}
-.placement-terms-close {
-  position: absolute;
-  top: 12px;
-  right: 14px;
-  width: 38px;
-  height: 38px;
-  border: 0;
-  background: transparent;
-  color: inherit;
-  font-size: 30px;
-  cursor: pointer;
-}
-.placement-continue-btn {
-  width: 100%;
-  margin-top: 8px;
-  border: 0;
-  cursor: pointer;
-}
-</style>
-<script>
-(function () {
-  const feeButton = document.getElementById("feePaymentButton");
-  const modal = document.getElementById("placementTerms");
-  const closeButton = document.getElementById("closePlacementTerms");
-  const continueButton = document.getElementById("continuePlacementPayment");
-
-  if (!feeButton || !modal) return;
-
-  feeButton.addEventListener("click", function () {
-    modal.hidden = false;
-    document.body.style.overflow = "hidden";
-  });
-
-  function closeTerms() {
-    modal.hidden = true;
-    document.body.style.overflow = "";
-  }
-
-  closeButton.addEventListener("click", closeTerms);
-
-  continueButton.addEventListener("click", function () {
-    modal.hidden = true;
-    document.body.style.overflow = "";
-
-    const supportStep = document.getElementById("supportStep");
-    if (supportStep) supportStep.hidden = false;
-
-    window.location.href = "upi://pay?pa=ashiam@superyes&pn=Merlin%20Agency&am=100&cu=INR&tn=Placement%20Interview%20Fee";
-  });
-
-  modal.addEventListener("click", function (event) {
-    if (event.target === modal) closeTerms();
-  });
-})();
 </script>
 </body>
 </html>
