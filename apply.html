@@ -162,7 +162,7 @@ const errorBox = document.getElementById("formError");
 const successNote = document.getElementById("successNote");
 const submitButton = document.getElementById("submitApplication");
 
-const WHATSAPP_URL = "https://wa.me/message/6HTA6PCUSTCXP1";
+const WHATSAPP_NUMBER = "918178949463";
 
 function showError(message){
   errorBox.textContent = message;
@@ -237,25 +237,28 @@ Please review my application. Thank you.`;
 
   // The only navigation happens after all validation above succeeds.
   const encoded = encodeURIComponent(message);
-  const appUrl = "whatsapp://send?text=" + encoded;
-  const webUrl = WHATSAPP_URL + "?text=" + encoded;
+  const appUrl = "whatsapp://send?phone=" + WHATSAPP_NUMBER + "&text=" + encoded;
+  const webUrl = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encoded;
 
-  // Try the native WhatsApp app first.
+  // Open the native WhatsApp app first.
   const isAndroid = /Android/i.test(navigator.userAgent);
   const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
   if(isAndroid){
     const fallbackTimer = setTimeout(() => {
       window.location.href = webUrl;
-    }, 1800);
+    }, 2200);
+
     window.location.href =
-      "intent://send?text=" + encoded +
+      "intent://send?phone=" + WHATSAPP_NUMBER + "&text=" + encoded +
       "#Intent;scheme=whatsapp;package=com.whatsapp;end";
+
     window.addEventListener("pagehide", () => clearTimeout(fallbackTimer), {once:true});
   }else if(isIOS){
     const fallbackTimer = setTimeout(() => {
       window.location.href = webUrl;
-    }, 1800);
+    }, 2200);
+
     window.location.href = appUrl;
     window.addEventListener("pagehide", () => clearTimeout(fallbackTimer), {once:true});
   }else{
