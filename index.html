@@ -283,70 +283,33 @@
 
 
 <style id="merlin-intro-css">
-#merlin-intro-overlay{
-  position:fixed; inset:0; z-index:2147483647;
-  background:rgba(0,0,0,.58);
-  display:flex; align-items:center; justify-content:center;
-  overflow:hidden; opacity:1; visibility:visible;
-  transition:opacity .45s ease, visibility .45s ease;
-}
-#merlin-intro-overlay video{
-  width:100vw; height:100vh; max-width:none; max-height:none;
-  object-fit:cover; display:block; background:#000;
-}
-#merlin-intro-overlay.merlin-intro-hide{
-  opacity:0; visibility:hidden; pointer-events:none;
-}
+#merlin-intro-overlay{position:fixed;inset:0;z-index:2147483647;background:rgba(0,0,0,.58);display:flex;align-items:center;justify-content:center;overflow:hidden;opacity:1;visibility:visible;transition:opacity .45s ease,visibility .45s ease}
+#merlin-intro-overlay video{width:100vw;height:100vh;object-fit:cover;display:block;background:#000}
+#merlin-intro-overlay.merlin-intro-hide{opacity:0;visibility:hidden;pointer-events:none}
 body.merlin-intro-active{overflow:hidden}
 </style>
-
 </head>
 <body>
-
 <div id="merlin-intro-overlay" aria-hidden="true">
-  <video id="merlin-intro-video"
-         autoplay muted playsinline webkit-playsinline
-         preload="auto" disablepictureinpicture>
-    <source src="assets/intro.mp4" type="video/mp4">
-  </video>
+  <video id="merlin-intro-video" autoplay muted playsinline webkit-playsinline preload="auto" poster="intro-poster.jpg" src="intro.mp4"></video>
 </div>
 <script>
 (function(){
-  const overlay=document.getElementById('merlin-intro-overlay');
-  const video=document.getElementById('merlin-intro-video');
-  if(!overlay || !video) return;
-
+  var overlay=document.getElementById('merlin-intro-overlay');
+  var video=document.getElementById('merlin-intro-video');
+  if(!overlay||!video)return;
   document.body.classList.add('merlin-intro-active');
-  video.muted=true;
-  video.defaultMuted=true;
-  video.setAttribute('muted','');
-  video.setAttribute('playsinline','');
-  video.setAttribute('webkit-playsinline','');
-
-  let finished=false;
-  const finish=()=>{
-    if(finished) return;
-    finished=true;
-    overlay.classList.add('merlin-intro-hide');
-    document.body.classList.remove('merlin-intro-active');
-    setTimeout(()=>overlay.remove(),500);
-  };
-
-  const timer=setTimeout(finish,5000);
-  video.addEventListener('ended',()=>{
-    clearTimeout(timer);
-    finish();
-  },{once:true});
-
-  // Start as soon as the browser has the video ready.
-  const start=()=>{
-    video.muted=true;
-    const p=video.play();
-    if(p && p.catch) p.catch(()=>{});
-  };
-  if(video.readyState>=2) start();
-  else video.addEventListener('canplay',start,{once:true});
-  window.addEventListener('load',start,{once:true});
+  video.muted=true; video.defaultMuted=true; video.volume=0;
+  var done=false;
+  function finish(){if(done)return;done=true;overlay.classList.add('merlin-intro-hide');document.body.classList.remove('merlin-intro-active');setTimeout(function(){if(overlay.parentNode)overlay.parentNode.removeChild(overlay)},500)}
+  var timer=setTimeout(finish,5000);
+  video.addEventListener('ended',function(){clearTimeout(timer);finish()},{once:true});
+  video.addEventListener('error',function(){clearTimeout(timer);setTimeout(finish,300)});
+  function play(){video.muted=true;var p=video.play();if(p&&p.catch)p.catch(function(){setTimeout(function(){video.play().catch(function(){});},50)})}
+  if(video.readyState>=2)play();
+  else video.addEventListener('loadeddata',play,{once:true});
+  document.addEventListener('DOMContentLoaded',play,{once:true});
+  window.addEventListener('load',play,{once:true});
 })();
 </script>
 <div class="bg-glow"></div>
