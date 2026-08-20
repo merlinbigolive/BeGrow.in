@@ -235,10 +235,13 @@ Please review my application. Thank you.`;
   submitButton.innerHTML = "Opening WhatsApp…";
   successNote.classList.add("show");
 
-  // Standard WhatsApp Click-to-Chat HTTPS link.
-  // This avoids the Android "Send to..." share screen.
+  // Open the installed WhatsApp Android app directly.
+  // Android intent keeps the browser WhatsApp page from being the primary destination.
   const encoded = encodeURIComponent(message);
-  const whatsappLink = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encoded;
+  const whatsappLink =
+    "intent://send?phone=" + WHATSAPP_NUMBER +
+    "&text=" + encoded +
+    "#Intent;scheme=whatsapp;package=com.whatsapp;end";
   window.location.href = whatsappLink;
 });
 </script>
