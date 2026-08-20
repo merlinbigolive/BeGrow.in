@@ -291,7 +291,9 @@ body.merlin-intro-active{overflow:hidden}
 </head>
 <body>
 <div id="merlin-intro-overlay" aria-hidden="true">
-  <video id="merlin-intro-video" autoplay muted playsinline webkit-playsinline preload="auto" poster="intro-poster.jpg" src="intro.mp4"></video>
+  <video id="merlin-intro-video" autoplay muted playsinline webkit-playsinline preload="auto" poster="./intro-poster.jpg">
+    <source src="./intro.mp4" type="video/mp4">
+  </video>
 </div>
 <script>
 (function(){
@@ -305,9 +307,16 @@ body.merlin-intro-active{overflow:hidden}
   var timer=setTimeout(finish,5000);
   video.addEventListener('ended',function(){clearTimeout(timer);finish()},{once:true});
   video.addEventListener('error',function(){clearTimeout(timer);setTimeout(finish,300)});
-  function play(){video.muted=true;var p=video.play();if(p&&p.catch)p.catch(function(){setTimeout(function(){video.play().catch(function(){});},50)})}
+  function play(){
+    video.muted=true; video.defaultMuted=true; video.setAttribute('muted',''); video.volume=0;
+    try{video.load();}catch(e){}
+    var p=video.play();
+    if(p&&p.catch)p.catch(function(){
+      setTimeout(function(){video.muted=true; video.play().catch(function(){});},100);
+    });
+  }
+  video.addEventListener('canplay',play,{once:true});
   if(video.readyState>=2)play();
-  else video.addEventListener('loadeddata',play,{once:true});
   document.addEventListener('DOMContentLoaded',play,{once:true});
   window.addEventListener('load',play,{once:true});
 })();
