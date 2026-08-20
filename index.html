@@ -281,8 +281,55 @@
 }
 </style>
 
+
+<style id="merlin-intro-css">
+#merlin-intro-overlay{
+  position:fixed; inset:0; z-index:2147483647;
+  background:rgba(0,0,0,.58);
+  display:flex; align-items:center; justify-content:center;
+  overflow:hidden; opacity:1; transition:opacity .45s ease;
+}
+#merlin-intro-overlay video{
+  width:100vw; height:100vh;
+  object-fit:cover; display:block;
+}
+#merlin-intro-overlay.merlin-intro-hide{opacity:0; pointer-events:none}
+body.merlin-intro-active{overflow:hidden}
+</style>
+
 </head>
 <body>
+
+<div id="merlin-intro-overlay" aria-hidden="true">
+  <video id="merlin-intro-video" autoplay muted playsinline preload="auto">
+    <source src="assets/intro.mp4" type="video/mp4">
+  </video>
+</div>
+<script>
+(function(){
+  const overlay=document.getElementById('merlin-intro-overlay');
+  const video=document.getElementById('merlin-intro-video');
+  if(!overlay || !video) return;
+  document.body.classList.add('merlin-intro-active');
+
+  const finish=()=>{
+    overlay.classList.add('merlin-intro-hide');
+    document.body.classList.remove('merlin-intro-active');
+    setTimeout(()=>overlay.remove(), 500);
+  };
+
+  // Always keep the intro to a maximum of 5 seconds.
+  const timer=setTimeout(finish,5000);
+  video.addEventListener('ended',()=>{
+    clearTimeout(timer);
+    finish();
+  },{once:true});
+
+  video.play().catch(()=>{});
+})();
+</script>
+
+
 
 <div class="bg-glow"></div>
 <div class="particles" aria-hidden="true"></div>
