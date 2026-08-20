@@ -235,35 +235,11 @@ Please review my application. Thank you.`;
   submitButton.innerHTML = "Opening WhatsApp…";
   successNote.classList.add("show");
 
-  // The only navigation happens after all validation above succeeds.
+  // Standard WhatsApp Click-to-Chat HTTPS link.
+  // This avoids the Android "Send to..." share screen.
   const encoded = encodeURIComponent(message);
-  const appUrl = "whatsapp://send?phone=" + WHATSAPP_NUMBER + "&text=" + encoded;
-  const webUrl = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encoded;
-
-  // Open the native WhatsApp app first.
-  const isAndroid = /Android/i.test(navigator.userAgent);
-  const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-  if(isAndroid){
-    const fallbackTimer = setTimeout(() => {
-      window.location.href = webUrl;
-    }, 2200);
-
-    window.location.href =
-      "intent://send?phone=" + WHATSAPP_NUMBER + "&text=" + encoded +
-      "#Intent;scheme=whatsapp;package=com.whatsapp;end";
-
-    window.addEventListener("pagehide", () => clearTimeout(fallbackTimer), {once:true});
-  }else if(isIOS){
-    const fallbackTimer = setTimeout(() => {
-      window.location.href = webUrl;
-    }, 2200);
-
-    window.location.href = appUrl;
-    window.addEventListener("pagehide", () => clearTimeout(fallbackTimer), {once:true});
-  }else{
-    window.location.href = webUrl;
-  }
+  const whatsappLink = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encoded;
+  window.location.href = whatsappLink;
 });
 </script>
 </body>
