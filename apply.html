@@ -5,8 +5,26 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#06110b">
 <title>Apply Now | Merlin Agency</title>
-<link rel="stylesheet" href="styles.css">
 <style>
+
+:root{--bg:#020705;--green:#19f08a;--green2:#9bffc9;--text:#f1f8f3;--muted:#8fa197;--line:rgba(141,255,194,.16)}
+html,body{margin:0;padding:0;background:#020705;color:var(--text);font-family:Arial,sans-serif}
+body{min-height:100vh}
+a{color:inherit}
+.bg-glow{position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at 75% 8%,rgba(25,240,138,.13),transparent 32%),radial-gradient(circle at 15% 45%,rgba(25,240,138,.045),transparent 35%),#020705}
+.header{height:92px;padding:0 22px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(141,255,194,.12);background:rgba(2,7,5,.94)}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo-m{width:58px;height:58px;border:1.5px solid var(--green);border-radius:18px;display:grid;place-items:center;color:var(--green);font:34px Georgia,serif}
+.logo b{display:block;font:700 22px Georgia,serif;letter-spacing:.14em}
+.logo small{display:block;color:#7f9187;font-size:9px;letter-spacing:.25em;margin-top:4px}
+.back{color:#e8f2ec;font-size:18px;text-underline-offset:5px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:13px;padding:14px 18px;text-decoration:none;cursor:pointer;font-weight:900;font-size:13px}
+.btn.green{background:var(--green);color:#031108;box-shadow:0 10px 28px rgba(25,240,138,.13)}
+.btn:disabled{opacity:.55;cursor:wait}
+.footer.compact{padding:25px 20px;border-top:1px solid rgba(141,255,194,.1)}
+.footer-bottom{display:flex;justify-content:space-between;gap:15px;max-width:760px;margin:auto;color:#728178;font-size:10px}
+.snap{color:#9bffc9}
+.reveal{opacity:1!important;transform:none!important;visibility:visible!important}
 *{box-sizing:border-box}
 .apply-page{min-height:100vh}
 .apply-wrap{width:min(760px,calc(100% - 28px));margin:0 auto;padding:60px 0}
@@ -44,8 +62,8 @@
   <a class="back" href="index.html">← Back to Website</a>
 </header>
 
-<main class="apply-wrap">
-  <div class="apply-intro reveal">
+<main class="apply-wrap" style="display:block;opacity:1;visibility:visible">
+  <div class="apply-intro reveal" style="display:block;opacity:1;visibility:visible">
     <span class="kicker">JOIN MERLIN AGENCY</span>
     <h1>Become an <em>official BIGO LIVE host.</em></h1>
     <p>Complete the application form below. After successful submission, WhatsApp will open directly with your application details.</p>
@@ -56,7 +74,7 @@
     </div>
   </div>
 
-  <form id="applyForm" class="apply-form reveal" novalidate>
+  <form id="applyForm" class="apply-form reveal" style="display:block;opacity:1;visibility:visible" novalidate>
     <div id="formError" class="form-error" role="alert"></div>
 
     <label>
