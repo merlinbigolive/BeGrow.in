@@ -19,11 +19,11 @@
   box-sizing:border-box;
   padding:12px 20px;
   margin:14px auto 22px;
-  border:1px solid rgba(25,240,138,.72);
+  border:1px solid rgba(228,184,61,.72);
   border-radius:13px;
-  background:linear-gradient(135deg,rgba(25,240,138,.16),rgba(25,240,138,.06));
-  box-shadow:0 0 24px rgba(25,240,138,.10);
-  color:#9bffc9;
+  background:linear-gradient(135deg,rgba(228,184,61,.16),rgba(228,184,61,.06));
+  box-shadow:0 0 24px rgba(228,184,61,.10);
+  color:#fff0a1;
   font-size:13px;
   font-weight:900;
   letter-spacing:.06em;
@@ -32,9 +32,9 @@
   transition:.2s ease;
 }
 .buy-diamond-hero:hover{
-  background:rgba(25,240,138,.18);
-  border-color:#19f08a;
-  box-shadow:0 0 30px rgba(25,240,138,.18);
+  background:rgba(228,184,61,.18);
+  border-color:#e4b83d;
+  box-shadow:0 0 30px rgba(228,184,61,.18);
   transform:translateY(-1px);
 }
 @media(max-width:700px){
@@ -58,16 +58,16 @@
 
 <style>
 .seller-dashboard-link{
-  color:#9af7c2 !important;
+  color:#fff0a1 !important;
   font-weight:800;
-  border:1px solid rgba(25,240,138,.45);
+  border:1px solid rgba(228,184,61,.45);
   border-radius:9px;
   padding:7px 10px !important;
-  background:rgba(25,240,138,.06);
+  background:rgba(228,184,61,.06);
 }
 .seller-dashboard-link:hover{
-  border-color:#19f08a;
-  background:rgba(25,240,138,.13);
+  border-color:#e4b83d;
+  background:rgba(228,184,61,.13);
 }
 
 <style>
@@ -78,7 +78,7 @@
   right:0;
   width:205px;
   padding:8px;
-  border:1px solid rgba(25,240,138,.35);
+  border:1px solid rgba(228,184,61,.35);
   border-radius:14px;
   background:rgba(3,12,7,.98);
   box-shadow:0 18px 45px rgba(0,0,0,.45);
@@ -97,7 +97,7 @@
   font-size:12px;
   font-weight:800;
 }
-.seller-menu a:hover{background:rgba(25,240,138,.09);color:#9af7c2}
+.seller-menu a:hover{background:rgba(228,184,61,.09);color:#fff0a1}
 .top-apply-wrap{position:relative}
 @media(max-width:700px){
   .seller-menu{right:0;width:190px}
@@ -117,9 +117,9 @@
   height:34px;
   margin:0 0 0 7px;
   padding:0;
-  border:1px solid rgba(25,240,138,.38);
+  border:1px solid rgba(228,184,61,.38);
   border-radius:9px;
-  background:rgba(25,240,138,.035);
+  background:rgba(228,184,61,.035);
   cursor:pointer;
   box-sizing:border-box;
   transition:all .2s ease;
@@ -130,17 +130,17 @@
   width:15px;
   height:2px;
   margin:0;
-  background:#19f08a;
+  background:#e4b83d;
   border-radius:99px;
   transition:transform .2s ease, opacity .15s ease, width .2s ease;
 }
 .seller-menu-toggle:hover{
-  border-color:rgba(25,240,138,.7);
-  background:rgba(25,240,138,.07);
-  box-shadow:0 0 12px rgba(25,240,138,.10);
+  border-color:rgba(228,184,61,.7);
+  background:rgba(228,184,61,.07);
+  box-shadow:0 0 12px rgba(228,184,61,.10);
 }
 .seller-menu-toggle:focus-visible{
-  outline:2px solid rgba(25,240,138,.55);
+  outline:2px solid rgba(228,184,61,.55);
   outline-offset:2px;
 }
 
@@ -169,6 +169,38 @@
     height:2px;
   }
 }
+
+/* Join as Influencer — distinct emerald shine, separate from the gold Brand Collaboration button */
+
+
+
+/* Premium moving shine for the two main hero CTAs */
+.hero .btn-primary,
+.hero a.influencer-apply-btn{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+}
+.hero .btn-primary::after,
+.hero a.influencer-apply-btn::after{
+  content:"";
+  position:absolute;
+  top:-30%;
+  left:-55%;
+  width:28%;
+  height:160%;
+  transform:skewX(-20deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);
+  filter:blur(1px);
+  animation:merlinCtaShine 3.2s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes merlinCtaShine{
+  0%,55%{left:-55%;opacity:0}
+  62%{opacity:1}
+  82%,100%{left:135%;opacity:0}
+}
+
 </style>
 
 </style>
@@ -227,15 +259,15 @@
   height:2px !important;
   margin:0 !important;
   padding:0 !important;
-  background:#19f08a !important;
+  background:#e4b83d !important;
   border:0 !important;
   border-radius:99px !important;
-  box-shadow:0 0 5px rgba(25,240,138,.16);
+  box-shadow:0 0 5px rgba(228,184,61,.16);
 }
 .seller-menu-toggle:hover,
 .seller-menu-toggle:active,
 .seller-menu-toggle:focus{background:transparent !important;box-shadow:none !important;}
-.seller-menu-toggle:focus-visible{outline:1px solid rgba(25,240,138,.55) !important;outline-offset:3px;}
+.seller-menu-toggle:focus-visible{outline:1px solid rgba(228,184,61,.55) !important;outline-offset:3px;}
 /* Keep the open-state animation subtle and contained */
 .seller-menu-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg);}
 .seller-menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;width:0 !important;}
@@ -351,7 +383,7 @@ body.merlin-intro-active{overflow:hidden}
   </nav>
 
   <div class="top-apply-wrap">
-    <a class="top-apply" href="apply.html">Apply Now ↗</a>
+    <a class="top-apply" href="apply.html">Become a Host ↗</a>
 
   </div>
 
@@ -359,10 +391,19 @@ body.merlin-intro-active{overflow:hidden}
 
 <main>
 
+
 <section class="hero wrap">
 
   <div class="hero-copy reveal">
-    <div class="eyebrow">
+    <div class="brand-collab-placement wrap">
+  <a class="brand-collab-btn" href="brand-collaboration.html">
+    <span class="brand-collab-shine">✦</span>
+    Brand Collaboration
+    <span class="brand-collab-arrow">↗</span>
+  </a>
+</div>
+
+<div class="eyebrow">
       <i></i> BIGO LIVE INDIA · HOST RECRUITMENT
     </div>
 
@@ -377,11 +418,10 @@ body.merlin-intro-active{overflow:hidden}
 
     <div class="actions">
       <a class="btn green" href="apply.html">
-        Apply Now <b>→</b>
+        Become a Host <b>→</b>
       </a>
 
-      <a class="btn ghost" href="#portfolio">
-        View Portfolio <b>↓</b>
+      <a class="btn ghost influencer-apply-btn" href="influencer-apply.html">Join as Influencer <b>↓</b>
       </a>
     </div>
 
@@ -805,9 +845,6 @@ body.merlin-intro-active{overflow:hidden}
 </footer>
 
 
-<a class="floating" href="apply.html">
-  Apply Now ↗
-</a>
 
 
 <div class="modal" id="videoModal" aria-hidden="true">
@@ -830,5 +867,13 @@ body.merlin-intro-active{overflow:hidden}
 })();
 </script>
 
+
+<style id="merlin-final-gold-override">
+/* Final override: legacy inline hero styles must not bring back green. */
+.buy-diamond-hero,.seller-dashboard-link,.seller-menu-toggle{border-color:rgba(255,231,143,.82)!important;color:#fff0a1!important;background:rgba(228,184,61,.08)!important}
+.seller-menu-toggle span{background:#e4b83d!important}.seller-menu a:hover{background:rgba(228,184,61,.10)!important;color:#fff0a1!important}
+.hero .btn-primary,.hero a.influencer-apply-btn,.hero .btn.green{background:linear-gradient(135deg,#8f6410 0%,#d6a92b 22%,#fff0a1 48%,#d8aa2d 70%,#8c5f0b 100%)!important;color:#251700!important;border-color:rgba(255,226,135,.72)!important;box-shadow:0 0 24px rgba(238,191,61,.18),inset 0 1px 0 rgba(255,255,255,.72)!important}
+.hero .btn-primary::after,.hero a.influencer-apply-btn::after,.hero .btn.green::after{background:rgba(255,255,255,.6)!important;filter:blur(4px)!important;animation:brandShine 3.4s ease-in-out infinite!important}
+</style>
 </body>
 </html>
