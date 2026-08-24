@@ -170,6 +170,37 @@
   }
 }
 
+/* Join as Influencer — distinct emerald shine, separate from the gold Brand Collaboration button */
+
+
+
+/* Premium moving shine for the two main hero CTAs */
+.hero .btn-primary,
+.hero a.influencer-apply-btn{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+}
+.hero .btn-primary::after,
+.hero a.influencer-apply-btn::after{
+  content:"";
+  position:absolute;
+  top:-30%;
+  left:-55%;
+  width:28%;
+  height:160%;
+  transform:skewX(-20deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);
+  filter:blur(1px);
+  animation:merlinCtaShine 3.2s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes merlinCtaShine{
+  0%,55%{left:-55%;opacity:0}
+  62%{opacity:1}
+  82%,100%{left:135%;opacity:0}
+}
+
 </style>
 
 </style>
@@ -364,14 +395,6 @@ body.merlin-intro-active{overflow:hidden}
 <section class="hero wrap">
 
   <div class="hero-copy reveal">
-    <div class="brand-collab-placement wrap">
-  <a class="brand-collab-btn" href="apply.html">
-    <span class="brand-collab-shine">✦</span>
-    Become a Host
-    <span class="brand-collab-arrow">↗</span>
-  </a>
-</div>
-
 <div class="eyebrow">
       <i></i> BIGO LIVE INDIA · HOST RECRUITMENT
     </div>
@@ -385,6 +408,11 @@ body.merlin-intro-active{overflow:hidden}
       Join Merlin Agency and turn your live presence into a serious earning opportunity with structured targets, bonuses and dedicated support.
     </p>
 
+    <div class="actions">
+      <a class="btn green" href="apply.html">
+        Become a Host <b>→</b>
+      </a>
+</div>
 
     <div class="trust">
       <span>✦ 2026 Salary Plan</span>
