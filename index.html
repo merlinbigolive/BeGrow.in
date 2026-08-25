@@ -1,824 +1,1057 @@
+Haan. Green/gold theme hata kar black + blue + purple theme ka complete ready-to-upload index.html de raha hoon. WhatsApp button direct 918178949463 par chat kholega.
+
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <meta name="theme-color" content="#07110d">
-  <meta
-    name="description"
-    content="BeGrow.in is a premium domain name available for acquisition. Make an offer for BeGrow.in."
-  >
-
-  <meta property="og:title" content="BeGrow.in — Domain For Sale | $4,500 USD">
-  <meta
-    property="og:description"
-    content="Premium domain BeGrow.in is available for acquisition. Make an offer today."
-  >
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.begrow.in/">
-
-  <title>BeGrow.in — Domain For Sale | $4,500 USD</title>
-
-  <style>
-    :root{
-      --bg:#050906;
-      --bg2:#08120d;
-      --card:rgba(12,25,18,.78);
-      --card2:rgba(15,31,22,.92);
-      --green:#20e889;
-      --green2:#0ebd68;
-      --gold:#e7c35a;
-      --white:#f5fff9;
-      --text:#d7e5dc;
-      --muted:#8da296;
-      --line:rgba(255,255,255,.09);
-      --shadow:0 30px 90px rgba(0,0,0,.45);
-    }
-
-    *{
-      box-sizing:border-box;
-      margin:0;
-      padding:0;
-    }
-
-    html{
-      scroll-behavior:smooth;
-    }
-
-    body{
-      min-height:100vh;
-      font-family:
-        Inter,
-        ui-sans-serif,
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        sans-serif;
-      color:var(--white);
-      background:
-        radial-gradient(circle at 50% -10%,rgba(32,232,137,.14),transparent 38%),
-        radial-gradient(circle at 10% 50%,rgba(32,232,137,.055),transparent 30%),
-        radial-gradient(circle at 90% 70%,rgba(231,195,90,.035),transparent 28%),
-        linear-gradient(180deg,#050906 0%,#07100b 48%,#040705 100%);
-      overflow-x:hidden;
-    }
-
-    body:before{
-      content:"";
-      position:fixed;
-      inset:0;
-      pointer-events:none;
-      opacity:.18;
-      background-image:
-        linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
-      background-size:70px 70px;
-      mask-image:linear-gradient(to bottom,black,transparent 80%);
-    }
-
-    a{
-      color:inherit;
-    }
-
-    .page{
-      width:min(1120px,calc(100% - 36px));
-      margin:auto;
-    }
-
-    /* HEADER */
-
-    header{
-      position:relative;
-      z-index:10;
-      width:min(1120px,calc(100% - 36px));
-      margin:0 auto;
-      padding:25px 0;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-    }
-
-    .logo{
-      text-decoration:none;
-      display:flex;
-      align-items:center;
-      gap:11px;
-    }
-
-    .logo-mark{
-      width:43px;
-      height:43px;
-      border-radius:13px;
-      display:grid;
-      place-items:center;
-      color:#06100a;
-      font-weight:950;
-      font-size:19px;
-      background:linear-gradient(135deg,var(--green),#9affc7);
-      box-shadow:
-        0 0 0 1px rgba(32,232,137,.18),
-        0 10px 30px rgba(32,232,137,.12);
-    }
-
-    .logo-text strong{
-      display:block;
-      font-size:18px;
-      line-height:1;
-      letter-spacing:.02em;
-    }
-
-    .logo-text span{
-      display:block;
-      margin-top:4px;
-      color:var(--muted);
-      font-size:9px;
-      letter-spacing:.2em;
-      text-transform:uppercase;
-    }
-
-    .header-link{
-      color:#b9c9c0;
-      text-decoration:none;
-      font-size:13px;
-      font-weight:700;
-      padding:10px 14px;
-      border:1px solid var(--line);
-      border-radius:999px;
-      background:rgba(255,255,255,.025);
-    }
-
-    /* HERO */
-
-    .hero{
-      min-height:calc(100vh - 94px);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:65px 0 90px;
-    }
-
-    .hero-inner{
-      width:100%;
-      max-width:880px;
-    }
-
-    .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:9px;
-      padding:8px 13px;
-      border:1px solid rgba(32,232,137,.2);
-      border-radius:999px;
-      background:rgba(32,232,137,.045);
-      color:#a9f5ca;
-      font-size:11px;
-      font-weight:850;
-      letter-spacing:.13em;
-      text-transform:uppercase;
-    }
-
-    .eyebrow i{
-      width:7px;
-      height:7px;
-      border-radius:50%;
-      background:var(--green);
-      box-shadow:0 0 12px var(--green);
-    }
-
-    h1{
-      margin:25px auto 18px;
-      max-width:850px;
-      font-size:clamp(48px,8vw,92px);
-      line-height:.96;
-      letter-spacing:-.055em;
-      font-weight:950;
-    }
-
-    h1 .domain{
-      display:block;
-      background:linear-gradient(
-        100deg,
-        #ffffff 0%,
-        #bfffd9 45%,
-        #20e889 100%
-      );
-      -webkit-background-clip:text;
-      background-clip:text;
-      color:transparent;
-    }
-
-    .subtitle{
-      max-width:650px;
-      margin:0 auto;
-      color:#a7b9af;
-      font-size:clamp(16px,2vw,19px);
-      line-height:1.7;
-    }
-
-    /* PRICE CARD */
-
-    .price-card{
-      width:min(650px,100%);
-      margin:38px auto 0;
-      padding:30px;
-      border:1px solid rgba(32,232,137,.18);
-      border-radius:25px;
-      background:
-        linear-gradient(
-          145deg,
-          rgba(20,43,29,.82),
-          rgba(7,17,11,.92)
-        );
-      box-shadow:var(--shadow);
-      position:relative;
-      overflow:hidden;
-    }
-
-    .price-card:before{
-      content:"";
-      position:absolute;
-      width:280px;
-      height:280px;
-      top:-180px;
-      right:-100px;
-      border-radius:50%;
-      background:rgba(32,232,137,.09);
-      filter:blur(10px);
-    }
-
-    .price-label{
-      position:relative;
-      color:var(--muted);
-      font-size:11px;
-      font-weight:850;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-    }
-
-    .price{
-      position:relative;
-      margin-top:7px;
-      font-size:clamp(38px,7vw,62px);
-      line-height:1;
-      font-weight:950;
-      letter-spacing:-.045em;
-    }
-
-    .price small{
-      font-size:16px;
-      color:#a7b7ad;
-      font-weight:700;
-      letter-spacing:0;
-    }
-
-    .offer-btn{
-      position:relative;
-      width:100%;
-      min-height:58px;
-      margin-top:25px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:11px;
-      border:0;
-      border-radius:16px;
-      background:linear-gradient(135deg,#20e889,#0bb765);
-      color:#031109;
-      text-decoration:none;
-      font-size:16px;
-      font-weight:950;
-      letter-spacing:.01em;
-      box-shadow:
-        0 16px 40px rgba(14,189,104,.18),
-        inset 0 1px rgba(255,255,255,.35);
-      transition:
-        transform .2s ease,
-        box-shadow .2s ease;
-      overflow:hidden;
-    }
-
-    .offer-btn:before{
-      content:"";
-      position:absolute;
-      top:0;
-      bottom:0;
-      left:-35%;
-      width:25%;
-      transform:skewX(-22deg);
-      background:rgba(255,255,255,.42);
-      animation:shine 3.5s ease-in-out infinite;
-    }
-
-    @keyframes shine{
-      0%,55%{left:-35%;opacity:0}
-      65%{opacity:1}
-      82%,100%{left:125%;opacity:0}
-    }
-
-    .offer-btn:hover{
-      transform:translateY(-2px);
-      box-shadow:
-        0 20px 48px rgba(14,189,104,.28),
-        inset 0 1px rgba(255,255,255,.4);
-    }
-
-    .whatsapp-icon{
-      width:23px;
-      height:23px;
-      display:grid;
-      place-items:center;
-      border-radius:50%;
-      background:#031109;
-      color:var(--green);
-      font-size:14px;
-      font-weight:950;
-    }
-
-    .safe-note{
-      position:relative;
-      margin-top:14px;
-      color:#778a7e;
-      font-size:11px;
-      line-height:1.6;
-    }
-
-    /* FEATURES */
-
-    .features{
-      padding:10px 0 100px;
-    }
-
-    .section-title{
-      text-align:center;
-      margin-bottom:35px;
-    }
-
-    .section-title span{
-      color:var(--green);
-      font-size:10px;
-      font-weight:900;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-    }
-
-    .section-title h2{
-      margin-top:9px;
-      font-size:clamp(28px,4vw,42px);
-      letter-spacing:-.035em;
-    }
-
-    .feature-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:15px;
-    }
-
-    .feature{
-      min-height:190px;
-      padding:25px;
-      border:1px solid var(--line);
-      border-radius:20px;
-      background:rgba(10,22,15,.65);
-      transition:.2s ease;
-    }
-
-    .feature:hover{
-      transform:translateY(-3px);
-      border-color:rgba(32,232,137,.2);
-      background:rgba(13,28,19,.85);
-    }
-
-    .feature-icon{
-      width:42px;
-      height:42px;
-      display:grid;
-      place-items:center;
-      border-radius:12px;
-      color:var(--green);
-      background:rgba(32,232,137,.07);
-      border:1px solid rgba(32,232,137,.12);
-      font-size:18px;
-    }
-
-    .feature h3{
-      margin-top:18px;
-      font-size:16px;
-    }
-
-    .feature p{
-      margin-top:8px;
-      color:#899b90;
-      font-size:13px;
-      line-height:1.65;
-    }
-
-    /* DOMAIN INFO */
-
-    .info{
-      padding:10px 0 100px;
-    }
-
-    .info-box{
-      padding:35px;
-      border:1px solid var(--line);
-      border-radius:25px;
-      background:linear-gradient(
-        145deg,
-        rgba(14,29,20,.75),
-        rgba(7,14,10,.75)
-      );
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:35px;
-    }
-
-    .info h2{
-      font-size:27px;
-      letter-spacing:-.03em;
-    }
-
-    .info p{
-      margin-top:12px;
-      color:#8fa096;
-      font-size:14px;
-      line-height:1.75;
-    }
-
-    .details{
-      display:grid;
-      gap:10px;
-    }
-
-    .detail{
-      display:flex;
-      justify-content:space-between;
-      gap:15px;
-      padding:14px 0;
-      border-bottom:1px solid var(--line);
-      font-size:13px;
-    }
-
-    .detail:last-child{
-      border-bottom:0;
-    }
-
-    .detail span:first-child{
-      color:#7f9287;
-    }
-
-    .detail span:last-child{
-      color:#e6f3eb;
-      font-weight:800;
-      text-align:right;
-    }
-
-    /* FOOTER */
-
-    footer{
-      border-top:1px solid var(--line);
-      padding:30px 0 35px;
-    }
-
-    .footer-inner{
-      width:min(1120px,calc(100% - 36px));
-      margin:auto;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:20px;
-    }
-
-    .footer-copy{
-      color:#718178;
-      font-size:11px;
-      line-height:1.6;
-    }
-
-    .footer-domain{
-      color:#b8c9bf;
-      font-weight:800;
-      font-size:12px;
-    }
-
-    /* MOBILE */
-
-    @media(max-width:700px){
-
-      header{
-        padding:18px 0;
-      }
-
-      .header-link{
-        font-size:11px;
-        padding:8px 11px;
-      }
-
-      .logo-mark{
-        width:39px;
-        height:39px;
-        border-radius:11px;
-      }
-
-      .logo-text strong{
-        font-size:16px;
-      }
-
-      .hero{
-        min-height:auto;
-        padding:70px 0 80px;
-      }
-
-      h1{
-        font-size:clamp(46px,15vw,70px);
-        margin-top:22px;
-      }
-
-      .subtitle{
-        font-size:15px;
-        line-height:1.65;
-      }
-
-      .price-card{
-        margin-top:30px;
-        padding:23px;
-        border-radius:21px;
-      }
-
-      .price{
-        font-size:45px;
-      }
-
-      .offer-btn{
-        min-height:55px;
-        font-size:15px;
-      }
-
-      .features{
-        padding-bottom:75px;
-      }
-
-      .feature-grid{
-        grid-template-columns:1fr;
-        gap:12px;
-      }
-
-      .feature{
-        min-height:auto;
-        padding:22px;
-      }
-
-      .info{
-        padding-bottom:75px;
-      }
-
-      .info-box{
-        grid-template-columns:1fr;
-        gap:25px;
-        padding:25px;
-        border-radius:21px;
-      }
-
-      .info h2{
-        font-size:24px;
-      }
-
-      .footer-inner{
-        flex-direction:column;
-        align-items:flex-start;
-      }
-    }
-
-    @media(prefers-reduced-motion:reduce){
-      html{
-        scroll-behavior:auto;
-      }
-
-      *,
-      *:before,
-      *:after{
-        animation:none !important;
-        transition:none !important;
-      }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<meta name="theme-color" content="#070812">
+<meta name="description" content="Merlin Agency | Host Requirement | Live Streaming | Work From Home | No Joining Fee">
+<meta name="robots" content="index,follow">
+
+<title>Merlin Agency | Host Requirement | Live Streaming | Work From Home | No Joining Fee</title>
+
+<style>
+:root{
+  --bg:#070812;
+  --bg2:#0d1020;
+  --card:rgba(17,20,38,.78);
+  --blue:#38a8ff;
+  --purple:#8b5cf6;
+  --purple2:#c084fc;
+  --white:#ffffff;
+  --muted:#aeb5c9;
+  --line:rgba(139,92,246,.25);
+  --shadow:0 25px 80px rgba(0,0,0,.45);
+}
+
+*{box-sizing:border-box}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--white);
+  background:
+    radial-gradient(circle at 15% 10%,rgba(56,168,255,.14),transparent 28%),
+    radial-gradient(circle at 85% 15%,rgba(139,92,246,.18),transparent 30%),
+    linear-gradient(180deg,#070812 0%,#090b16 55%,#06070e 100%);
+  min-height:100vh;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.wrap{
+  width:min(1120px,92%);
+  margin:auto;
+}
+
+.header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  display:flex;
+  align-items:center;
+  min-height:72px;
+  padding:0 4%;
+  background:rgba(7,8,18,.86);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.logo-m{
+  width:40px;
+  height:40px;
+  display:grid;
+  place-items:center;
+  border-radius:12px;
+  font-size:21px;
+  font-weight:900;
+  background:linear-gradient(135deg,var(--blue),var(--purple));
+  box-shadow:0 0 28px rgba(56,168,255,.25);
+}
+
+.logo b{
+  display:block;
+  font-size:16px;
+  letter-spacing:.16em;
+}
+
+.logo small{
+  display:block;
+  margin-top:2px;
+  color:#8f98b0;
+  font-size:8px;
+  letter-spacing:.25em;
+}
+
+.header nav{
+  display:flex;
+  gap:26px;
+  margin-left:auto;
+  margin-right:25px;
+}
+
+.header nav a{
+  color:#aeb5c9;
+  font-size:13px;
+  font-weight:700;
+  transition:.2s;
+}
+
+.header nav a:hover{
+  color:#fff;
+}
+
+.top-apply{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:38px;
+  padding:0 17px;
+  border-radius:22px;
+  background:linear-gradient(135deg,var(--blue),var(--purple));
+  font-size:12px;
+  font-weight:900;
+  box-shadow:0 10px 30px rgba(79,110,255,.22);
+}
+
+.hero{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:70px;
+  align-items:center;
+  padding:100px 0 80px;
+}
+
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  color:#82c9ff;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.14em;
+}
+
+.eyebrow i,
+.live-dot{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--blue);
+  box-shadow:0 0 15px var(--blue);
+}
+
+h1{
+  margin:18px 0;
+  font-size:clamp(45px,7vw,82px);
+  line-height:.94;
+  letter-spacing:-.055em;
+}
+
+h1 em,
+h2 em{
+  font-style:normal;
+  background:linear-gradient(90deg,var(--blue),var(--purple2));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.hero-copy>p{
+  max-width:650px;
+  color:var(--muted);
+  font-size:17px;
+  line-height:1.8;
+}
+
+.actions{
+  margin-top:30px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:20px;
+  padding:16px 23px;
+  border-radius:14px;
+  background:linear-gradient(135deg,var(--blue),var(--purple));
+  font-weight:900;
+  box-shadow:0 15px 45px rgba(73,110,255,.25);
+  transition:.2s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 20px 55px rgba(73,110,255,.35);
+}
+
+.trust{
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+  margin-top:25px;
+}
+
+.trust span{
+  color:#9da5bb;
+  font-size:11px;
+}
+
+.hero-card{
+  position:relative;
+  min-height:390px;
+  padding:30px;
+  border:1px solid var(--line);
+  border-radius:28px;
+  background:
+    radial-gradient(circle at 50% 35%,rgba(56,168,255,.12),transparent 35%),
+    var(--card);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+
+.hero-card:before{
+  content:"";
+  position:absolute;
+  width:220px;
+  height:220px;
+  right:-80px;
+  top:-80px;
+  border-radius:50%;
+  background:rgba(139,92,246,.15);
+  filter:blur(25px);
+}
+
+.hero-card-top{
+  display:flex;
+  justify-content:space-between;
+  font-size:11px;
+  letter-spacing:.12em;
+}
+
+.hero-card-top span{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  color:#82c9ff;
+}
+
+.crest{
+  width:130px;
+  height:130px;
+  margin:55px auto 25px;
+  display:grid;
+  place-items:center;
+  border-radius:38px;
+  border:1px solid rgba(139,92,246,.5);
+  background:linear-gradient(135deg,rgba(56,168,255,.12),rgba(139,92,246,.18));
+  box-shadow:0 0 70px rgba(91,96,255,.18);
+}
+
+.crest strong{
+  font-size:65px;
+  background:linear-gradient(135deg,var(--blue),var(--purple2));
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.hero-card h3{
+  text-align:center;
+  font-size:25px;
+  line-height:1.1;
+  letter-spacing:.08em;
+}
+
+.hero-card h3 span{
+  color:#aeb5c9;
+  font-size:13px;
+}
+
+.hero-stat{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:30px;
+}
+
+.hero-stat div{
+  padding:15px;
+  border-radius:14px;
+  background:rgba(255,255,255,.035);
+  border:1px solid rgba(255,255,255,.06);
+  text-align:center;
+}
+
+.hero-stat b{
+  display:block;
+  font-size:22px;
+}
+
+.hero-stat small{
+  color:#8e96aa;
+  font-size:10px;
+}
+
+.section{
+  padding:80px 0;
+}
+
+.section-head{
+  max-width:720px;
+  margin-bottom:35px;
+}
+
+.kicker{
+  color:#82c9ff;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.2em;
+}
+
+.section h2{
+  margin:12px 0;
+  font-size:clamp(32px,5vw,54px);
+  letter-spacing:-.04em;
+}
+
+.section-head p{
+  color:var(--muted);
+  line-height:1.7;
+}
+
+.video-box{
+  position:relative;
+  width:min(390px,100%);
+  margin:auto;
+  overflow:hidden;
+  border-radius:25px;
+  border:1px solid var(--line);
+  background:#05060b;
+  box-shadow:var(--shadow);
+}
+
+.video-box video{
+  display:block;
+  width:100%;
+  aspect-ratio:9/16;
+  object-fit:cover;
+}
+
+.video-label{
+  position:absolute;
+  left:15px;
+  top:15px;
+  padding:8px 11px;
+  border-radius:20px;
+  background:rgba(5,7,15,.75);
+  backdrop-filter:blur(8px);
+  color:#b9dcff;
+  font-size:10px;
+  font-weight:900;
+}
+
+.salary-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+}
+
+.salary{
+  padding:25px;
+  border-radius:20px;
+  background:var(--card);
+  border:1px solid var(--line);
+}
+
+.salary small{
+  color:#8e96aa;
+}
+
+.salary b{
+  display:block;
+  margin:10px 0;
+  font-size:26px;
+  background:linear-gradient(90deg,var(--blue),var(--purple2));
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.note{
+  margin-top:18px;
+  padding:18px 20px;
+  border-left:3px solid var(--purple);
+  background:rgba(139,92,246,.07);
+  color:#b6bdd0;
+  line-height:1.6;
+}
+
+.steps{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+
+.step{
+  padding:25px;
+  border-radius:20px;
+  background:var(--card);
+  border:1px solid rgba(255,255,255,.07);
+}
+
+.step>b{
+  color:#59627a;
+  font-size:12px;
+}
+
+.step>span{
+  display:block;
+  margin:30px 0 12px;
+  color:var(--blue);
+  font-size:26px;
+}
+
+.step h3{
+  margin:0 0 10px;
+}
+
+.step p{
+  margin:0;
+  color:#929aaf;
+  font-size:13px;
+  line-height:1.6;
+}
+
+.portfolio-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.portfolio-card{
+  position:relative;
+  overflow:hidden;
+  min-height:340px;
+  padding:0;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:#0d0f1b;
+  color:#fff;
+  text-align:left;
+  cursor:pointer;
+}
+
+.portfolio-card img{
+  width:100%;
+  height:100%;
+  min-height:340px;
+  display:block;
+  object-fit:cover;
+  opacity:.75;
+  transition:.3s;
+}
+
+.portfolio-card:hover img{
+  transform:scale(1.04);
+  opacity:.95;
+}
+
+.portfolio-card:after{
+  content:"";
+  position:absolute;
+  inset:45% 0 0;
+  background:linear-gradient(transparent,rgba(4,5,12,.95));
+}
+
+.portfolio-card div{
+  position:absolute;
+  left:20px;
+  bottom:20px;
+  z-index:2;
+}
+
+.portfolio-card small{
+  display:block;
+  color:#8dcfff;
+  font-size:9px;
+  font-weight:900;
+  margin-bottom:5px;
+}
+
+.play{
+  position:absolute;
+  z-index:3;
+  right:18px;
+  top:18px;
+  width:45px;
+  height:45px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--blue),var(--purple));
+}
+
+.accordion{
+  display:grid;
+  gap:10px;
+  max-width:850px;
+}
+
+details{
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:16px;
+  background:rgba(255,255,255,.025);
+  overflow:hidden;
+}
+
+summary{
+  padding:20px;
+  cursor:pointer;
+  font-weight:800;
+  list-style:none;
+  display:flex;
+  justify-content:space-between;
+}
+
+summary::-webkit-details-marker{
+  display:none;
+}
+
+details p{
+  margin:0;
+  padding:0 20px 20px;
+  color:#9da5b8;
+  line-height:1.7;
+}
+
+.whatsapp{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:9999;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:13px 18px;
+  border-radius:30px;
+  background:#25d366;
+  color:#06110a;
+  font-size:12px;
+  font-weight:900;
+  box-shadow:0 12px 35px rgba(37,211,102,.3);
+}
+
+.footer{
+  padding:50px 4%;
+  border-top:1px solid rgba(255,255,255,.07);
+  background:#05060d;
+}
+
+.footer p{
+  max-width:500px;
+  color:#858da2;
+  font-size:12px;
+  line-height:1.7;
+}
+
+.footer-bottom{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  margin-top:30px;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.06);
+  color:#697186;
+  font-size:11px;
+}
+
+.snap{
+  color:#aeb5c9;
+}
+
+@media(max-width:800px){
+
+  .header{
+    min-height:65px;
+    padding:0 4%;
+  }
+
+  .header nav{
+    display:none;
+  }
+
+  .top-apply{
+    min-height:34px;
+    padding:0 12px;
+    font-size:10px;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+    gap:45px;
+    padding:70px 0 50px;
+  }
+
+  .hero-card{
+    min-height:350px;
+  }
+
+  .salary-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .steps{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .portfolio-grid{
+    grid-template-columns:1fr;
+  }
+
+  .section{
+    padding:60px 0;
+  }
+}
+
+@media(max-width:520px){
+
+  h1{
+    font-size:48px;
+  }
+
+  .salary-grid{
+    grid-template-columns:1fr;
+  }
+
+  .steps{
+    grid-template-columns:1fr;
+  }
+
+  .hero-stat{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .footer-bottom{
+    flex-direction:column;
+  }
+
+  .whatsapp{
+    right:14px;
+    bottom:14px;
+    padding:12px 15px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <a class="logo" href="./">
-      <span class="logo-mark">B</span>
-      <span class="logo-text">
-        <strong>BeGrow</strong>
-        <span>Premium Domain</span>
+<header class="header">
+
+  <a class="logo" href="index.html">
+    <span class="logo-m">M</span>
+    <span>
+      <b>MERLIN</b>
+      <small>AGENCY</small>
+    </span>
+  </a>
+
+  <nav>
+    <a href="#earnings">Earnings</a>
+    <a href="#how">How It Works</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+
+  <a class="top-apply" href="#apply">JOIN NOW ↗</a>
+
+</header>
+
+<main>
+
+<section class="hero wrap">
+
+  <div class="hero-copy">
+
+    <div class="eyebrow">
+      <i></i>
+      MERLIN AGENCY · HOST REQUIREMENT
+    </div>
+
+    <h1>
+      Go LIVE.<br>
+      <em>Build Your Future.</em>
+    </h1>
+
+    <p>
+      Join Merlin Agency as a live streaming host. Work from home,
+      connect with your audience, grow your presence and earn according
+      to your performance.
+    </p>
+
+    <div class="actions">
+      <a class="btn" href="https://wa.me/918178949463?text=Hello%20Merlin%20Agency%2C%20I%20want%20to%20join%20as%20a%20Host." target="_blank" rel="noopener">
+        Apply on WhatsApp <b>→</b>
+      </a>
+    </div>
+
+    <div class="trust">
+      <span>✦ Work From Home</span>
+      <span>✦ Flexible Schedule</span>
+      <span>✦ No Joining Fee</span>
+    </div>
+
+  </div>
+
+  <div class="hero-card">
+
+    <div class="hero-card-top">
+      <b>MERLIN AGENCY</b>
+      <span>
+        <i class="live-dot"></i>
+        RECRUITING
       </span>
-    </a>
+    </div>
+
+    <div class="crest">
+      <strong>M</strong>
+    </div>
+
+    <h3>
+      HOST<br>
+      <span>REQUIREMENT</span>
+    </h3>
+
+    <div class="hero-stat">
+      <div>
+        <b>LIVE</b>
+        <small>Streaming</small>
+      </div>
+
+      <div>
+        <b>24/7</b>
+        <small>Support</small>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section wrap">
+
+  <div class="section-head">
+    <span class="kicker">LIVE STREAMING</span>
+    <h2>Turn your screen into a <em>career.</em></h2>
+    <p>
+      Build your audience from home with flexible live streaming opportunities
+      and dedicated agency support.
+    </p>
+  </div>
+
+  <div class="video-box">
+
+    <div class="video-label">
+      ● MERLIN LIVE
+    </div>
+
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      poster="05-featured.jpg"
+    >
+      <source src="01-featured-24s.mp4" type="video/mp4">
+    </video>
+
+  </div>
+
+</section>
+
+
+<section id="earnings" class="section wrap">
+
+  <div class="section-head">
+    <span class="kicker">OPPORTUNITY</span>
+    <h2>Your effort. <em>Your growth.</em></h2>
+    <p>
+      Earnings and targets can vary according to platform rules,
+      performance and applicable agency plans.
+    </p>
+  </div>
+
+  <div class="salary-grid">
+
+    <div class="salary">
+      <small>LEVEL 01</small>
+      <b>START</b>
+      <span>Begin your live journey.</span>
+    </div>
+
+    <div class="salary">
+      <small>LEVEL 02</small>
+      <b>GROW</b>
+      <span>Build your audience.</span>
+    </div>
+
+    <div class="salary">
+      <small>LEVEL 03</small>
+      <b>PRO</b>
+      <span>Improve consistency.</span>
+    </div>
+
+    <div class="salary">
+      <small>LEVEL 04</small>
+      <b>STAR</b>
+      <span>Scale your performance.</span>
+    </div>
+
+  </div>
+
+  <div class="note">
+    <b>Important:</b>
+    Actual earnings depend on applicable platform rules, targets,
+    performance and eligibility. Contact Merlin Agency for current details.
+  </div>
+
+</section>
+
+
+<section id="how" class="section wrap">
+
+  <div class="section-head">
+    <span class="kicker">HOW IT WORKS</span>
+    <h2>Four steps. <em>One opportunity.</em></h2>
+  </div>
+
+  <div class="steps">
+
+    <article class="step">
+      <b>01</b>
+      <span>✦</span>
+      <h3>Apply</h3>
+      <p>Send your basic details through WhatsApp.</p>
+    </article>
+
+    <article class="step">
+      <b>02</b>
+      <span>◎</span>
+      <h3>Connect</h3>
+      <p>Our team will explain the hosting process.</p>
+    </article>
+
+    <article class="step">
+      <b>03</b>
+      <span>↗</span>
+      <h3>Go LIVE</h3>
+      <p>Start streaming and interact with your audience.</p>
+    </article>
+
+    <article class="step">
+      <b>04</b>
+      <span>★</span>
+      <h3>Grow</h3>
+      <p>Improve your performance and build your profile.</p>
+    </article>
+
+  </div>
+
+</section>
+
+
+<section id="portfolio" class="section wrap">
+
+  <div class="section-head">
+    <span class="kicker">HOST PORTFOLIO</span>
+    <h2>Live moments. <em>Real energy.</em></h2>
+    <p>
+      Explore examples from the Merlin Agency hosting portfolio.
+    </p>
+  </div>
+
+  <div class="portfolio-grid">
+
+    <div class="portfolio-card">
+      <img src="06-p1.jpg" alt="Merlin Agency live host">
+      <span class="play">▶</span>
+      <div>
+        <small>LIVE MOMENT</small>
+        <b>Beauty · Chat · Energy</b>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <img src="07-p2.jpg" alt="Merlin Agency host">
+      <span class="play">▶</span>
+      <div>
+        <small>HOST STYLE</small>
+        <b>On-camera presence</b>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <img src="08-p3.jpg" alt="Merlin Agency live streaming">
+      <span class="play">▶</span>
+      <div>
+        <small>LIVE HOST</small>
+        <b>Live · Chat · Energy</b>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section id="faq" class="section wrap">
+
+  <div class="section-head">
+    <span class="kicker">FAQ</span>
+    <h2>Questions, <em>answered.</em></h2>
+  </div>
+
+  <div class="accordion">
+
+    <details>
+      <summary>
+        Do I need previous hosting experience?
+        <span>＋</span>
+      </summary>
+      <p>
+        Previous experience is not necessarily required. Beginners can contact
+        Merlin Agency to learn about the current application and onboarding process.
+      </p>
+    </details>
+
+    <details>
+      <summary>
+        Can I work from home?
+        <span>＋</span>
+      </summary>
+      <p>
+        Live streaming can generally be performed remotely. Contact the agency
+        for current requirements and eligibility.
+      </p>
+    </details>
+
+    <details>
+      <summary>
+        Is there any joining fee?
+        <span>＋</span>
+      </summary>
+      <p>
+        There is no joining fee for applying through Merlin Agency.
+      </p>
+    </details>
+
+    <details>
+      <summary>
+        How do I apply?
+        <span>＋</span>
+      </summary>
+      <p>
+        Click the WhatsApp button on this page and send your details directly
+        to the Merlin Agency team.
+      </p>
+    </details>
+
+    <details>
+      <summary>
+        How much can I earn?
+        <span>＋</span>
+      </summary>
+      <p>
+        Earnings depend on platform rules, targets, performance and eligibility.
+        Contact Merlin Agency for the latest applicable earning information.
+      </p>
+    </details>
+
+  </div>
+
+</section>
+
+
+<section id="apply" class="section wrap">
+
+  <div class="hero-card" style="text-align:center;max-width:800px;margin:auto">
+
+    <div class="kicker">READY TO START?</div>
+
+    <h2>
+      Join <em>Merlin Agency.</em>
+    </h2>
+
+    <p style="color:#aeb5c9;line-height:1.8">
+      Send us a WhatsApp message and our team will guide you through
+      the current host recruitment process.
+    </p>
 
     <a
-      class="header-link"
-      href="https://wa.me/918178949463?text=Hello%2C%20I%27m%20interested%20in%20buying%20BeGrow.in."
+      class="btn"
+      href="https://wa.me/918178949463?text=Hello%20Merlin%20Agency%2C%20I%20want%20to%20join%20as%20a%20Host."
       target="_blank"
-      rel="noopener noreferrer"
+      rel="noopener"
     >
-      Make an Offer ↗
+      WhatsApp Us →
     </a>
-  </header>
+
+  </div>
+
+</section>
+
+</main>
 
 
-  <main>
+<footer class="footer">
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-inner">
+  <a class="logo" href="index.html">
+    <span class="logo-m">M</span>
+    <span>
+      <b>MERLIN</b>
+      <small>AGENCY</small>
+    </span>
+  </a>
 
-        <div class="eyebrow">
-          <i></i>
-          PREMIUM DOMAIN FOR SALE
-        </div>
+  <p>
+    Merlin Agency — Host Requirement | Live Streaming | Work From Home | No Joining Fee.
+  </p>
 
-        <h1>
-          <span class="domain">BeGrow.in</span>
-          Your next brand starts here.
-        </h1>
+  <div class="footer-bottom">
+    <span>© 2026 Merlin Agency</span>
+    <a class="snap" href="https://www.snapchat.com/add/JoinMerlin" target="_blank" rel="noopener">
+      Snapchat · JoinMerlin
+    </a>
+  </div>
 
-        <p class="subtitle">
-          A short, memorable and brandable .in domain available for acquisition.
-          Ideal for a startup, business, technology company, community,
-          education platform or growth-focused brand.
-        </p>
-
-        <div class="price-card">
-
-          <div class="price-label">
-            Asking Price
-          </div>
-
-          <div class="price">
-            $4,500 <small>USD</small>
-          </div>
-
-          <a
-            class="offer-btn"
-            href="https://wa.me/918178949463?text=Hello%2C%20I%27m%20interested%20in%20buying%20BeGrow.in.%20I%27d%20like%20to%20make%20an%20offer."
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Make an offer for BeGrow.in on WhatsApp"
-          >
-            <span class="whatsapp-icon">↗</span>
-            Make an Offer on WhatsApp
-          </a>
-
-          <p class="safe-note">
-            Clicking the button opens a direct WhatsApp conversation.
-            No form or account is required.
-          </p>
-
-        </div>
-
-      </div>
-    </section>
+</footer>
 
 
-    <!-- FEATURES -->
-    <section class="features page">
-
-      <div class="section-title">
-        <span>Why BeGrow.in</span>
-        <h2>A domain built for growth.</h2>
-      </div>
-
-      <div class="feature-grid">
-
-        <article class="feature">
-          <div class="feature-icon">✦</div>
-          <h3>Short & Memorable</h3>
-          <p>
-            BeGrow.in is concise, easy to remember and simple to use
-            in marketing, social media and word-of-mouth.
-          </p>
-        </article>
-
-        <article class="feature">
-          <div class="feature-icon">◎</div>
-          <h3>Brandable Name</h3>
-          <p>
-            A versatile name that can work across startups, technology,
-            education, finance, marketing, communities and more.
-          </p>
-        </article>
-
-        <article class="feature">
-          <div class="feature-icon">↗</div>
-          <h3>.IN Extension</h3>
-          <p>
-            A strong country-code domain extension for businesses
-            targeting India and the growing Indian digital market.
-          </p>
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- DOMAIN INFORMATION -->
-    <section class="info page">
-
-      <div class="info-box">
-
-        <div>
-          <h2>Own BeGrow.in</h2>
-
-          <p>
-            The right domain can become the foundation of a memorable
-            digital brand. BeGrow.in is now available to a buyer looking
-            for a clean, professional and growth-oriented name.
-          </p>
-
-          <p>
-            Interested? Start a conversation directly on WhatsApp and
-            discuss the acquisition.
-          </p>
-        </div>
-
-        <div class="details">
-
-          <div class="detail">
-            <span>Domain</span>
-            <span>BeGrow.in</span>
-          </div>
-
-          <div class="detail">
-            <span>Status</span>
-            <span>For Sale</span>
-          </div>
-
-          <div class="detail">
-            <span>Asking Price</span>
-            <span>$4,500 USD</span>
-          </div>
-
-          <div class="detail">
-            <span>Offers</span>
-            <span>Welcome</span>
-          </div>
-
-          <div class="detail">
-            <span>Contact</span>
-            <span>WhatsApp</span>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-
-      <div class="footer-copy">
-        © 2026 BeGrow.in · Premium Domain For Sale
-      </div>
-
-      <div class="footer-domain">
-        BeGrow.in
-      </div>
-
-    </div>
-  </footer>
-
-
-  <!-- DIRECT WHATSAPP BUTTON SCRIPT -->
-  <script>
-    (function () {
-      const phone = "918178949463";
-
-      const message =
-        "Hello, I'm interested in buying BeGrow.in. I'd like to make an offer.";
-
-      const whatsappUrl =
-        "https://wa.me/" +
-        phone +
-        "?text=" +
-        encodeURIComponent(message);
-
-      document
-        .querySelectorAll('a[href*="wa.me"]')
-        .forEach(function (button) {
-          button.href = whatsappUrl;
-        });
-    })();
-  </script>
+<a
+  class="whatsapp"
+  href="https://wa.me/918178949463?text=Hello%20Merlin%20Agency%2C%20I%20want%20to%20join%20as%20a%20Host."
+  target="_blank"
+  rel="noopener"
+  aria-label="Chat with Merlin Agency on WhatsApp"
+>
+  WhatsApp ↗
+</a>
 
 </body>
 </html>
