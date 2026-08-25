@@ -4,51 +4,62 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#06110b">
-<title>Apply Now | Merlin Agency</title>
+<title>Become a Host / Influencer for Brand Collaborations | BeGrow</title>
 <style>
 
-:root{--bg:#020705;--green:#19f08a;--green2:#9bffc9;--text:#f1f8f3;--muted:#8fa197;--line:rgba(141,255,194,.16)}
+:root{--bg:#020705;--green:#e4b83d;--green2:#fff0a1;--text:#f1f8f3;--muted:#8fa197;--line:rgba(255,239,150,.16)}
 html,body{margin:0;padding:0;background:#020705;color:var(--text);font-family:Arial,sans-serif}
 body{min-height:100vh}
 a{color:inherit}
-.bg-glow{position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at 75% 8%,rgba(25,240,138,.13),transparent 32%),radial-gradient(circle at 15% 45%,rgba(25,240,138,.045),transparent 35%),#020705}
-.header{height:92px;padding:0 22px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(141,255,194,.12);background:rgba(2,7,5,.94)}
+.bg-glow{position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at 75% 8%,rgba(228,184,61,.13),transparent 32%),radial-gradient(circle at 15% 45%,rgba(228,184,61,.045),transparent 35%),#020705}
+.header{height:92px;padding:0 22px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,239,150,.12);background:rgba(2,7,5,.94)}
 .logo{display:flex;align-items:center;gap:12px;text-decoration:none}
 .logo-m{width:58px;height:58px;border:1.5px solid var(--green);border-radius:18px;display:grid;place-items:center;color:var(--green);font:34px Georgia,serif}
 .logo b{display:block;font:700 22px Georgia,serif;letter-spacing:.14em}
 .logo small{display:block;color:#7f9187;font-size:9px;letter-spacing:.25em;margin-top:4px}
 .back{color:#e8f2ec;font-size:18px;text-underline-offset:5px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:13px;padding:14px 18px;text-decoration:none;cursor:pointer;font-weight:900;font-size:13px}
-.btn.green{background:var(--green);color:#031108;box-shadow:0 10px 28px rgba(25,240,138,.13)}
+.btn.green{background:var(--green);color:#031108;box-shadow:0 10px 28px rgba(228,184,61,.13)}
 .btn:disabled{opacity:.55;cursor:wait}
-.footer.compact{padding:25px 20px;border-top:1px solid rgba(141,255,194,.1)}
+.footer.compact{padding:25px 20px;border-top:1px solid rgba(255,239,150,.1)}
 .footer-bottom{display:flex;justify-content:space-between;gap:15px;max-width:760px;margin:auto;color:#728178;font-size:10px}
-.snap{color:#9bffc9}
+.snap{color:#fff0a1}
 .reveal{opacity:1!important;transform:none!important;visibility:visible!important}
 *{box-sizing:border-box}
 .apply-page{min-height:100vh}
 .apply-wrap{width:min(760px,calc(100% - 28px));margin:0 auto;padding:60px 0}
 .apply-intro{text-align:center;margin-bottom:28px}
-.kicker{display:inline-block;color:#19f08a;font-size:11px;font-weight:800;letter-spacing:.18em}
+.kicker{display:inline-block;color:#e4b83d;font-size:11px;font-weight:800;letter-spacing:.18em}
 .apply-intro h1{margin:12px 0;font-size:clamp(30px,6vw,52px)}
-.apply-intro h1 em{color:#19f08a;font-style:normal}
+.apply-intro h1 em{color:#e4b83d;font-style:normal}
 .apply-intro p{color:#9aa9a0;line-height:1.7;font-size:13px}
 .apply-pills{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:18px}
-.apply-pills span{padding:8px 11px;border:1px solid rgba(141,255,194,.16);border-radius:999px;color:#b8c8bf;font-size:10px}
-.apply-form{padding:24px;border:1px solid rgba(141,255,194,.18);border-radius:24px;background:linear-gradient(145deg,rgba(12,37,24,.92),rgba(4,11,7,.96));box-shadow:0 24px 80px rgba(0,0,0,.4)}
+.apply-pills span{padding:8px 11px;border:1px solid rgba(255,239,150,.16);border-radius:999px;color:#b8c8bf;font-size:10px}
+.apply-form{padding:24px;border:1px solid rgba(255,239,150,.18);border-radius:24px;background:linear-gradient(145deg,rgba(12,37,24,.92),rgba(4,11,7,.96));box-shadow:0 24px 80px rgba(0,0,0,.4)}
 .apply-form label{display:block;color:#dce9e1;font-size:11px;font-weight:800;margin:0 0 16px}
 .apply-form label small{color:#7e9187;font-weight:500}
-.apply-form input,.apply-form select,.apply-form textarea{display:block;width:100%;margin-top:7px;padding:13px 14px;border-radius:12px;border:1px solid rgba(141,255,194,.14);background:#020805;color:#fff;outline:none;font:inherit;font-size:12px}
-.apply-form input:focus,.apply-form select:focus,.apply-form textarea:focus{border-color:#19f08a;box-shadow:0 0 0 2px rgba(25,240,138,.08)}
+.apply-form input,.apply-form select,.apply-form textarea{display:block;width:100%;margin-top:7px;padding:13px 14px;border-radius:12px;border:1px solid rgba(255,239,150,.14);background:#020805;color:#fff;outline:none;font:inherit;font-size:12px}
+.apply-form input:focus,.apply-form select:focus,.apply-form textarea:focus{border-color:#e4b83d;box-shadow:0 0 0 2px rgba(228,184,61,.08)}
 .apply-form input:invalid:not(:placeholder-shown),.apply-form select:invalid{border-color:#ff6b6b}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .btn.submit{width:100%;margin-top:4px}
 .form-note{text-align:center;color:#74847b;font-size:10px;line-height:1.5;margin:13px 0 0}
 .form-error{display:none;margin:0 0 15px;padding:11px 13px;border-radius:12px;background:rgba(255,70,70,.08);border:1px solid rgba(255,100,100,.2);color:#ffb3b3;font-size:11px;line-height:1.5}
 .form-error.show{display:block}
-.success-note{display:none;text-align:center;margin:18px 0;padding:16px;border-radius:16px;background:rgba(25,240,138,.07);border:1px solid rgba(141,255,194,.2);color:#9bffc9;font-size:12px}
+.success-note{display:none;text-align:center;margin:18px 0;padding:16px;border-radius:16px;background:rgba(228,184,61,.07);border:1px solid rgba(255,239,150,.2);color:#fff0a1;font-size:12px}
 .success-note.show{display:block}
 @media(max-width:600px){.apply-wrap{padding:38px 0}.apply-form{padding:18px}.two{grid-template-columns:1fr}}
+/* FINAL GOLDEN THEME OVERRIDE FOR HOST APPLICATION PAGE */
+html,body{background:#020201!important;color:#f7f3e8!important}
+.bg-glow{background:radial-gradient(circle at 75% 8%,rgba(228,184,61,.12),transparent 32%),radial-gradient(circle at 15% 45%,rgba(228,184,61,.055),transparent 35%),#020201!important}
+.header{background:rgba(5,4,2,.94)!important;border-bottom-color:rgba(255,239,150,.18)!important}
+.apply-form{background:linear-gradient(145deg,rgba(39,29,10,.88),rgba(7,5,2,.97))!important;border-color:rgba(228,184,61,.28)!important;box-shadow:0 24px 80px rgba(0,0,0,.48),0 0 45px rgba(228,184,61,.06)!important}
+.apply-form input,.apply-form select,.apply-form textarea{background:#050403!important;border-color:rgba(228,184,61,.22)!important;color:#f7f3e8!important}
+.apply-form input:focus,.apply-form select:focus,.apply-form textarea:focus{border-color:#e4b83d!important;box-shadow:0 0 0 3px rgba(228,184,61,.12)!important}
+.btn.green{position:relative;overflow:hidden;background:linear-gradient(120deg,#8f6410 0%,#d5a52a 22%,#fff0a1 46%,#e4b83d 58%,#d8aa2d 76%,#8c5f0b 100%)!important;color:#241700!important;border:1px solid rgba(255,231,143,.82)!important;box-shadow:0 0 30px rgba(228,184,61,.28),inset 0 1px 0 rgba(255,255,255,.82)!important;animation:applyGoldPulse 3.4s ease-in-out infinite!important}
+.btn.green:after{content:"";position:absolute;top:-35%;left:-60%;width:28%;height:170%;transform:skewX(-20deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.72),transparent);filter:blur(1px);animation:applyGoldSweep 2.8s ease-in-out infinite;pointer-events:none}
+@keyframes applyGoldSweep{0%,45%{left:-60%;opacity:0}52%{opacity:1}78%,100%{left:140%;opacity:0}}
+@keyframes applyGoldPulse{0%,100%{filter:brightness(1)}50%{filter:brightness(1.08)}}
 </style>
 </head>
 <body class="apply-page">
