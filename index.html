@@ -3,16 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-
 <meta name="theme-color" content="#06110b">
 
-<meta name="description"
-content="Merlin Agency host requirement for live streaming. Work from home, flexible live schedule, host support and no joining fee. Apply now.">
-
-<meta name="robots" content="index, follow">
-<meta name="googlebot" content="index, follow">
-
-<link rel="canonical" href="https://www.begrow.in/">
+<meta name="description" content="Merlin Agency | Host Requirement | Live Streaming | Work From Home | No Joining Fee">
 
 <title>Merlin Agency | Host Requirement | Live Streaming | Work From Home | No Joining Fee</title>
 
@@ -20,7 +13,7 @@ content="Merlin Agency host requirement for live streaming. Work from home, flex
 
 <style>
 /* =========================================================
-   MERLIN AGENCY - CLEAN INDEX PAGE
+   MERLIN AGENCY - INDEX PAGE FIXES
    ========================================================= */
 
 *{
@@ -33,909 +26,404 @@ html{
 
 body{
   margin:0;
-  background:#050b08;
-  color:#f4f8f5;
-  font-family:
-    Inter,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
 }
 
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
-button{
-  font:inherit;
-}
-
-.wrap{
-  width:min(1120px,92%);
-  margin:auto;
-}
-
-/* =========================================================
-   BACKGROUND
-   ========================================================= */
-
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  z-index:-2;
-
-  background:
-    radial-gradient(
-      circle at 15% 10%,
-      rgba(39,191,111,.14),
-      transparent 32%
-    ),
-    radial-gradient(
-      circle at 85% 18%,
-      rgba(228,184,61,.10),
-      transparent 28%
-    ),
-    linear-gradient(
-      180deg,
-      #07120c 0%,
-      #030705 100%
-    );
-}
-
-.bg-glow{
-  position:fixed;
-  width:500px;
-  height:500px;
-  border-radius:50%;
-  background:rgba(40,190,110,.07);
-  filter:blur(100px);
-  left:-250px;
-  top:200px;
-  pointer-events:none;
-  z-index:-1;
-}
-
-/* =========================================================
-   HEADER
-   ========================================================= */
+/* ---------- HEADER ---------- */
 
 .header{
-  width:min(1200px,94%);
-  min-height:76px;
-  margin:auto;
-
-  display:flex;
-  align-items:center;
-  gap:30px;
-
-  border-bottom:1px solid rgba(255,255,255,.07);
+  position:relative;
+  z-index:1000;
 }
 
 .brand-wrap{
-  flex:0 0 auto;
-}
-
-.logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-
-.logo-m{
-  width:38px;
-  height:38px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  border-radius:11px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #e4b83d,
-      #a97917
-    );
-
-  color:#07110b;
-  font-size:21px;
-  font-weight:950;
-
-  box-shadow:
-    0 0 25px rgba(228,184,61,.15);
-}
-
-.logo b{
-  display:block;
-  font-size:15px;
-  letter-spacing:.12em;
-}
-
-.logo small{
-  display:block;
-  margin-top:1px;
-
-  color:#7f8d85;
-  font-size:8px;
-  letter-spacing:.28em;
-}
-
-.header nav{
-  display:flex;
-  align-items:center;
-  gap:24px;
-  margin-left:auto;
-}
-
-.header nav a{
-  color:#9eaaa3;
-  font-size:12px;
-  font-weight:700;
-  transition:.2s;
-}
-
-.header nav a:hover{
-  color:#fff0a1;
+  position:relative;
+  z-index:10;
 }
 
 .top-apply-wrap{
+  position:relative;
+  z-index:20;
   display:flex;
   align-items:center;
+  justify-content:flex-end;
+  gap:8px;
   margin-left:auto;
 }
 
 .top-apply{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  width:112px;
-  height:36px;
-
-  border-radius:20px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #e4b83d,
-      #bd8d20
-    );
-
-  color:#06110b;
-
-  font-size:11px;
-  font-weight:950;
-
-  box-shadow:
-    0 8px 25px rgba(228,184,61,.12);
-
-  transition:.2s;
-}
-
-.top-apply:hover{
-  transform:translateY(-2px);
-  box-shadow:
-    0 12px 32px rgba(228,184,61,.22);
-}
-
-/* =========================================================
-   HERO
-   ========================================================= */
-
-.hero{
-  min-height:650px;
-
-  display:grid;
-  grid-template-columns:
-    minmax(0,1.2fr)
-    minmax(300px,.8fr);
-
-  align-items:center;
-  gap:60px;
-
-  padding-top:70px;
-  padding-bottom:80px;
-}
-
-.eyebrow{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-
-  padding:9px 13px;
-
-  border:1px solid rgba(86,216,142,.22);
-  border-radius:999px;
-
-  background:rgba(86,216,142,.045);
-
-  color:#bfe8ce;
-
-  font-size:10px;
-  font-weight:850;
-
-  letter-spacing:.14em;
-}
-
-.eyebrow i{
-  width:7px;
-  height:7px;
-
-  display:block;
-
-  border-radius:50%;
-
-  background:#56d88e;
-
-  box-shadow:
-    0 0 12px #56d88e;
-}
-
-.hero h1{
-  margin:25px 0 18px;
-
-  font-size:
-    clamp(48px,7vw,82px);
-
-  line-height:.96;
-
-  letter-spacing:-.065em;
-}
-
-.hero h1 em{
-  color:#56d88e;
-  font-style:normal;
-}
-
-.hero-copy>p{
-  max-width:650px;
-
-  color:#9daaa2;
-
-  font-size:16px;
-  line-height:1.75;
-}
-
-.actions{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-
-  margin-top:30px;
-}
-
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-
-  min-height:49px;
-  padding:0 22px;
-
-  border-radius:13px;
-
-  font-size:12px;
-  font-weight:900;
-
-  transition:.2s;
-}
-
-.btn.green{
-  background:
-    linear-gradient(
-      135deg,
-      #56d88e,
-      #22b86a
-    );
-
-  color:#041009;
-
-  box-shadow:
-    0 12px 35px rgba(39,191,111,.18);
-}
-
-.btn.green:hover{
-  transform:translateY(-2px);
-  box-shadow:
-    0 17px 42px rgba(39,191,111,.28);
-}
-
-.trust{
-  display:flex;
-  flex-wrap:wrap;
-  gap:14px;
-
-  margin-top:25px;
-
-  color:#6f7d75;
-
-  font-size:10px;
-  font-weight:700;
-}
-
-/* =========================================================
-   HERO CARD
-   ========================================================= */
-
-.hero-card{
   position:relative;
+  z-index:21;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  white-space:nowrap;
+  text-decoration:none;
+}
 
-  padding:30px;
+/* Hamburger */
 
-  min-height:390px;
-
+.seller-menu-toggle{
+  -webkit-appearance:none;
+  appearance:none;
   display:flex;
   flex-direction:column;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
+  gap:4px;
 
-  text-align:center;
+  width:32px;
+  height:32px;
+  padding:0;
+  margin:0;
 
-  border:
-    1px solid
-    rgba(228,184,61,.22);
+  border:0;
+  border-radius:0;
+  background:transparent;
 
-  border-radius:25px;
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(228,184,61,.08),
-      rgba(255,255,255,.025)
-    );
-
-  box-shadow:
-    0 35px 90px rgba(0,0,0,.3);
+  cursor:pointer;
+  box-shadow:none;
 }
 
-.hero-card-top{
+.seller-menu-toggle span{
+  display:block;
+  width:18px;
+  height:2px;
+  background:#e4b83d;
+  border-radius:99px;
+  transition:.2s ease;
+}
+
+.seller-menu-toggle:hover{
+  background:transparent;
+  box-shadow:none;
+}
+
+.seller-menu-toggle[aria-expanded="true"] span:nth-child(1){
+  transform:translateY(6px) rotate(45deg);
+}
+
+.seller-menu-toggle[aria-expanded="true"] span:nth-child(2){
+  opacity:0;
+}
+
+.seller-menu-toggle[aria-expanded="true"] span:nth-child(3){
+  transform:translateY(-6px) rotate(-45deg);
+}
+
+/* Seller dropdown */
+
+.seller-menu{
   position:absolute;
+  top:calc(100% + 10px);
+  right:0;
 
-  top:22px;
-  left:25px;
-  right:25px;
+  width:210px;
+  padding:8px;
 
-  display:flex;
-  justify-content:space-between;
-
-  color:#89958e;
-
-  font-size:10px;
-  letter-spacing:.08em;
-}
-
-.hero-card-top b{
-  color:#e4b83d;
-}
-
-.hero-card-top span{
-  display:flex;
-  align-items:center;
-  gap:6px;
-}
-
-.hero-card-top i{
-  width:6px;
-  height:6px;
-  border-radius:50%;
-  background:#56d88e;
-  box-shadow:0 0 10px #56d88e;
-}
-
-.crest{
-  width:100px;
-  height:100px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  margin-bottom:22px;
-
-  border-radius:28px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #e4b83d,
-      #92701d
-    );
-
-  color:#06110b;
-
-  box-shadow:
-    0 20px 45px rgba(228,184,61,.15);
-}
-
-.crest strong{
-  font-size:60px;
-  font-weight:950;
-}
-
-.hero-card h3{
-  margin:0;
-
-  font-size:22px;
-  line-height:1.05;
-  letter-spacing:.08em;
-}
-
-.hero-card h3 span{
-  color:#56d88e;
-}
-
-.hero-stat{
-  width:100%;
-
-  display:grid;
-  grid-template-columns:1fr 1fr;
-
-  margin-top:30px;
-
-  border-top:1px solid rgba(255,255,255,.07);
-  padding-top:20px;
-}
-
-.hero-stat b{
-  display:block;
-
-  color:#fff0a1;
-
-  font-size:21px;
-}
-
-.hero-stat small{
-  color:#75827b;
-  font-size:9px;
-}
-
-/* =========================================================
-   SECTION
-   ========================================================= */
-
-.section{
-  padding:80px 0;
-}
-
-.section-head{
-  margin-bottom:32px;
-}
-
-.kicker{
-  color:#56d88e;
-
-  font-size:10px;
-  font-weight:900;
-
-  letter-spacing:.16em;
-}
-
-.section h2{
-  margin:9px 0 10px;
-
-  font-size:
-    clamp(30px,5vw,46px);
-
-  letter-spacing:-.045em;
-}
-
-.section h2 em{
-  color:#e4b83d;
-  font-style:normal;
-}
-
-.section-head p{
-  max-width:650px;
-
-  color:#8e9b94;
-
-  font-size:14px;
-  line-height:1.7;
-}
-
-/* =========================================================
-   SALARY
-   ========================================================= */
-
-.salary-grid{
-  display:grid;
-  grid-template-columns:
-    repeat(4,1fr);
-
-  gap:13px;
-}
-
-.salary-card{
-  padding:22px;
-
-  border:
-    1px solid
-    rgba(255,255,255,.07);
-
-  border-radius:16px;
-
-  background:
-    rgba(255,255,255,.025);
-}
-
-.salary-card b{
-  display:block;
-  color:#fff0a1;
-  font-size:22px;
-}
-
-.salary-card span{
-  display:block;
-  margin-top:5px;
-
-  color:#7e8b84;
-
-  font-size:10px;
-}
-
-.note{
-  margin-top:18px;
-
-  padding:18px;
-
-  border-radius:13px;
-
-  background:rgba(86,216,142,.035);
-  border:1px solid rgba(86,216,142,.10);
-
-  color:#89978f;
-
-  font-size:11px;
-  line-height:1.6;
-}
-
-.note b{
-  color:#56d88e;
-}
-
-/* =========================================================
-   STEPS
-   ========================================================= */
-
-.steps{
-  display:grid;
-  grid-template-columns:
-    repeat(4,1fr);
-
-  gap:14px;
-}
-
-.step{
-  padding:25px;
-
-  border:
-    1px solid
-    rgba(255,255,255,.07);
-
-  border-radius:17px;
-
-  background:
-    rgba(255,255,255,.025);
-}
-
-.step>b{
-  display:block;
-
-  color:#e4b83d;
-
-  font-size:11px;
-}
-
-.step>span{
-  display:block;
-
-  margin:20px 0 12px;
-
-  color:#56d88e;
-
-  font-size:23px;
-}
-
-.step h3{
-  margin:0 0 8px;
-  font-size:17px;
-}
-
-.step p{
-  margin:0;
-
-  color:#84918a;
-
-  font-size:12px;
-  line-height:1.65;
-}
-
-/* =========================================================
-   FAQ
-   ========================================================= */
-
-.accordion{
-  max-width:850px;
-}
-
-details{
-  margin-bottom:10px;
-
-  border:
-    1px solid
-    rgba(255,255,255,.07);
-
+  border:1px solid rgba(228,184,61,.35);
   border-radius:14px;
 
-  background:
-    rgba(255,255,255,.025);
+  background:rgba(3,12,7,.98);
+  box-shadow:0 18px 45px rgba(0,0,0,.45);
 
+  display:none;
+  z-index:2000;
+}
+
+.seller-menu.open{
+  display:block;
+}
+
+.seller-menu a{
+  display:flex;
+  align-items:center;
+  gap:9px;
+
+  padding:11px 12px;
+
+  color:#eafff2;
+  text-decoration:none;
+
+  font-size:12px;
+  font-weight:800;
+
+  border-radius:9px;
+}
+
+.seller-menu a:hover{
+  background:rgba(228,184,61,.09);
+  color:#fff0a1;
+}
+
+/* ---------- HERO CTA ---------- */
+
+.hero .btn,
+.hero .btn-primary,
+.hero a.influencer-apply-btn{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+}
+
+.hero .btn::after,
+.hero .btn-primary::after,
+.hero a.influencer-apply-btn::after{
+  content:"";
+  position:absolute;
+  top:-30%;
+  left:-55%;
+
+  width:28%;
+  height:160%;
+
+  transform:skewX(-20deg);
+
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.55),
+    transparent
+  );
+
+  filter:blur(1px);
+
+  animation:merlinCtaShine 3.2s ease-in-out infinite;
+
+  pointer-events:none;
+}
+
+@keyframes merlinCtaShine{
+  0%,55%{
+    left:-55%;
+    opacity:0;
+  }
+
+  62%{
+    opacity:1;
+  }
+
+  82%,100%{
+    left:135%;
+    opacity:0;
+  }
+}
+
+/* ---------- INTRO VIDEO ---------- */
+
+#merlin-intro-overlay{
+  position:fixed;
+  inset:0;
+
+  z-index:2147483647;
+
+  background:rgba(0,0,0,.72);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  overflow:hidden;
+
+  opacity:1;
+  visibility:visible;
+
+  transition:
+    opacity .45s ease,
+    visibility .45s ease;
+}
+
+#merlin-intro-overlay video{
+  width:100vw;
+  height:100vh;
+
+  object-fit:cover;
+
+  display:block;
+  background:#000;
+}
+
+#merlin-intro-play{
+  position:absolute;
+  z-index:2;
+
+  left:50%;
+  top:50%;
+
+  transform:translate(-50%,-50%);
+
+  padding:14px 24px;
+
+  border:0;
+  border-radius:999px;
+
+  background:#fff;
+  color:#111;
+
+  font-size:16px;
+  font-weight:700;
+
+  display:none;
+
+  cursor:pointer;
+}
+
+#merlin-intro-overlay.merlin-show-play #merlin-intro-play{
+  display:block;
+}
+
+#merlin-intro-overlay.merlin-intro-hide{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+
+body.merlin-intro-active{
   overflow:hidden;
 }
 
-summary{
-  cursor:pointer;
+/* ---------- BUY DIAMOND ---------- */
 
-  list-style:none;
-
+.buy-diamond-hero{
   display:flex;
   align-items:center;
-  justify-content:space-between;
+  justify-content:center;
 
-  padding:19px 20px;
+  width:220px;
+  min-height:48px;
 
-  color:#dce5df;
+  margin:14px auto 22px;
+  padding:12px 20px;
 
-  font-size:13px;
-  font-weight:800;
-}
-
-summary::-webkit-details-marker{
-  display:none;
-}
-
-summary span{
-  color:#56d88e;
-  font-size:20px;
-}
-
-details p{
-  margin:0;
-  padding:0 20px 20px;
-
-  color:#87948d;
-
-  font-size:12px;
-  line-height:1.7;
-}
-
-/* =========================================================
-   WHATSAPP CTA
-   ========================================================= */
-
-.whatsapp-section{
-  padding:85px 0;
-  text-align:center;
-}
-
-.whatsapp-box{
-  padding:45px 25px;
-
-  border:
-    1px solid
-    rgba(86,216,142,.16);
-
-  border-radius:25px;
+  border:1px solid rgba(228,184,61,.72);
+  border-radius:13px;
 
   background:
     linear-gradient(
-      145deg,
-      rgba(86,216,142,.07),
-      rgba(255,255,255,.02)
+      135deg,
+      rgba(228,184,61,.16),
+      rgba(228,184,61,.06)
     );
-}
-
-.whatsapp-box h2{
-  margin:0 0 10px;
-
-  font-size:
-    clamp(30px,5vw,45px);
-
-  letter-spacing:-.05em;
-}
-
-.whatsapp-box p{
-  max-width:600px;
-  margin:0 auto 25px;
-
-  color:#89978f;
-
-  font-size:13px;
-  line-height:1.7;
-}
-
-.whatsapp-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-
-  min-height:52px;
-  padding:0 27px;
-
-  border-radius:14px;
-
-  background:#25d366;
-
-  color:#041009;
-
-  font-size:13px;
-  font-weight:950;
 
   box-shadow:
-    0 15px 40px rgba(37,211,102,.20);
+    0 0 24px rgba(228,184,61,.10);
 
-  transition:.2s;
+  color:#fff0a1;
+
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.06em;
+
+  text-decoration:none;
+  white-space:nowrap;
+
+  transition:.2s ease;
 }
 
-.whatsapp-btn:hover{
-  transform:translateY(-2px);
+.buy-diamond-hero:hover{
+  background:rgba(228,184,61,.18);
+  border-color:#e4b83d;
 
   box-shadow:
-    0 20px 50px rgba(37,211,102,.30);
+    0 0 30px rgba(228,184,61,.18);
+
+  transform:translateY(-1px);
 }
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
+/* ---------- WHATSAPP ---------- */
 
-.footer{
-  padding:35px 0;
+.whatsapp-float{
+  position:fixed;
 
-  border-top:
-    1px solid
-    rgba(255,255,255,.07);
+  right:20px;
+  bottom:20px;
 
-  color:#68756e;
-
-  font-size:10px;
-}
-
-.footer-inner{
-  width:min(1120px,92%);
-  margin:auto;
+  z-index:9999;
 
   display:flex;
   align-items:center;
-  justify-content:space-between;
-  gap:20px;
+  justify-content:center;
+
+  width:56px;
+  height:56px;
+
+  border-radius:50%;
+
+  background:#25D366;
+  color:#fff;
+
+  text-decoration:none;
+
+  font-size:27px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.35);
+
+  transition:.2s ease;
 }
 
-.footer strong{
-  color:#c7d1cb;
+.whatsapp-float:hover{
+  transform:translateY(-3px) scale(1.03);
 }
 
-/* =========================================================
-   MOBILE
-   ========================================================= */
+/* ---------- MOBILE ---------- */
 
-@media(max-width:850px){
+@media(max-width:700px){
 
   .header{
-    width:92%;
-  }
-
-  .header nav{
-    display:none;
+    min-height:70px;
   }
 
   .top-apply-wrap{
-    margin-left:auto;
-  }
-
-  .hero{
-    grid-template-columns:1fr;
-
-    gap:45px;
-
-    padding-top:55px;
-  }
-
-  .hero-copy{
-    text-align:center;
-  }
-
-  .eyebrow{
-    justify-content:center;
-  }
-
-  .hero-copy>p{
-    margin-left:auto;
-    margin-right:auto;
-  }
-
-  .actions{
-    justify-content:center;
-  }
-
-  .trust{
-    justify-content:center;
-  }
-
-  .salary-grid{
-    grid-template-columns:
-      repeat(2,1fr);
-  }
-
-  .steps{
-    grid-template-columns:
-      repeat(2,1fr);
-  }
-}
-
-@media(max-width:550px){
-
-  .header{
-    min-height:68px;
-  }
-
-  .logo-m{
-    width:34px;
-    height:34px;
-  }
-
-  .logo b{
-    font-size:13px;
-  }
-
-  .badge{
-    display:none;
+    gap:5px;
   }
 
   .top-apply{
-    width:100px;
-    height:34px;
-    font-size:10px;
+    width:88px !important;
+    min-width:88px !important;
+
+    height:32px !important;
+    min-height:32px !important;
+
+    padding:0 7px !important;
+
+    font-size:10.5px !important;
+
+    line-height:1;
+
+    border-radius:17px !important;
   }
 
-  .hero{
-    min-height:auto;
-
-    padding-top:48px;
-    padding-bottom:45px;
+  .seller-menu-toggle{
+    width:30px;
+    height:30px;
+    flex:0 0 30px;
   }
 
-  .hero h1{
-    font-size:54px;
+  .seller-menu-toggle span{
+    width:17px;
   }
 
-  .hero-copy>p{
-    font-size:14px;
+  .seller-menu{
+    width:190px;
   }
 
-  .hero-card{
-    min-height:350px;
+  .buy-diamond-hero{
+    width:210px;
+    min-height:46px;
+
+    margin:12px auto 18px;
+
+    font-size:12px;
   }
 
-  .section{
-    padding:55px 0;
-  }
+  .whatsapp-float{
+    right:15px;
+    bottom:15px;
 
-  .salary-grid,
-  .steps{
-    grid-template-columns:1fr;
-  }
+    width:52px;
+    height:52px;
 
-  .footer-inner{
-    flex-direction:column;
-    align-items:flex-start;
+    font-size:25px;
   }
 }
 </style>
@@ -943,11 +431,158 @@ details p{
 
 <body>
 
-<div class="bg-glow"></div>
+<!-- =====================================================
+     INTRO VIDEO
+     ===================================================== -->
 
-<!-- =======================================================
+<div id="merlin-intro-overlay" aria-hidden="true">
+
+  <button
+    id="merlin-intro-play"
+    type="button"
+    aria-label="Play intro video"
+  >
+    Tap to play
+  </button>
+
+  <video
+    id="merlin-intro-video"
+    autoplay
+    muted
+    playsinline
+    webkit-playsinline
+    preload="auto"
+    poster="./intro-poster.jpg"
+    controlslist="nodownload noplaybackrate"
+  >
+    <source src="./intro.mp4" type="video/mp4">
+  </video>
+
+</div>
+
+<script>
+(function(){
+
+  var overlay = document.getElementById("merlin-intro-overlay");
+  var video = document.getElementById("merlin-intro-video");
+  var play = document.getElementById("merlin-intro-play");
+
+  if(!overlay || !video){
+    return;
+  }
+
+  document.body.classList.add("merlin-intro-active");
+
+  video.muted = true;
+  video.defaultMuted = true;
+  video.volume = 0;
+
+  var done = false;
+
+  function finish(){
+
+    if(done){
+      return;
+    }
+
+    done = true;
+
+    overlay.classList.add("merlin-intro-hide");
+
+    document.body.classList.remove("merlin-intro-active");
+
+    setTimeout(function(){
+
+      if(overlay.parentNode){
+        overlay.remove();
+      }
+
+    },500);
+  }
+
+  function start(){
+
+    video.muted = true;
+    video.defaultMuted = true;
+    video.volume = 0;
+
+    var promise = video.play();
+
+    if(promise && promise.catch){
+
+      promise.catch(function(){
+
+        overlay.classList.add("merlin-show-play");
+
+      });
+
+    }
+  }
+
+  video.addEventListener("ended",finish);
+  video.addEventListener("error",finish);
+
+  if(play){
+
+    play.addEventListener("click",function(){
+
+      overlay.classList.remove("merlin-show-play");
+
+      start();
+
+    });
+
+  }
+
+  video.addEventListener(
+    "loadedmetadata",
+    start,
+    {once:true}
+  );
+
+  video.addEventListener(
+    "canplay",
+    start,
+    {once:true}
+  );
+
+  setTimeout(function(){
+
+    if(!done && video.paused){
+
+      overlay.classList.add("merlin-show-play");
+
+    }
+
+  },1800);
+
+  setTimeout(function(){
+
+    if(!done){
+
+      finish();
+
+    }
+
+  },9000);
+
+  video.load();
+
+})();
+</script>
+
+
+<!-- =====================================================
+     BACKGROUND
+     ===================================================== -->
+
+<div class="bg-glow"></div>
+<div class="particles" aria-hidden="true"></div>
+
+
+<!-- =====================================================
      HEADER
-     ======================================================= -->
+     ===================================================== -->
 
 <header class="header">
 
@@ -966,15 +601,27 @@ details p{
 
   </div>
 
+
   <nav>
 
-    <a href="#earnings">Earnings</a>
+    <a href="#earnings">
+      Earnings
+    </a>
 
-    <a href="#how">How It Works</a>
+    <a href="#how">
+      How It Works
+    </a>
 
-    <a href="#faq">FAQ</a>
+    <a href="#portfolio">
+      Portfolio
+    </a>
+
+    <a href="#faq">
+      FAQ
+    </a>
 
   </nav>
+
 
   <div class="top-apply-wrap">
 
@@ -985,36 +632,83 @@ details p{
       Become a Host ↗
     </a>
 
+
+    <button
+      class="seller-menu-toggle"
+      id="sellerMenuToggle"
+      type="button"
+      aria-label="Open menu"
+      aria-expanded="false"
+    >
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </button>
+
+
+    <div
+      class="seller-menu"
+      id="sellerMenu"
+    >
+
+      <a href="#earnings">
+        ✦ Earnings Plan
+      </a>
+
+      <a href="#how">
+        ◎ How It Works
+      </a>
+
+      <a href="#portfolio">
+        ▶ Host Portfolio
+      </a>
+
+      <a href="#faq">
+        ? FAQ
+      </a>
+
+      <a href="apply.html">
+        ↗ Apply Now
+      </a>
+
+    </div>
+
   </div>
 
 </header>
 
 
+<!-- =====================================================
+     MAIN
+     ===================================================== -->
+
 <main>
 
-<!-- =======================================================
-     HERO
-     ======================================================= -->
+
+<!-- HERO -->
 
 <section class="hero wrap">
 
-  <div class="hero-copy">
+  <div class="hero-copy reveal">
 
     <div class="eyebrow">
       <i></i>
-      BIGO LIVE INDIA · HOST REQUIREMENT
+      BIGO LIVE INDIA · HOST RECRUITMENT
     </div>
+
 
     <h1>
       Go LIVE.<br>
       <em>Build Your Empire.</em>
     </h1>
 
+
     <p>
-      Join Merlin Agency and turn your live presence into
-      a serious earning opportunity with structured targets,
-      bonuses and dedicated support.
+      Join Merlin Agency and turn your live presence into a serious earning opportunity with structured targets, bonuses and dedicated support.
     </p>
+
 
     <div class="actions">
 
@@ -1028,42 +722,54 @@ details p{
 
     </div>
 
+
     <div class="trust">
 
-      <span>✦ 2026 Salary Plan</span>
+      <span>
+        ✦ 2026 Salary Plan
+      </span>
 
-      <span>✦ Flexible Live Schedule</span>
+      <span>
+        ✦ Flexible Live Schedule
+      </span>
 
-      <span>✦ WhatsApp Support</span>
+      <span>
+        ✦ WhatsApp Support
+      </span>
 
-      <span>✦ No Joining Fee</span>
+      <span>
+        ✦ No Joining Fee
+      </span>
 
     </div>
 
   </div>
 
 
-  <div class="hero-card">
+  <div class="hero-card reveal delay1">
 
     <div class="hero-card-top">
 
-      <b>MERLIN AGENCY</b>
+      <b>BIGO LIVE</b>
 
       <span>
         <i></i>
-        RECRUITING
+        LIVE NOW
       </span>
 
     </div>
+
 
     <div class="crest">
       <strong>M</strong>
     </div>
 
+
     <h3>
       OFFICIAL<br>
       <span>HOST AGENCY</span>
     </h3>
+
 
     <div class="hero-stat">
 
@@ -1076,6 +782,7 @@ details p{
         </small>
 
       </div>
+
 
       <div>
 
@@ -1094,9 +801,236 @@ details p{
 </section>
 
 
-<!-- =======================================================
+<!-- =====================================================
+     FEATURED VIDEOS
+     ===================================================== -->
+
+<section class="video-section wrap reveal">
+
+  <div class="section-head">
+
+    <span class="kicker">
+      FEATURED LIVE MOMENTS
+    </span>
+
+    <h2>
+      Feel the <em>LIVE energy.</em>
+    </h2>
+
+    <p>
+      Portrait videos, medium-sized and optimized for fast loading. The showcase slides smoothly and auto-plays muted.
+    </p>
+
+  </div>
+
+
+  <div
+    class="video-carousel"
+    id="videoCarousel"
+  >
+
+    <div class="video-track">
+
+
+      <!-- VIDEO 1 -->
+
+      <div class="video-slide active">
+
+        <span class="live-badge">
+          <i></i>
+          MERLIN LIVE
+        </span>
+
+        <video
+          class="feature-video"
+          muted
+          autoplay
+          playsinline
+          loop
+          preload="auto"
+          poster="05-featured.jpg"
+        >
+
+          <source
+            src="01-featured-24s.mp4"
+            type="video/mp4"
+          >
+
+        </video>
+
+
+        <div class="slide-label">
+
+          <b>
+            FEATURED · 24 SEC
+          </b>
+
+          <span>
+            Portrait preview
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- VIDEO 2 -->
+
+      <div class="video-slide">
+
+        <span class="live-badge">
+          <i></i>
+          PORTFOLIO 01
+        </span>
+
+        <video
+          class="feature-video"
+          muted
+          playsinline
+          loop
+          preload="none"
+          poster="06-p1.jpg"
+        >
+
+          <source
+            src="02-portfolio-1.mp4"
+            type="video/mp4"
+          >
+
+        </video>
+
+
+        <div class="slide-label">
+
+          <b>
+            HOST MOMENT
+          </b>
+
+          <span>
+            Beauty · Chat · Energy
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- VIDEO 3 -->
+
+      <div class="video-slide">
+
+        <span class="live-badge">
+          <i></i>
+          PORTFOLIO 02
+        </span>
+
+        <video
+          class="feature-video"
+          muted
+          playsinline
+          loop
+          preload="none"
+          poster="07-p2.jpg"
+        >
+
+          <source
+            src="03-portfolio-2.mp4"
+            type="video/mp4"
+          >
+
+        </video>
+
+
+        <div class="slide-label">
+
+          <b>
+            HOST STYLE
+          </b>
+
+          <span>
+            On-camera presence
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- VIDEO 4 -->
+
+      <div class="video-slide">
+
+        <span class="live-badge">
+          <i></i>
+          PORTFOLIO 03
+        </span>
+
+        <video
+          class="feature-video"
+          muted
+          playsinline
+          loop
+          preload="none"
+          poster="08-p3.jpg"
+        >
+
+          <source
+            src="04-portfolio-3.mp4"
+            type="video/mp4"
+          >
+
+        </video>
+
+
+        <div class="slide-label">
+
+          <b>
+            LIVE HOST MOMENT
+          </b>
+
+          <span>
+            Live · Chat · Energy
+          </span>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+    <button
+      class="slider-arrow prev"
+      aria-label="Previous video"
+      type="button"
+    >
+      ‹
+    </button>
+
+
+    <button
+      class="slider-arrow next"
+      aria-label="Next video"
+      type="button"
+    >
+      ›
+    </button>
+
+
+    <div
+      class="dots"
+      aria-label="Video slides"
+    ></div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
      EARNINGS
-     ======================================================= -->
+     ===================================================== -->
 
 <section
   id="earnings"
@@ -1115,41 +1049,23 @@ details p{
     </h2>
 
     <p>
-      Salary and commission figures from the Merlin Agency
-      2026 host earning plan.
+      Salary and commission figures from the supplied Merlin Agency 2026 chart.
     </p>
 
   </div>
 
 
-  <div class="salary-grid">
-
-    <div class="salary-card">
-      <b>Starter</b>
-      <span>Begin your live journey</span>
-    </div>
-
-    <div class="salary-card">
-      <b>Growth</b>
-      <span>Build your audience</span>
-    </div>
-
-    <div class="salary-card">
-      <b>Pro</b>
-      <span>Higher target tier</span>
-    </div>
-
-    <div class="salary-card">
-      <b>1M+</b>
-      <span>Premium target tier</span>
-    </div>
-
-  </div>
+  <div
+    class="salary-grid"
+    id="salaryGrid"
+  ></div>
 
 
   <div class="note">
 
-    <b>Extra bonuses:</b>
+    <b>
+      Extra bonuses:
+    </b>
 
     Pack Streaks + Daily Stars.
     Sitting at least 2 hours daily counts as one day;
@@ -1160,9 +1076,9 @@ details p{
 </section>
 
 
-<!-- =======================================================
+<!-- =====================================================
      HOW IT WORKS
-     ======================================================= -->
+     ===================================================== -->
 
 <section
   id="how"
@@ -1185,7 +1101,8 @@ details p{
 
   <div class="steps">
 
-    <article class="step">
+
+    <article class="step reveal">
 
       <b>01</b>
 
@@ -1196,14 +1113,13 @@ details p{
       </h3>
 
       <p>
-        Submit your details.
-        BIGO ID is optional.
+        Submit your details. BIGO ID is optional.
       </p>
 
     </article>
 
 
-    <article class="step">
+    <article class="step reveal">
 
       <b>02</b>
 
@@ -1214,14 +1130,13 @@ details p{
       </h3>
 
       <p>
-        Your application opens directly
-        in WhatsApp for Merlin Agency.
+        Your application opens directly in WhatsApp for Merlin Agency.
       </p>
 
     </article>
 
 
-    <article class="step">
+    <article class="step reveal">
 
       <b>03</b>
 
@@ -1232,14 +1147,13 @@ details p{
       </h3>
 
       <p>
-        Start hosting, follow your target
-        and build your portfolio.
+        Start hosting, follow your target and build your portfolio.
       </p>
 
     </article>
 
 
-    <article class="step">
+    <article class="step reveal">
 
       <b>04</b>
 
@@ -1250,24 +1164,181 @@ details p{
       </h3>
 
       <p>
-        Progress through target tiers
-        and eligible bonuses.
+        Progress through target tiers and eligible bonuses.
       </p>
 
     </article>
+
+
+  </div>
+
+
+  <div class="connector"></div>
+
+</section>
+
+
+<!-- =====================================================
+     PORTFOLIO
+     ===================================================== -->
+
+<section
+  id="portfolio"
+  class="section portfolio wrap"
+>
+
+  <div class="section-head">
+
+    <span class="kicker">
+      HOST PORTFOLIO
+    </span>
+
+    <h2>
+      Live hosts.
+      <em>Real moments.</em>
+    </h2>
+
+    <p>
+      All uploaded videos are included. Tap a card for a larger player.
+    </p>
+
+  </div>
+
+
+  <div class="portfolio-grid">
+
+
+    <button
+      class="portfolio-card reveal"
+      type="button"
+      data-video="02-portfolio-1.mp4"
+      data-poster="06-p1.jpg"
+    >
+
+      <img
+        src="06-p1.jpg"
+        alt="Live streaming host portfolio photo"
+        loading="lazy"
+      >
+
+      <span class="play">
+        ▶
+      </span>
+
+      <div>
+
+        <small>
+          LIVE MOMENT
+        </small>
+
+        <b>
+          Beauty · Chat · Energy
+        </b>
+
+      </div>
+
+    </button>
+
+
+    <button
+      class="portfolio-card reveal delay1"
+      type="button"
+      data-video="03-portfolio-2.mp4"
+      data-poster="07-p2.jpg"
+    >
+
+      <img
+        src="07-p2.jpg"
+        alt="Live streaming host portfolio photo"
+        loading="lazy"
+      >
+
+      <span class="play">
+        ▶
+      </span>
+
+      <div>
+
+        <small>
+          HOST STYLE
+        </small>
+
+        <b>
+          On-camera presence
+        </b>
+
+      </div>
+
+    </button>
+
+
+    <button
+      class="portfolio-card reveal delay2"
+      type="button"
+      data-video="04-portfolio-3.mp4"
+      data-poster="08-p3.jpg"
+    >
+
+      <img
+        src="08-p3.jpg"
+        alt="Live streaming host portfolio photo"
+        loading="lazy"
+      >
+
+      <span class="play">
+        ▶
+      </span>
+
+      <div>
+
+        <small>
+          LIVE HOST MOMENT
+        </small>
+
+        <b>
+          Live · Chat · Energy
+        </b>
+
+      </div>
+
+    </button>
+
+
+    <div class="portfolio-card reveal">
+
+      <img
+        src="10-p4.jpg"
+        alt="Live streaming host portfolio portrait"
+        loading="lazy"
+      >
+
+      <div>
+
+        <small>
+          MERLIN STAR
+        </small>
+
+        <b>
+          Live streaming host showcase
+        </b>
+
+      </div>
+
+    </div>
+
 
   </div>
 
 </section>
 
 
-<!-- =======================================================
+<!-- =====================================================
      FAQ
-     ======================================================= -->
+     ===================================================== -->
 
 <section
   id="faq"
-  class="section wrap"
+  class="section wrap faq"
 >
 
   <div class="section-head">
@@ -1286,129 +1357,21 @@ details p{
 
   <div class="accordion">
 
+
     <details>
 
       <summary>
+
         Do I need previous hosting experience?
-        <span>＋</span>
+
+        <span>
+          ＋
+        </span>
+
       </summary>
 
       <p>
-        No. Beginners are welcome to apply.
-        Training, guidance and support can be provided
-        to help you get started.
+        No. Beginners are welcome to apply. Training, guidance, and support can be provided to help you get started.
       </p>
 
-    </details>
-
-
-    <details>
-
-      <summary>
-        How will I withdraw my income?
-        <span>＋</span>
-      </summary>
-
-      <p>
-        You can withdraw your earnings directly from
-        your wallet according to the available
-        withdrawal options.
-      </p>
-
-    </details>
-
-
-    <details>
-
-      <summary>
-        How many hours do I need to be live every day?
-        <span>＋</span>
-      </summary>
-
-      <p>
-        Required live hours may vary depending on
-        your target and hosting schedule.
-        Your agency team will guide you regarding
-        expected daily live hours.
-      </p>
-
-    </details>
-
-
-    <details>
-
-      <summary>
-        Is there any joining fee?
-        <span>＋</span>
-      </summary>
-
-      <p>
-        No. There is no joining fee.
-        You can apply and join Merlin Agency
-        without paying joining charges.
-      </p>
-
-    </details>
-
-
-    <details>
-
-      <summary>
-        What do I need to do while I'm live?
-        <span>＋</span>
-      </summary>
-
-      <p>
-        While you're live, you can play PKs,
-        interact with viewers, reply to comments,
-        entertain your audience and keep the
-        live session engaging.
-      </p>
-
-    </details>
-
-  </div>
-
-</section>
-
-
-<!-- =======================================================
-     WHATSAPP
-     ======================================================= -->
-
-<section class="whatsapp-section wrap">
-
-  <div class="whatsapp-box">
-
-    <h2>
-      Ready to
-      <span class="green">
-        become a Host?
-      </span>
-    </h2>
-
-    <p>
-      Contact Merlin Agency directly on WhatsApp.
-      Your chat will open automatically with a
-      pre-filled application message.
-    </p>
-
-    <a
-      class="whatsapp-btn"
-      href="https://wa.me/918178949463?text=Hi%2C%20I%27m%20interested%20in%20joining%20Merlin%20Agency%20as%20a%20host.%20Please%20share%20the%20details."
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      💬 Open WhatsApp Chat →
-    </a>
-
-  </div>
-
-</section>
-
-</main>
-
-
-<!-- =======================================================
-     FOOTER
-     ========================================
+    </detai
