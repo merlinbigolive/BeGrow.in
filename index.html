@@ -1,411 +1,790 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#06110b">
+<meta name="description" content="Merlin Agency — BIGO LIVE India host recruitment, earnings, portfolio and application.">
+<title>Merlin Agency | BIGO LIVE India</title>
+<link rel="stylesheet" href="styles.css">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* Buy Diamond: centered under BIGO LIVE INDIA eyebrow */
+.buy-diamond-hero{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:220px;
+  min-height:48px;
+  box-sizing:border-box;
+  padding:12px 20px;
+  margin:14px auto 22px;
+  border:1px solid rgba(25,240,138,.72);
+  border-radius:13px;
+  background:linear-gradient(135deg,rgba(25,240,138,.16),rgba(25,240,138,.06));
+  box-shadow:0 0 24px rgba(25,240,138,.10);
+  color:#9bffc9;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.06em;
+  text-decoration:none;
+  white-space:nowrap;
+  transition:.2s ease;
+}
+.buy-diamond-hero:hover{
+  background:rgba(25,240,138,.18);
+  border-color:#19f08a;
+  box-shadow:0 0 30px rgba(25,240,138,.18);
+  transform:translateY(-1px);
+}
+@media(max-width:700px){
+  .buy-diamond-hero{
+    width:210px;
+    min-height:46px;
+    margin:12px auto 18px;
+    font-size:12px;
+  }
+}
 
-  <title>Merlin Agency | Host Requirement | Live Streaming | Work From Home | Bigo Live India | No Joining Fee</title>
 
-  <meta name="description" content="Merlin Agency is welcoming female creators and influencers for live streaming and brand collaboration opportunities. Work from home with flexible hours, training and guidance. No joining fee.">
 
-  <meta name="keywords" content="Merlin Agency, Bigo Live India, Bigo Live Host, Host Requirement, Live Streaming, Work From Home, Female Live Host, Brand Collaboration, No Joining Fee">
 
-  <meta name="robots" content="index, follow">
 
-  <link rel="canonical" href="https://merlinbigolive.github.io/Domain-Sell-For-Business-/">
+@media (max-width: 700px) {
 
-  <meta property="og:title" content="Merlin Agency | Host Requirement | Live Streaming | Work From Home | Bigo Live India | No Joining Fee">
-  <meta property="og:description" content="Join Merlin Agency for live streaming and brand collaboration opportunities. Flexible working hours, work from home, training and guidance. No joining fee.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://merlinbigolive.github.io/Domain-Sell-For-Business-/">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  
+}
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f5f7fb;
-      color: #222;
-      line-height: 1.6;
-    }
+<style>
+.seller-dashboard-link{
+  color:#9af7c2 !important;
+  font-weight:800;
+  border:1px solid rgba(25,240,138,.45);
+  border-radius:9px;
+  padding:7px 10px !important;
+  background:rgba(25,240,138,.06);
+}
+.seller-dashboard-link:hover{
+  border-color:#19f08a;
+  background:rgba(25,240,138,.13);
+}
 
-    header {
-      background: linear-gradient(135deg, #6a11cb, #2575fc);
-      color: white;
-      padding: 70px 20px;
-      text-align: center;
-    }
+<style>
+.top-apply{position:relative;z-index:20;cursor:pointer}
+.seller-menu{
+  position:absolute;
+  top:calc(100% + 10px);
+  right:0;
+  width:205px;
+  padding:8px;
+  border:1px solid rgba(25,240,138,.35);
+  border-radius:14px;
+  background:rgba(3,12,7,.98);
+  box-shadow:0 18px 45px rgba(0,0,0,.45);
+  display:none;
+  z-index:50;
+}
+.seller-menu.open{display:block}
+.seller-menu a{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  padding:11px 12px;
+  border-radius:9px;
+  color:#eafff2;
+  text-decoration:none;
+  font-size:12px;
+  font-weight:800;
+}
+.seller-menu a:hover{background:rgba(25,240,138,.09);color:#9af7c2}
+.top-apply-wrap{position:relative}
+@media(max-width:700px){
+  .seller-menu{right:0;width:190px}
+}
 
-    header h1 {
-      font-size: 42px;
-      line-height: 1.2;
-      margin-bottom: 18px;
-    }
+<style>
+/* Compact hamburger menu — sized to sit neatly beside Apply Now */
+.seller-menu-toggle{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:3px;
+  flex:0 0 34px;
+  width:34px;
+  height:34px;
+  margin:0 0 0 7px;
+  padding:0;
+  border:1px solid rgba(25,240,138,.38);
+  border-radius:9px;
+  background:rgba(25,240,138,.035);
+  cursor:pointer;
+  box-sizing:border-box;
+  transition:all .2s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.seller-menu-toggle span{
+  display:block;
+  width:15px;
+  height:2px;
+  margin:0;
+  background:#19f08a;
+  border-radius:99px;
+  transition:transform .2s ease, opacity .15s ease, width .2s ease;
+}
+.seller-menu-toggle:hover{
+  border-color:rgba(25,240,138,.7);
+  background:rgba(25,240,138,.07);
+  box-shadow:0 0 12px rgba(25,240,138,.10);
+}
+.seller-menu-toggle:focus-visible{
+  outline:2px solid rgba(25,240,138,.55);
+  outline-offset:2px;
+}
 
-    header p {
-      font-size: 19px;
-      max-width: 800px;
-      margin: auto;
-    }
+/* Compact X state */
+.seller-menu-toggle[aria-expanded="true"] span:nth-child(1){
+  transform:translateY(5px) rotate(45deg);
+}
+.seller-menu-toggle[aria-expanded="true"] span:nth-child(2){
+  opacity:0;
+  width:0;
+}
+.seller-menu-toggle[aria-expanded="true"] span:nth-child(3){
+  transform:translateY(-5px) rotate(-45deg);
+}
 
-    .container {
-      width: 92%;
-      max-width: 1100px;
-      margin: auto;
-    }
+@media(max-width:700px){
+  .seller-menu-toggle{
+    flex-basis:32px;
+    width:32px;
+    height:32px;
+    margin-left:6px;
+    border-radius:8px;
+  }
+  .seller-menu-toggle span{
+    width:14px;
+    height:2px;
+  }
+}
+</style>
 
-    section {
-      padding: 55px 0;
-    }
+</style>
 
-    .hero-card {
-      background: white;
-      max-width: 900px;
-      margin: -35px auto 0;
-      position: relative;
-      padding: 35px;
-      border-radius: 18px;
-      box-shadow: 0 10px 35px rgba(0,0,0,0.10);
-      text-align: center;
-    }
+</style>
 
-    .hero-card h2 {
-      color: #5d2bbf;
-      margin-bottom: 15px;
-      font-size: 30px;
-    }
+</style>
 
-    .hero-card p {
-      font-size: 17px;
-    }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      margin-top: 30px;
-    }
+<style id="final-header-fix">
+/* FINAL MOBILE HEADER FIX: Merlin left, Apply Now right */
+.header{position:relative;}
+.brand-wrap{position:relative;z-index:10;}
 
-    .card {
-      background: white;
-      padding: 28px 22px;
-      border-radius: 16px;
-      box-shadow: 0 7px 25px rgba(0,0,0,0.07);
-    }
+.top-apply-wrap{
+  position:relative;
+  z-index:20;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:8px;
+  flex:0 0 auto;
+  margin-left:auto;
+}
+.top-apply{
+  position:relative;
+  z-index:21;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  white-space:nowrap;
+}
+/* Simple premium BIGO-green hamburger: no grey/default button styling */
+.seller-menu-toggle{
+  -webkit-appearance:none;
+  appearance:none;
+  outline:none;
+  box-shadow:none;
+  display:flex !important;
+  flex:0 0 30px !important;
+  align-items:center !important;
+  justify-content:center !important;
+  flex-direction:column !important;
+  gap:4px !important;
+  width:30px !important;
+  height:30px !important;
+  margin:0 !important;
+  padding:0 !important;
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+}
+.seller-menu-toggle span{
+  display:block !important;
+  width:18px !important;
+  height:2px !important;
+  margin:0 !important;
+  padding:0 !important;
+  background:#19f08a !important;
+  border:0 !important;
+  border-radius:99px !important;
+  box-shadow:0 0 5px rgba(25,240,138,.16);
+}
+.seller-menu-toggle:hover,
+.seller-menu-toggle:active,
+.seller-menu-toggle:focus{background:transparent !important;box-shadow:none !important;}
+.seller-menu-toggle:focus-visible{outline:1px solid rgba(25,240,138,.55) !important;outline-offset:3px;}
+/* Keep the open-state animation subtle and contained */
+.seller-menu-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+.seller-menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;width:0 !important;}
+.seller-menu-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
 
-    .card h3 {
-      color: #5d2bbf;
-      margin-bottom: 10px;
-      font-size: 21px;
-    }
+@media (max-width:700px){
+  .header{min-height:70px;}
+  .top-apply-wrap{gap:5px;margin-left:auto;}
+  .top-apply{
+    min-width:104px;
+    height:40px;
+    padding:0 10px !important;
+    box-sizing:border-box;
+    border-radius:21px !important;
+    font-size:12px !important;
+  }
+  .seller-menu-toggle{flex-basis:30px !important;width:30px !important;height:30px !important;}
+  .seller-menu-toggle span{width:17px !important;height:2px !important;}
+  
+  
+}
 
-    .card p {
-      color: #555;
-    }
+@media (min-width:701px){
+  .top-apply-wrap{gap:9px;}
+  .seller-menu-toggle{width:32px !important;height:32px !important;flex-basis:32px !important;}
+}
+</style>
 
-    .section-title {
-      text-align: center;
-      font-size: 32px;
-      margin-bottom: 15px;
-      color: #222;
-    }
 
-    .section-subtitle {
-      text-align: center;
-      max-width: 750px;
-      margin: auto;
-      color: #666;
-    }
+<style>
+/* Apply Now — compact size matched to the hamburger */
+.header .top-apply{
+  width:88px !important;
+  min-width:88px !important;
+  height:32px !important;
+  min-height:32px !important;
+  padding:0 7px !important;
+  font-size:10.5px !important;
+  line-height:1 !important;
+  border-radius:17px !important;
+  box-sizing:border-box !important;
+  flex:0 0 88px !important;
+}
+</style>
 
-    .requirements {
-      background: #fff;
-    }
-
-    .requirements ul {
-      max-width: 750px;
-      margin: 30px auto 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .requirements li {
-      background: #f7f3ff;
-      margin-bottom: 12px;
-      padding: 15px 18px;
-      border-radius: 10px;
-      border-left: 4px solid #6a11cb;
-    }
-
-    .cta {
-      background: linear-gradient(135deg, #6a11cb, #2575fc);
-      color: white;
-      text-align: center;
-      padding: 65px 20px;
-    }
-
-    .cta h2 {
-      font-size: 34px;
-      margin-bottom: 15px;
-    }
-
-    .cta p {
-      max-width: 700px;
-      margin: 0 auto 25px;
-      font-size: 18px;
-    }
-
-    .button {
-      display: inline-block;
-      background: white;
-      color: #5d2bbf;
-      padding: 14px 30px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 7px 20px rgba(0,0,0,0.15);
-    }
-
-    footer {
-      background: #151515;
-      color: #ccc;
-      text-align: center;
-      padding: 25px 15px;
-      font-size: 14px;
-    }
-
-    footer strong {
-      color: white;
-    }
-
-    @media (max-width: 800px) {
-      header {
-        padding: 50px 18px;
-      }
-
-      header h1 {
-        font-size: 30px;
-      }
-
-      header p {
-        font-size: 16px;
-      }
-
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-card {
-        padding: 25px 20px;
-      }
-
-      .hero-card h2 {
-        font-size: 25px;
-      }
-
-      .section-title {
-        font-size: 27px;
-      }
-
-      .cta h2 {
-        font-size: 28px;
-      }
-    }
-  </style>
 </head>
-
 <body>
 
-  <header>
-    <div class="container">
-      <h1>Merlin Agency</h1>
+<div class="bg-glow"></div>
+<div class="particles" aria-hidden="true"></div>
+
+<header class="header">
+
+  <div class="brand-wrap">
+    <a class="logo" href="index.html">
+      <span class="logo-m">M</span>
+      <span>
+        <b>MERLIN</b>
+        <small>AGENCY</small>
+      </span>
+    </a>
+  </div>
+
+  <nav>
+    <a href="#earnings">Earnings</a>
+    <a href="#how">How It Works</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+
+  <div class="top-apply-wrap">
+    <a class="top-apply" href="apply.html">Apply Now ↗</a>
+
+  </div>
+
+</header>
+
+<main>
+
+<section class="hero wrap">
+
+  <div class="hero-copy reveal">
+    <div class="eyebrow">
+      <i></i> BIGO LIVE INDIA · HOST RECRUITMENT
+    </div>
+
+    <h1>
+      Go LIVE.<br>
+      <em>Build Your Empire.</em>
+    </h1>
+
+    <p>
+      Join Merlin Agency and turn your live presence into a serious earning opportunity with structured targets, bonuses and dedicated support.
+    </p>
+
+    <div class="actions">
+      <a class="btn green" href="apply.html">
+        Apply Now <b>→</b>
+      </a>
+
+      <a class="btn ghost" href="#portfolio">
+        View Portfolio <b>↓</b>
+      </a>
+    </div>
+
+    <div class="trust">
+      <span>✦ 2026 Salary Plan</span>
+      <span>✦ Flexible Live Schedule</span>
+      <span>✦ WhatsApp Support</span>
+    </div>
+  </div>
+
+  <div class="hero-card reveal delay1">
+
+    <div class="hero-card-top">
+      <b>BIGO LIVE</b>
+      <span><i></i> LIVE NOW</span>
+    </div>
+
+    <div class="crest">
+      <strong>M</strong>
+    </div>
+
+    <h3>
+      OFFICIAL<br>
+      <span>HOST AGENCY</span>
+    </h3>
+
+    <div class="hero-stat">
+      <div>
+        <b>1M+</b>
+        <small>Target Tier</small>
+      </div>
+
+      <div>
+        <b>₹7.6L</b>
+        <small>Monthly Plan</small>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="video-section wrap reveal">
+
+  <div class="section-head">
+    <span class="kicker">FEATURED LIVE MOMENTS</span>
+    <h2>Feel the <em>LIVE energy.</em></h2>
+    <p>
+      Portrait videos, medium-sized and optimized for fast loading. The showcase slides smoothly and auto-plays muted.
+    </p>
+  </div>
+
+  <div class="video-carousel" id="videoCarousel">
+
+    <div class="video-track">
+
+      <div class="video-slide active">
+        <span class="live-badge">
+          <i></i> MERLIN LIVE
+        </span>
+
+        <video
+          class="feature-video"
+          muted
+          autoplay
+          playsinline
+          loop
+          preload="auto"
+          poster="05-featured.jpg"
+        >
+          <source src="01-featured-24s.mp4" type="video/mp4">
+        </video>
+
+        <div class="slide-label">
+          <b>FEATURED · 24 SEC</b>
+          <span>Portrait preview</span>
+        </div>
+      </div>
+
+
+      <div class="video-slide">
+
+        <span class="live-badge">
+          <i></i> PORTFOLIO 01
+        </span>
+
+        <video
+          class="feature-video"
+          muted
+          playsinline
+          loop
+          preload="none"
+          poster="06-p1.jpg"
+        >
+          <source src="02-portfolio-1.mp4" type="video/mp4">
+        </video>
+
+        <div class="slide-label">
+          <b>HOST MOMENT</b>
+          <span>Beauty · Chat · Energy</span>
+        </div>
+
+      </div>
+
+
+      <div class="video-slide">
+
+        <span class="live-badge">
+          <i></i> PORTFOLIO 02
+        </span>
+
+        <video
+          class="feature-video"
+          muted
+          playsinline
+          loop
+          preload="none"
+          poster="07-p2.jpg"
+        >
+          <source src="03-portfolio-2.mp4" type="video/mp4">
+        </video>
+
+        <div class="slide-label">
+          <b>HOST STYLE</b>
+          <span>On-camera presence</span>
+        </div>
+
+      </div>
+
+
+      <div class="video-slide">
+
+        <span class="live-badge">
+          <i></i> PORTFOLIO 03
+        </span>
+
+        <video
+          class="feature-video"
+          muted
+          playsinline
+          loop
+          preload="none"
+          poster="08-p3.jpg"
+        >
+          <source src="04-portfolio-3.mp4" type="video/mp4">
+        </video>
+
+        <div class="slide-label">
+          <b>LIVE HOST MOMENT</b>
+          <span>Live · Chat · Energy</span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <button class="slider-arrow prev" aria-label="Previous video">‹</button>
+    <button class="slider-arrow next" aria-label="Next video">›</button>
+
+    <div class="dots" aria-label="Video slides"></div>
+
+  </div>
+
+</section>
+
+
+<section id="earnings" class="section wrap">
+
+  <div class="section-head">
+    <span class="kicker">2026 EARNING PLAN</span>
+    <h2>Your target. <em>Your earning.</em></h2>
+    <p>
+      Salary and commission figures from the supplied Merlin Agency 2026 chart.
+    </p>
+  </div>
+
+  <div class="salary-grid" id="salaryGrid"></div>
+
+  <div class="note">
+    <b>Extra bonuses:</b>
+    Pack Streaks + Daily Stars. Sitting at least 2 hours daily counts as one day; up to 5 hours/day can count in live data.
+  </div>
+
+</section>
+
+
+<section id="how" class="section wrap">
+
+  <div class="section-head">
+    <span class="kicker">HOW IT WORKS</span>
+    <h2>Simple steps. <em>Serious potential.</em></h2>
+  </div>
+
+  <div class="steps">
+
+    <article class="step reveal">
+      <b>01</b>
+      <span>✦</span>
+      <h3>Apply</h3>
+      <p>Submit your details. BIGO ID is optional.</p>
+    </article>
+
+    <article class="step reveal">
+      <b>02</b>
+      <span>◎</span>
+      <h3>Connect</h3>
+      <p>Your application opens directly in WhatsApp for Merlin Agency.</p>
+    </article>
+
+    <article class="step reveal">
+      <b>03</b>
+      <span>↗</span>
+      <h3>Go LIVE</h3>
+      <p>Start hosting, follow your target and build your portfolio.</p>
+    </article>
+
+    <article class="step reveal">
+      <b>04</b>
+      <span>₹</span>
+      <h3>Earn</h3>
+      <p>Progress through target tiers and eligible bonuses.</p>
+    </article>
+
+  </div>
+
+  <div class="connector"></div>
+
+</section>
+
+
+<section id="portfolio" class="section portfolio wrap">
+
+  <div class="section-head">
+    <span class="kicker">HOST PORTFOLIO</span>
+    <h2>Live hosts. <em>Real moments.</em></h2>
+    <p>All uploaded videos are included. Tap a card for a larger player.</p>
+  </div>
+
+  <div class="portfolio-grid">
+
+    <button
+      class="portfolio-card reveal"
+      data-video="02-portfolio-1.mp4"
+      data-poster="06-p1.jpg"
+    >
+      <img
+        src="06-p1.jpg"
+        alt="Live streaming host portfolio photo"
+      >
+
+      <span class="play">▶</span>
+
+      <div>
+        <small>LIVE MOMENT</small>
+        <b>Beauty · Chat · Energy</b>
+      </div>
+    </button>
+
+
+    <button
+      class="portfolio-card reveal delay1"
+      data-video="03-portfolio-2.mp4"
+      data-poster="07-p2.jpg"
+    >
+      <img
+        src="07-p2.jpg"
+        alt="Live streaming host portfolio photo"
+      >
+
+      <span class="play">▶</span>
+
+      <div>
+        <small>HOST STYLE</small>
+        <b>On-camera presence</b>
+      </div>
+    </button>
+
+
+    <button
+      class="portfolio-card reveal delay2"
+      data-video="04-portfolio-3.mp4"
+      data-poster="08-p3.jpg"
+    >
+      <img
+        src="08-p3.jpg"
+        alt="Live streaming host portfolio photo"
+      >
+
+      <span class="play">▶</span>
+
+      <div>
+        <small>LIVE HOST MOMENT</small>
+        <b>Live · Chat · Energy</b>
+      </div>
+    </button>
+
+
+    <div class="portfolio-card reveal">
+
+      <img
+        src="10-p4.jpg"
+        alt="Adult female live host portfolio portrait"
+      >
+
+      <div>
+        <small>MERLIN STAR</small>
+        <b>Live streaming host showcase</b>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section id="faq" class="section wrap faq">
+
+  <div class="section-head">
+    <span class="kicker">FAQ</span>
+    <h2>Questions, <em>answered.</em></h2>
+  </div>
+
+  <div class="accordion">
+
+    <details>
+      <summary>
+        Do I need previous hosting experience?
+        <span>＋</span>
+      </summary>
       <p>
-        Host Requirement | Live Streaming | Work From Home |
-        Bigo Live India | No Joining Fee
+        No. Beginners are welcome to apply. Training, guidance, and support can be provided to help you get started.
       </p>
-    </div>
-  </header>
+    </details>
 
-  <main>
+    <details>
+      <summary>
+        How will I withdraw my income?
+        <span>＋</span>
+      </summary>
+      <p>
+        You can withdraw your earnings directly from your wallet according to the available withdrawal options.
+      </p>
+    </details>
 
-    <div class="container">
-      <div class="hero-card">
-        <h2>Join Merlin Agency</h2>
-        <p>
-          Merlin Agency is welcoming female creators and influencers
-          who are interested in becoming Live Hosts or joining
-          Brand Collaboration opportunities.
-        </p>
-      </div>
-    </div>
+    <details>
+      <summary>
+        How many hours do I need to be live every day?
+        <span>＋</span>
+      </summary>
+      <p>
+        The required live hours may vary depending on your target and hosting schedule. Your agency team will guide you regarding the expected daily live hours.
+      </p>
+    </details>
 
-    <section>
-      <div class="container">
+    <details>
+      <summary>
+        Is there any joining fee?
+        <span>＋</span>
+      </summary>
+      <p>
+        No. There is no joining fee. You can apply and join Merlin Agency without paying any joining charges.
+      </p>
+    </details>
 
-        <h2 class="section-title">Why Join Merlin Agency?</h2>
+    <details>
+      <summary>
+        What do I need to do while I'm live?
+        <span>＋</span>
+      </summary>
+      <p>
+        While you're live, you can play PKs, interact and chat with your viewers, reply to comments, entertain your audience, and keep the live session engaging and active.
+      </p>
+    </details>
 
-        <p class="section-subtitle">
-          Get professional guidance and the flexibility to manage
-          your live-streaming activities from your own space.
-        </p>
+  </div>
 
-        <div class="grid">
+</section>
 
-          <div class="card">
-            <h3>✨ Flexible Working Hours</h3>
-            <p>
-              Work according to your own schedule and manage your
-              streaming activities at convenient times.
-            </p>
-          </div>
+</main>
 
-          <div class="card">
-            <h3>🏠 Work From Home</h3>
-            <p>
-              Host comfortably from your own home without the need
-              to travel to an office.
-            </p>
-          </div>
 
-          <div class="card">
-            <h3>🎓 Training & Guidance</h3>
-            <p>
-              Get complete guidance and support to understand
-              live streaming and improve your hosting skills.
-            </p>
-          </div>
+<footer class="footer">
 
-          <div class="card">
-            <h3>💰 No Joining Fee</h3>
-            <p>
-              There is no joining fee required to become part of
-              Merlin Agency.
-            </p>
-          </div>
+  <div>
 
-          <div class="card">
-            <h3>📱 Live Streaming</h3>
-            <p>
-              Explore live-streaming opportunities and connect
-              with audiences through engaging content.
-            </p>
-          </div>
+    <a class="logo" href="index.html">
+      <span class="logo-m">M</span>
 
-          <div class="card">
-            <h3>🤝 Brand Collaboration</h3>
-            <p>
-              Eligible creators may also explore opportunities
-              related to brand collaborations.
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="requirements">
-
-      <div class="container">
-
-        <h2 class="section-title">Host Requirement</h2>
-
-        <p class="section-subtitle">
-          If you are interested in becoming a live host,
-          you can contact Merlin Agency for further information.
-        </p>
-
-        <ul>
-          <li>✔ Interested in live streaming and content creation</li>
-          <li>✔ Comfortable communicating with an online audience</li>
-          <li>✔ Regular availability for live sessions</li>
-          <li>✔ Smartphone and stable internet connection</li>
-          <li>✔ Willingness to learn and improve hosting skills</li>
-          <li>✔ No joining fee</li>
-        </ul>
-
-      </div>
-
-    </section>
-
-    <section>
-
-      <div class="container">
-
-        <h2 class="section-title">How It Works</h2>
-
-        <div class="grid">
-
-          <div class="card">
-            <h3>1️⃣ Contact Us</h3>
-            <p>
-              Get in touch with Merlin Agency and share
-              your basic details.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>2️⃣ Get Guidance</h3>
-            <p>
-              Our team can provide information and guidance
-              regarding the host opportunity.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>3️⃣ Start Streaming</h3>
-            <p>
-              After completing the required process,
-              you can begin your live-hosting journey.
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <section class="cta">
-
-      <div class="container">
-
-        <h2>Interested in Becoming a Live Host?</h2>
-
-        <p>
-          Contact Merlin Agency to learn more about
-          live-streaming and brand collaboration opportunities.
-        </p>
-
-        <a href="mailto:contact@begrow.in" class="button">
-          Contact Merlin Agency
-        </a>
-
-      </div>
-
-    </section>
-
-  </main>
-
-  <footer>
+      <span>
+        <b>MERLIN</b>
+        <small>AGENCY</small>
+      </span>
+    </a>
 
     <p>
-      © 2026 <strong>Merlin Agency</strong>. All Rights Reserved.
+      Official BIGO LIVE India host recruitment landing page.
     </p>
 
-    <p>
-      Live Streaming | Work From Home | Bigo Live India
-    </p>
+  </div>
 
-  </footer>
+
+
+
+  <div class="footer-bottom">
+
+    <span>© 2026 Merlin Agency</span>
+
+    <a
+      class="snap"
+      href="https://www.snapchat.com/add/JoinMerlin"
+      target="_blank"
+      rel="noopener"
+    >
+      👻 Snapchat · JoinMerlin
+    </a>
+
+  </div>
+
+</footer>
+
+
+<a class="floating" href="apply.html">
+  Apply Now ↗
+</a>
+
+
+<div class="modal" id="videoModal" aria-hidden="true">
+
+  <button class="modal-close" aria-label="Close">
+    ×
+  </button>
+
+  <video id="modalVideo" controls playsinline></video>
+
+</div>
+
+
+<script src="script.js"></script>
+
+
+<script>
+(function(){
+
+})();
+</script>
 
 </body>
 </html>
