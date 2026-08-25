@@ -1,1377 +1,824 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#06110b">
-
-<meta name="description" content="Merlin Agency | Host Requirement | Live Streaming | Work From Home | No Joining Fee">
-
-<title>Merlin Agency | Host Requirement | Live Streaming | Work From Home | No Joining Fee</title>
-
-<link rel="stylesheet" href="styles.css">
-
-<style>
-/* =========================================================
-   MERLIN AGENCY - INDEX PAGE FIXES
-   ========================================================= */
-
-*{
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  margin:0;
-}
-
-/* ---------- HEADER ---------- */
-
-.header{
-  position:relative;
-  z-index:1000;
-}
-
-.brand-wrap{
-  position:relative;
-  z-index:10;
-}
-
-.top-apply-wrap{
-  position:relative;
-  z-index:20;
-  display:flex;
-  align-items:center;
-  justify-content:flex-end;
-  gap:8px;
-  margin-left:auto;
-}
-
-.top-apply{
-  position:relative;
-  z-index:21;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  white-space:nowrap;
-  text-decoration:none;
-}
-
-/* Hamburger */
-
-.seller-menu-toggle{
-  -webkit-appearance:none;
-  appearance:none;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:4px;
-
-  width:32px;
-  height:32px;
-  padding:0;
-  margin:0;
-
-  border:0;
-  border-radius:0;
-  background:transparent;
-
-  cursor:pointer;
-  box-shadow:none;
-}
-
-.seller-menu-toggle span{
-  display:block;
-  width:18px;
-  height:2px;
-  background:#e4b83d;
-  border-radius:99px;
-  transition:.2s ease;
-}
-
-.seller-menu-toggle:hover{
-  background:transparent;
-  box-shadow:none;
-}
-
-.seller-menu-toggle[aria-expanded="true"] span:nth-child(1){
-  transform:translateY(6px) rotate(45deg);
-}
-
-.seller-menu-toggle[aria-expanded="true"] span:nth-child(2){
-  opacity:0;
-}
-
-.seller-menu-toggle[aria-expanded="true"] span:nth-child(3){
-  transform:translateY(-6px) rotate(-45deg);
-}
-
-/* Seller dropdown */
-
-.seller-menu{
-  position:absolute;
-  top:calc(100% + 10px);
-  right:0;
-
-  width:210px;
-  padding:8px;
-
-  border:1px solid rgba(228,184,61,.35);
-  border-radius:14px;
-
-  background:rgba(3,12,7,.98);
-  box-shadow:0 18px 45px rgba(0,0,0,.45);
-
-  display:none;
-  z-index:2000;
-}
-
-.seller-menu.open{
-  display:block;
-}
-
-.seller-menu a{
-  display:flex;
-  align-items:center;
-  gap:9px;
-
-  padding:11px 12px;
-
-  color:#eafff2;
-  text-decoration:none;
-
-  font-size:12px;
-  font-weight:800;
-
-  border-radius:9px;
-}
-
-.seller-menu a:hover{
-  background:rgba(228,184,61,.09);
-  color:#fff0a1;
-}
-
-/* ---------- HERO CTA ---------- */
-
-.hero .btn,
-.hero .btn-primary,
-.hero a.influencer-apply-btn{
-  position:relative;
-  overflow:hidden;
-  isolation:isolate;
-}
-
-.hero .btn::after,
-.hero .btn-primary::after,
-.hero a.influencer-apply-btn::after{
-  content:"";
-  position:absolute;
-  top:-30%;
-  left:-55%;
-
-  width:28%;
-  height:160%;
-
-  transform:skewX(-20deg);
-
-  background:linear-gradient(
-    90deg,
-    transparent,
-    rgba(255,255,255,.55),
-    transparent
-  );
-
-  filter:blur(1px);
-
-  animation:merlinCtaShine 3.2s ease-in-out infinite;
-
-  pointer-events:none;
-}
-
-@keyframes merlinCtaShine{
-  0%,55%{
-    left:-55%;
-    opacity:0;
-  }
-
-  62%{
-    opacity:1;
-  }
-
-  82%,100%{
-    left:135%;
-    opacity:0;
-  }
-}
-
-/* ---------- INTRO VIDEO ---------- */
-
-#merlin-intro-overlay{
-  position:fixed;
-  inset:0;
-
-  z-index:2147483647;
-
-  background:rgba(0,0,0,.72);
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  overflow:hidden;
-
-  opacity:1;
-  visibility:visible;
-
-  transition:
-    opacity .45s ease,
-    visibility .45s ease;
-}
-
-#merlin-intro-overlay video{
-  width:100vw;
-  height:100vh;
-
-  object-fit:cover;
-
-  display:block;
-  background:#000;
-}
-
-#merlin-intro-play{
-  position:absolute;
-  z-index:2;
-
-  left:50%;
-  top:50%;
-
-  transform:translate(-50%,-50%);
-
-  padding:14px 24px;
-
-  border:0;
-  border-radius:999px;
-
-  background:#fff;
-  color:#111;
-
-  font-size:16px;
-  font-weight:700;
-
-  display:none;
-
-  cursor:pointer;
-}
-
-#merlin-intro-overlay.merlin-show-play #merlin-intro-play{
-  display:block;
-}
-
-#merlin-intro-overlay.merlin-intro-hide{
-  opacity:0;
-  visibility:hidden;
-  pointer-events:none;
-}
-
-body.merlin-intro-active{
-  overflow:hidden;
-}
-
-/* ---------- BUY DIAMOND ---------- */
-
-.buy-diamond-hero{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  width:220px;
-  min-height:48px;
-
-  margin:14px auto 22px;
-  padding:12px 20px;
-
-  border:1px solid rgba(228,184,61,.72);
-  border-radius:13px;
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(228,184,61,.16),
-      rgba(228,184,61,.06)
-    );
-
-  box-shadow:
-    0 0 24px rgba(228,184,61,.10);
-
-  color:#fff0a1;
-
-  font-size:13px;
-  font-weight:900;
-  letter-spacing:.06em;
-
-  text-decoration:none;
-  white-space:nowrap;
-
-  transition:.2s ease;
-}
-
-.buy-diamond-hero:hover{
-  background:rgba(228,184,61,.18);
-  border-color:#e4b83d;
-
-  box-shadow:
-    0 0 30px rgba(228,184,61,.18);
-
-  transform:translateY(-1px);
-}
-
-/* ---------- WHATSAPP ---------- */
-
-.whatsapp-float{
-  position:fixed;
-
-  right:20px;
-  bottom:20px;
-
-  z-index:9999;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  width:56px;
-  height:56px;
-
-  border-radius:50%;
-
-  background:#25D366;
-  color:#fff;
-
-  text-decoration:none;
-
-  font-size:27px;
-
-  box-shadow:
-    0 10px 30px rgba(0,0,0,.35);
-
-  transition:.2s ease;
-}
-
-.whatsapp-float:hover{
-  transform:translateY(-3px) scale(1.03);
-}
-
-/* ---------- MOBILE ---------- */
-
-@media(max-width:700px){
-
-  .header{
-    min-height:70px;
-  }
-
-  .top-apply-wrap{
-    gap:5px;
-  }
-
-  .top-apply{
-    width:88px !important;
-    min-width:88px !important;
-
-    height:32px !important;
-    min-height:32px !important;
-
-    padding:0 7px !important;
-
-    font-size:10.5px !important;
-
-    line-height:1;
-
-    border-radius:17px !important;
-  }
-
-  .seller-menu-toggle{
-    width:30px;
-    height:30px;
-    flex:0 0 30px;
-  }
-
-  .seller-menu-toggle span{
-    width:17px;
-  }
-
-  .seller-menu{
-    width:190px;
-  }
-
-  .buy-diamond-hero{
-    width:210px;
-    min-height:46px;
-
-    margin:12px auto 18px;
-
-    font-size:12px;
-  }
-
-  .whatsapp-float{
-    right:15px;
-    bottom:15px;
-
-    width:52px;
-    height:52px;
-
-    font-size:25px;
-  }
-}
-</style>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="theme-color" content="#07110d">
+  <meta
+    name="description"
+    content="BeGrow.in is a premium domain name available for acquisition. Make an offer for BeGrow.in."
+  >
+
+  <meta property="og:title" content="BeGrow.in — Domain For Sale | $4,500 USD">
+  <meta
+    property="og:description"
+    content="Premium domain BeGrow.in is available for acquisition. Make an offer today."
+  >
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.begrow.in/">
+
+  <title>BeGrow.in — Domain For Sale | $4,500 USD</title>
+
+  <style>
+    :root{
+      --bg:#050906;
+      --bg2:#08120d;
+      --card:rgba(12,25,18,.78);
+      --card2:rgba(15,31,22,.92);
+      --green:#20e889;
+      --green2:#0ebd68;
+      --gold:#e7c35a;
+      --white:#f5fff9;
+      --text:#d7e5dc;
+      --muted:#8da296;
+      --line:rgba(255,255,255,.09);
+      --shadow:0 30px 90px rgba(0,0,0,.45);
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      min-height:100vh;
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+      color:var(--white);
+      background:
+        radial-gradient(circle at 50% -10%,rgba(32,232,137,.14),transparent 38%),
+        radial-gradient(circle at 10% 50%,rgba(32,232,137,.055),transparent 30%),
+        radial-gradient(circle at 90% 70%,rgba(231,195,90,.035),transparent 28%),
+        linear-gradient(180deg,#050906 0%,#07100b 48%,#040705 100%);
+      overflow-x:hidden;
+    }
+
+    body:before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:.18;
+      background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+      background-size:70px 70px;
+      mask-image:linear-gradient(to bottom,black,transparent 80%);
+    }
+
+    a{
+      color:inherit;
+    }
+
+    .page{
+      width:min(1120px,calc(100% - 36px));
+      margin:auto;
+    }
+
+    /* HEADER */
+
+    header{
+      position:relative;
+      z-index:10;
+      width:min(1120px,calc(100% - 36px));
+      margin:0 auto;
+      padding:25px 0;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .logo{
+      text-decoration:none;
+      display:flex;
+      align-items:center;
+      gap:11px;
+    }
+
+    .logo-mark{
+      width:43px;
+      height:43px;
+      border-radius:13px;
+      display:grid;
+      place-items:center;
+      color:#06100a;
+      font-weight:950;
+      font-size:19px;
+      background:linear-gradient(135deg,var(--green),#9affc7);
+      box-shadow:
+        0 0 0 1px rgba(32,232,137,.18),
+        0 10px 30px rgba(32,232,137,.12);
+    }
+
+    .logo-text strong{
+      display:block;
+      font-size:18px;
+      line-height:1;
+      letter-spacing:.02em;
+    }
+
+    .logo-text span{
+      display:block;
+      margin-top:4px;
+      color:var(--muted);
+      font-size:9px;
+      letter-spacing:.2em;
+      text-transform:uppercase;
+    }
+
+    .header-link{
+      color:#b9c9c0;
+      text-decoration:none;
+      font-size:13px;
+      font-weight:700;
+      padding:10px 14px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(255,255,255,.025);
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:calc(100vh - 94px);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:65px 0 90px;
+    }
+
+    .hero-inner{
+      width:100%;
+      max-width:880px;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+      padding:8px 13px;
+      border:1px solid rgba(32,232,137,.2);
+      border-radius:999px;
+      background:rgba(32,232,137,.045);
+      color:#a9f5ca;
+      font-size:11px;
+      font-weight:850;
+      letter-spacing:.13em;
+      text-transform:uppercase;
+    }
+
+    .eyebrow i{
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background:var(--green);
+      box-shadow:0 0 12px var(--green);
+    }
+
+    h1{
+      margin:25px auto 18px;
+      max-width:850px;
+      font-size:clamp(48px,8vw,92px);
+      line-height:.96;
+      letter-spacing:-.055em;
+      font-weight:950;
+    }
+
+    h1 .domain{
+      display:block;
+      background:linear-gradient(
+        100deg,
+        #ffffff 0%,
+        #bfffd9 45%,
+        #20e889 100%
+      );
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+
+    .subtitle{
+      max-width:650px;
+      margin:0 auto;
+      color:#a7b9af;
+      font-size:clamp(16px,2vw,19px);
+      line-height:1.7;
+    }
+
+    /* PRICE CARD */
+
+    .price-card{
+      width:min(650px,100%);
+      margin:38px auto 0;
+      padding:30px;
+      border:1px solid rgba(32,232,137,.18);
+      border-radius:25px;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(20,43,29,.82),
+          rgba(7,17,11,.92)
+        );
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .price-card:before{
+      content:"";
+      position:absolute;
+      width:280px;
+      height:280px;
+      top:-180px;
+      right:-100px;
+      border-radius:50%;
+      background:rgba(32,232,137,.09);
+      filter:blur(10px);
+    }
+
+    .price-label{
+      position:relative;
+      color:var(--muted);
+      font-size:11px;
+      font-weight:850;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+
+    .price{
+      position:relative;
+      margin-top:7px;
+      font-size:clamp(38px,7vw,62px);
+      line-height:1;
+      font-weight:950;
+      letter-spacing:-.045em;
+    }
+
+    .price small{
+      font-size:16px;
+      color:#a7b7ad;
+      font-weight:700;
+      letter-spacing:0;
+    }
+
+    .offer-btn{
+      position:relative;
+      width:100%;
+      min-height:58px;
+      margin-top:25px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:11px;
+      border:0;
+      border-radius:16px;
+      background:linear-gradient(135deg,#20e889,#0bb765);
+      color:#031109;
+      text-decoration:none;
+      font-size:16px;
+      font-weight:950;
+      letter-spacing:.01em;
+      box-shadow:
+        0 16px 40px rgba(14,189,104,.18),
+        inset 0 1px rgba(255,255,255,.35);
+      transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+      overflow:hidden;
+    }
+
+    .offer-btn:before{
+      content:"";
+      position:absolute;
+      top:0;
+      bottom:0;
+      left:-35%;
+      width:25%;
+      transform:skewX(-22deg);
+      background:rgba(255,255,255,.42);
+      animation:shine 3.5s ease-in-out infinite;
+    }
+
+    @keyframes shine{
+      0%,55%{left:-35%;opacity:0}
+      65%{opacity:1}
+      82%,100%{left:125%;opacity:0}
+    }
+
+    .offer-btn:hover{
+      transform:translateY(-2px);
+      box-shadow:
+        0 20px 48px rgba(14,189,104,.28),
+        inset 0 1px rgba(255,255,255,.4);
+    }
+
+    .whatsapp-icon{
+      width:23px;
+      height:23px;
+      display:grid;
+      place-items:center;
+      border-radius:50%;
+      background:#031109;
+      color:var(--green);
+      font-size:14px;
+      font-weight:950;
+    }
+
+    .safe-note{
+      position:relative;
+      margin-top:14px;
+      color:#778a7e;
+      font-size:11px;
+      line-height:1.6;
+    }
+
+    /* FEATURES */
+
+    .features{
+      padding:10px 0 100px;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:35px;
+    }
+
+    .section-title span{
+      color:var(--green);
+      font-size:10px;
+      font-weight:900;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+    }
+
+    .section-title h2{
+      margin-top:9px;
+      font-size:clamp(28px,4vw,42px);
+      letter-spacing:-.035em;
+    }
+
+    .feature-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:15px;
+    }
+
+    .feature{
+      min-height:190px;
+      padding:25px;
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:rgba(10,22,15,.65);
+      transition:.2s ease;
+    }
+
+    .feature:hover{
+      transform:translateY(-3px);
+      border-color:rgba(32,232,137,.2);
+      background:rgba(13,28,19,.85);
+    }
+
+    .feature-icon{
+      width:42px;
+      height:42px;
+      display:grid;
+      place-items:center;
+      border-radius:12px;
+      color:var(--green);
+      background:rgba(32,232,137,.07);
+      border:1px solid rgba(32,232,137,.12);
+      font-size:18px;
+    }
+
+    .feature h3{
+      margin-top:18px;
+      font-size:16px;
+    }
+
+    .feature p{
+      margin-top:8px;
+      color:#899b90;
+      font-size:13px;
+      line-height:1.65;
+    }
+
+    /* DOMAIN INFO */
+
+    .info{
+      padding:10px 0 100px;
+    }
+
+    .info-box{
+      padding:35px;
+      border:1px solid var(--line);
+      border-radius:25px;
+      background:linear-gradient(
+        145deg,
+        rgba(14,29,20,.75),
+        rgba(7,14,10,.75)
+      );
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:35px;
+    }
+
+    .info h2{
+      font-size:27px;
+      letter-spacing:-.03em;
+    }
+
+    .info p{
+      margin-top:12px;
+      color:#8fa096;
+      font-size:14px;
+      line-height:1.75;
+    }
+
+    .details{
+      display:grid;
+      gap:10px;
+    }
+
+    .detail{
+      display:flex;
+      justify-content:space-between;
+      gap:15px;
+      padding:14px 0;
+      border-bottom:1px solid var(--line);
+      font-size:13px;
+    }
+
+    .detail:last-child{
+      border-bottom:0;
+    }
+
+    .detail span:first-child{
+      color:#7f9287;
+    }
+
+    .detail span:last-child{
+      color:#e6f3eb;
+      font-weight:800;
+      text-align:right;
+    }
+
+    /* FOOTER */
+
+    footer{
+      border-top:1px solid var(--line);
+      padding:30px 0 35px;
+    }
+
+    .footer-inner{
+      width:min(1120px,calc(100% - 36px));
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+    }
+
+    .footer-copy{
+      color:#718178;
+      font-size:11px;
+      line-height:1.6;
+    }
+
+    .footer-domain{
+      color:#b8c9bf;
+      font-weight:800;
+      font-size:12px;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:700px){
+
+      header{
+        padding:18px 0;
+      }
+
+      .header-link{
+        font-size:11px;
+        padding:8px 11px;
+      }
+
+      .logo-mark{
+        width:39px;
+        height:39px;
+        border-radius:11px;
+      }
+
+      .logo-text strong{
+        font-size:16px;
+      }
+
+      .hero{
+        min-height:auto;
+        padding:70px 0 80px;
+      }
+
+      h1{
+        font-size:clamp(46px,15vw,70px);
+        margin-top:22px;
+      }
+
+      .subtitle{
+        font-size:15px;
+        line-height:1.65;
+      }
+
+      .price-card{
+        margin-top:30px;
+        padding:23px;
+        border-radius:21px;
+      }
+
+      .price{
+        font-size:45px;
+      }
+
+      .offer-btn{
+        min-height:55px;
+        font-size:15px;
+      }
+
+      .features{
+        padding-bottom:75px;
+      }
+
+      .feature-grid{
+        grid-template-columns:1fr;
+        gap:12px;
+      }
+
+      .feature{
+        min-height:auto;
+        padding:22px;
+      }
+
+      .info{
+        padding-bottom:75px;
+      }
+
+      .info-box{
+        grid-template-columns:1fr;
+        gap:25px;
+        padding:25px;
+        border-radius:21px;
+      }
+
+      .info h2{
+        font-size:24px;
+      }
+
+      .footer-inner{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      html{
+        scroll-behavior:auto;
+      }
+
+      *,
+      *:before,
+      *:after{
+        animation:none !important;
+        transition:none !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- =====================================================
-     INTRO VIDEO
-     ===================================================== -->
-
-<div id="merlin-intro-overlay" aria-hidden="true">
-
-  <button
-    id="merlin-intro-play"
-    type="button"
-    aria-label="Play intro video"
-  >
-    Tap to play
-  </button>
-
-  <video
-    id="merlin-intro-video"
-    autoplay
-    muted
-    playsinline
-    webkit-playsinline
-    preload="auto"
-    poster="./intro-poster.jpg"
-    controlslist="nodownload noplaybackrate"
-  >
-    <source src="./intro.mp4" type="video/mp4">
-  </video>
-
-</div>
-
-<script>
-(function(){
-
-  var overlay = document.getElementById("merlin-intro-overlay");
-  var video = document.getElementById("merlin-intro-video");
-  var play = document.getElementById("merlin-intro-play");
-
-  if(!overlay || !video){
-    return;
-  }
-
-  document.body.classList.add("merlin-intro-active");
-
-  video.muted = true;
-  video.defaultMuted = true;
-  video.volume = 0;
-
-  var done = false;
-
-  function finish(){
-
-    if(done){
-      return;
-    }
-
-    done = true;
-
-    overlay.classList.add("merlin-intro-hide");
-
-    document.body.classList.remove("merlin-intro-active");
-
-    setTimeout(function(){
-
-      if(overlay.parentNode){
-        overlay.remove();
-      }
-
-    },500);
-  }
-
-  function start(){
-
-    video.muted = true;
-    video.defaultMuted = true;
-    video.volume = 0;
-
-    var promise = video.play();
-
-    if(promise && promise.catch){
-
-      promise.catch(function(){
-
-        overlay.classList.add("merlin-show-play");
-
-      });
-
-    }
-  }
-
-  video.addEventListener("ended",finish);
-  video.addEventListener("error",finish);
-
-  if(play){
-
-    play.addEventListener("click",function(){
-
-      overlay.classList.remove("merlin-show-play");
-
-      start();
-
-    });
-
-  }
-
-  video.addEventListener(
-    "loadedmetadata",
-    start,
-    {once:true}
-  );
-
-  video.addEventListener(
-    "canplay",
-    start,
-    {once:true}
-  );
-
-  setTimeout(function(){
-
-    if(!done && video.paused){
-
-      overlay.classList.add("merlin-show-play");
-
-    }
-
-  },1800);
-
-  setTimeout(function(){
-
-    if(!done){
-
-      finish();
-
-    }
-
-  },9000);
-
-  video.load();
-
-})();
-</script>
-
-
-<!-- =====================================================
-     BACKGROUND
-     ===================================================== -->
-
-<div class="bg-glow"></div>
-<div class="particles" aria-hidden="true"></div>
-
-
-<!-- =====================================================
-     HEADER
-     ===================================================== -->
-
-<header class="header">
-
-  <div class="brand-wrap">
-
-    <a class="logo" href="index.html">
-
-      <span class="logo-m">M</span>
-
-      <span>
-        <b>MERLIN</b>
-        <small>AGENCY</small>
+  <!-- HEADER -->
+  <header>
+    <a class="logo" href="./">
+      <span class="logo-mark">B</span>
+      <span class="logo-text">
+        <strong>BeGrow</strong>
+        <span>Premium Domain</span>
       </span>
-
     </a>
-
-  </div>
-
-
-  <nav>
-
-    <a href="#earnings">
-      Earnings
-    </a>
-
-    <a href="#how">
-      How It Works
-    </a>
-
-    <a href="#portfolio">
-      Portfolio
-    </a>
-
-    <a href="#faq">
-      FAQ
-    </a>
-
-  </nav>
-
-
-  <div class="top-apply-wrap">
 
     <a
-      class="top-apply"
-      href="apply.html"
+      class="header-link"
+      href="https://wa.me/918178949463?text=Hello%2C%20I%27m%20interested%20in%20buying%20BeGrow.in."
+      target="_blank"
+      rel="noopener noreferrer"
     >
-      Become a Host ↗
+      Make an Offer ↗
     </a>
+  </header>
 
 
-    <button
-      class="seller-menu-toggle"
-      id="sellerMenuToggle"
-      type="button"
-      aria-label="Open menu"
-      aria-expanded="false"
-    >
+  <main>
 
-      <span></span>
-      <span></span>
-      <span></span>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
 
-    </button>
-
-
-    <div
-      class="seller-menu"
-      id="sellerMenu"
-    >
-
-      <a href="#earnings">
-        ✦ Earnings Plan
-      </a>
-
-      <a href="#how">
-        ◎ How It Works
-      </a>
-
-      <a href="#portfolio">
-        ▶ Host Portfolio
-      </a>
-
-      <a href="#faq">
-        ? FAQ
-      </a>
-
-      <a href="apply.html">
-        ↗ Apply Now
-      </a>
-
-    </div>
-
-  </div>
-
-</header>
-
-
-<!-- =====================================================
-     MAIN
-     ===================================================== -->
-
-<main>
-
-
-<!-- HERO -->
-
-<section class="hero wrap">
-
-  <div class="hero-copy reveal">
-
-    <div class="eyebrow">
-      <i></i>
-      BIGO LIVE INDIA · HOST RECRUITMENT
-    </div>
-
-
-    <h1>
-      Go LIVE.<br>
-      <em>Build Your Empire.</em>
-    </h1>
-
-
-    <p>
-      Join Merlin Agency and turn your live presence into a serious earning opportunity with structured targets, bonuses and dedicated support.
-    </p>
-
-
-    <div class="actions">
-
-      <a
-        class="btn green"
-        href="apply.html"
-      >
-        Become a Host
-        <b>→</b>
-      </a>
-
-    </div>
-
-
-    <div class="trust">
-
-      <span>
-        ✦ 2026 Salary Plan
-      </span>
-
-      <span>
-        ✦ Flexible Live Schedule
-      </span>
-
-      <span>
-        ✦ WhatsApp Support
-      </span>
-
-      <span>
-        ✦ No Joining Fee
-      </span>
-
-    </div>
-
-  </div>
-
-
-  <div class="hero-card reveal delay1">
-
-    <div class="hero-card-top">
-
-      <b>BIGO LIVE</b>
-
-      <span>
-        <i></i>
-        LIVE NOW
-      </span>
-
-    </div>
-
-
-    <div class="crest">
-      <strong>M</strong>
-    </div>
-
-
-    <h3>
-      OFFICIAL<br>
-      <span>HOST AGENCY</span>
-    </h3>
-
-
-    <div class="hero-stat">
-
-      <div>
-
-        <b>1M+</b>
-
-        <small>
-          Target Tier
-        </small>
-
-      </div>
-
-
-      <div>
-
-        <b>₹7.6L</b>
-
-        <small>
-          Monthly Plan
-        </small>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =====================================================
-     FEATURED VIDEOS
-     ===================================================== -->
-
-<section class="video-section wrap reveal">
-
-  <div class="section-head">
-
-    <span class="kicker">
-      FEATURED LIVE MOMENTS
-    </span>
-
-    <h2>
-      Feel the <em>LIVE energy.</em>
-    </h2>
-
-    <p>
-      Portrait videos, medium-sized and optimized for fast loading. The showcase slides smoothly and auto-plays muted.
-    </p>
-
-  </div>
-
-
-  <div
-    class="video-carousel"
-    id="videoCarousel"
-  >
-
-    <div class="video-track">
-
-
-      <!-- VIDEO 1 -->
-
-      <div class="video-slide active">
-
-        <span class="live-badge">
+        <div class="eyebrow">
           <i></i>
-          MERLIN LIVE
-        </span>
+          PREMIUM DOMAIN FOR SALE
+        </div>
 
-        <video
-          class="feature-video"
-          muted
-          autoplay
-          playsinline
-          loop
-          preload="auto"
-          poster="05-featured.jpg"
-        >
+        <h1>
+          <span class="domain">BeGrow.in</span>
+          Your next brand starts here.
+        </h1>
 
-          <source
-            src="01-featured-24s.mp4"
-            type="video/mp4"
+        <p class="subtitle">
+          A short, memorable and brandable .in domain available for acquisition.
+          Ideal for a startup, business, technology company, community,
+          education platform or growth-focused brand.
+        </p>
+
+        <div class="price-card">
+
+          <div class="price-label">
+            Asking Price
+          </div>
+
+          <div class="price">
+            $4,500 <small>USD</small>
+          </div>
+
+          <a
+            class="offer-btn"
+            href="https://wa.me/918178949463?text=Hello%2C%20I%27m%20interested%20in%20buying%20BeGrow.in.%20I%27d%20like%20to%20make%20an%20offer."
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Make an offer for BeGrow.in on WhatsApp"
           >
+            <span class="whatsapp-icon">↗</span>
+            Make an Offer on WhatsApp
+          </a>
 
-        </video>
+          <p class="safe-note">
+            Clicking the button opens a direct WhatsApp conversation.
+            No form or account is required.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
 
 
-        <div class="slide-label">
+    <!-- FEATURES -->
+    <section class="features page">
 
-          <b>
-            FEATURED · 24 SEC
-          </b>
+      <div class="section-title">
+        <span>Why BeGrow.in</span>
+        <h2>A domain built for growth.</h2>
+      </div>
 
-          <span>
-            Portrait preview
-          </span>
+      <div class="feature-grid">
+
+        <article class="feature">
+          <div class="feature-icon">✦</div>
+          <h3>Short & Memorable</h3>
+          <p>
+            BeGrow.in is concise, easy to remember and simple to use
+            in marketing, social media and word-of-mouth.
+          </p>
+        </article>
+
+        <article class="feature">
+          <div class="feature-icon">◎</div>
+          <h3>Brandable Name</h3>
+          <p>
+            A versatile name that can work across startups, technology,
+            education, finance, marketing, communities and more.
+          </p>
+        </article>
+
+        <article class="feature">
+          <div class="feature-icon">↗</div>
+          <h3>.IN Extension</h3>
+          <p>
+            A strong country-code domain extension for businesses
+            targeting India and the growing Indian digital market.
+          </p>
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- DOMAIN INFORMATION -->
+    <section class="info page">
+
+      <div class="info-box">
+
+        <div>
+          <h2>Own BeGrow.in</h2>
+
+          <p>
+            The right domain can become the foundation of a memorable
+            digital brand. BeGrow.in is now available to a buyer looking
+            for a clean, professional and growth-oriented name.
+          </p>
+
+          <p>
+            Interested? Start a conversation directly on WhatsApp and
+            discuss the acquisition.
+          </p>
+        </div>
+
+        <div class="details">
+
+          <div class="detail">
+            <span>Domain</span>
+            <span>BeGrow.in</span>
+          </div>
+
+          <div class="detail">
+            <span>Status</span>
+            <span>For Sale</span>
+          </div>
+
+          <div class="detail">
+            <span>Asking Price</span>
+            <span>$4,500 USD</span>
+          </div>
+
+          <div class="detail">
+            <span>Offers</span>
+            <span>Welcome</span>
+          </div>
+
+          <div class="detail">
+            <span>Contact</span>
+            <span>WhatsApp</span>
+          </div>
 
         </div>
 
       </div>
 
+    </section>
 
-      <!-- VIDEO 2 -->
-
-      <div class="video-slide">
-
-        <span class="live-badge">
-          <i></i>
-          PORTFOLIO 01
-        </span>
-
-        <video
-          class="feature-video"
-          muted
-          playsinline
-          loop
-          preload="none"
-          poster="06-p1.jpg"
-        >
-
-          <source
-            src="02-portfolio-1.mp4"
-            type="video/mp4"
-          >
-
-        </video>
+  </main>
 
 
-        <div class="slide-label">
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
 
-          <b>
-            HOST MOMENT
-          </b>
-
-          <span>
-            Beauty · Chat · Energy
-          </span>
-
-        </div>
-
+      <div class="footer-copy">
+        © 2026 BeGrow.in · Premium Domain For Sale
       </div>
 
-
-      <!-- VIDEO 3 -->
-
-      <div class="video-slide">
-
-        <span class="live-badge">
-          <i></i>
-          PORTFOLIO 02
-        </span>
-
-        <video
-          class="feature-video"
-          muted
-          playsinline
-          loop
-          preload="none"
-          poster="07-p2.jpg"
-        >
-
-          <source
-            src="03-portfolio-2.mp4"
-            type="video/mp4"
-          >
-
-        </video>
-
-
-        <div class="slide-label">
-
-          <b>
-            HOST STYLE
-          </b>
-
-          <span>
-            On-camera presence
-          </span>
-
-        </div>
-
-      </div>
-
-
-      <!-- VIDEO 4 -->
-
-      <div class="video-slide">
-
-        <span class="live-badge">
-          <i></i>
-          PORTFOLIO 03
-        </span>
-
-        <video
-          class="feature-video"
-          muted
-          playsinline
-          loop
-          preload="none"
-          poster="08-p3.jpg"
-        >
-
-          <source
-            src="04-portfolio-3.mp4"
-            type="video/mp4"
-          >
-
-        </video>
-
-
-        <div class="slide-label">
-
-          <b>
-            LIVE HOST MOMENT
-          </b>
-
-          <span>
-            Live · Chat · Energy
-          </span>
-
-        </div>
-
-      </div>
-
-
-    </div>
-
-
-    <button
-      class="slider-arrow prev"
-      aria-label="Previous video"
-      type="button"
-    >
-      ‹
-    </button>
-
-
-    <button
-      class="slider-arrow next"
-      aria-label="Next video"
-      type="button"
-    >
-      ›
-    </button>
-
-
-    <div
-      class="dots"
-      aria-label="Video slides"
-    ></div>
-
-  </div>
-
-</section>
-
-
-<!-- =====================================================
-     EARNINGS
-     ===================================================== -->
-
-<section
-  id="earnings"
-  class="section wrap"
->
-
-  <div class="section-head">
-
-    <span class="kicker">
-      2026 EARNING PLAN
-    </span>
-
-    <h2>
-      Your target.
-      <em>Your earning.</em>
-    </h2>
-
-    <p>
-      Salary and commission figures from the supplied Merlin Agency 2026 chart.
-    </p>
-
-  </div>
-
-
-  <div
-    class="salary-grid"
-    id="salaryGrid"
-  ></div>
-
-
-  <div class="note">
-
-    <b>
-      Extra bonuses:
-    </b>
-
-    Pack Streaks + Daily Stars.
-    Sitting at least 2 hours daily counts as one day;
-    up to 5 hours/day can count in live data.
-
-  </div>
-
-</section>
-
-
-<!-- =====================================================
-     HOW IT WORKS
-     ===================================================== -->
-
-<section
-  id="how"
-  class="section wrap"
->
-
-  <div class="section-head">
-
-    <span class="kicker">
-      HOW IT WORKS
-    </span>
-
-    <h2>
-      Simple steps.
-      <em>Serious potential.</em>
-    </h2>
-
-  </div>
-
-
-  <div class="steps">
-
-
-    <article class="step reveal">
-
-      <b>01</b>
-
-      <span>✦</span>
-
-      <h3>
-        Apply
-      </h3>
-
-      <p>
-        Submit your details. BIGO ID is optional.
-      </p>
-
-    </article>
-
-
-    <article class="step reveal">
-
-      <b>02</b>
-
-      <span>◎</span>
-
-      <h3>
-        Connect
-      </h3>
-
-      <p>
-        Your application opens directly in WhatsApp for Merlin Agency.
-      </p>
-
-    </article>
-
-
-    <article class="step reveal">
-
-      <b>03</b>
-
-      <span>↗</span>
-
-      <h3>
-        Go LIVE
-      </h3>
-
-      <p>
-        Start hosting, follow your target and build your portfolio.
-      </p>
-
-    </article>
-
-
-    <article class="step reveal">
-
-      <b>04</b>
-
-      <span>₹</span>
-
-      <h3>
-        Earn
-      </h3>
-
-      <p>
-        Progress through target tiers and eligible bonuses.
-      </p>
-
-    </article>
-
-
-  </div>
-
-
-  <div class="connector"></div>
-
-</section>
-
-
-<!-- =====================================================
-     PORTFOLIO
-     ===================================================== -->
-
-<section
-  id="portfolio"
-  class="section portfolio wrap"
->
-
-  <div class="section-head">
-
-    <span class="kicker">
-      HOST PORTFOLIO
-    </span>
-
-    <h2>
-      Live hosts.
-      <em>Real moments.</em>
-    </h2>
-
-    <p>
-      All uploaded videos are included. Tap a card for a larger player.
-    </p>
-
-  </div>
-
-
-  <div class="portfolio-grid">
-
-
-    <button
-      class="portfolio-card reveal"
-      type="button"
-      data-video="02-portfolio-1.mp4"
-      data-poster="06-p1.jpg"
-    >
-
-      <img
-        src="06-p1.jpg"
-        alt="Live streaming host portfolio photo"
-        loading="lazy"
-      >
-
-      <span class="play">
-        ▶
-      </span>
-
-      <div>
-
-        <small>
-          LIVE MOMENT
-        </small>
-
-        <b>
-          Beauty · Chat · Energy
-        </b>
-
-      </div>
-
-    </button>
-
-
-    <button
-      class="portfolio-card reveal delay1"
-      type="button"
-      data-video="03-portfolio-2.mp4"
-      data-poster="07-p2.jpg"
-    >
-
-      <img
-        src="07-p2.jpg"
-        alt="Live streaming host portfolio photo"
-        loading="lazy"
-      >
-
-      <span class="play">
-        ▶
-      </span>
-
-      <div>
-
-        <small>
-          HOST STYLE
-        </small>
-
-        <b>
-          On-camera presence
-        </b>
-
-      </div>
-
-    </button>
-
-
-    <button
-      class="portfolio-card reveal delay2"
-      type="button"
-      data-video="04-portfolio-3.mp4"
-      data-poster="08-p3.jpg"
-    >
-
-      <img
-        src="08-p3.jpg"
-        alt="Live streaming host portfolio photo"
-        loading="lazy"
-      >
-
-      <span class="play">
-        ▶
-      </span>
-
-      <div>
-
-        <small>
-          LIVE HOST MOMENT
-        </small>
-
-        <b>
-          Live · Chat · Energy
-        </b>
-
-      </div>
-
-    </button>
-
-
-    <div class="portfolio-card reveal">
-
-      <img
-        src="10-p4.jpg"
-        alt="Live streaming host portfolio portrait"
-        loading="lazy"
-      >
-
-      <div>
-
-        <small>
-          MERLIN STAR
-        </small>
-
-        <b>
-          Live streaming host showcase
-        </b>
-
+      <div class="footer-domain">
+        BeGrow.in
       </div>
 
     </div>
+  </footer>
 
 
-  </div>
+  <!-- DIRECT WHATSAPP BUTTON SCRIPT -->
+  <script>
+    (function () {
+      const phone = "918178949463";
 
-</section>
+      const message =
+        "Hello, I'm interested in buying BeGrow.in. I'd like to make an offer.";
 
+      const whatsappUrl =
+        "https://wa.me/" +
+        phone +
+        "?text=" +
+        encodeURIComponent(message);
 
-<!-- =====================================================
-     FAQ
-     ===================================================== -->
+      document
+        .querySelectorAll('a[href*="wa.me"]')
+        .forEach(function (button) {
+          button.href = whatsappUrl;
+        });
+    })();
+  </script>
 
-<section
-  id="faq"
-  class="section wrap faq"
->
-
-  <div class="section-head">
-
-    <span class="kicker">
-      FAQ
-    </span>
-
-    <h2>
-      Questions,
-      <em>answered.</em>
-    </h2>
-
-  </div>
-
-
-  <div class="accordion">
-
-
-    <details>
-
-      <summary>
-
-        Do I need previous hosting experience?
-
-        <span>
-          ＋
-        </span>
-
-      </summary>
-
-      <p>
-        No. Beginners are welcome to apply. Training, guidance, and support can be provided to help you get started.
-      </p>
-
-    </detai
+</body>
+</html>
