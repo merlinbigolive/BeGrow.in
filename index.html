@@ -2,1194 +2,1032 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <meta name="theme-color" content="#06110b">
-  <meta name="description" content="Merlin Agency — Become a Host for BIGO LIVE India. Join Merlin Agency, go LIVE, build your audience and explore earning opportunities with structured targets, bonuses and dedicated support.">
-  <meta name="robots" content="index,follow">
-
-  <link rel="canonical" href="https://merlinbigolive.github.io/Domain-Sell-For-Business-/">
-
-  <title>Become a Host | Merlin Agency | BIGO LIVE India</title>
-
-  <link rel="stylesheet" href="styles.css">
-
-  <!-- =========================================================
-       PAGE FIXES / EXTRA STYLING
-       ========================================================= -->
-  <style>
-
-    /* ---------- Header ---------- */
-
-    .header{
-      position:relative;
-      z-index:1000;
-    }
-
-    .brand-wrap{
-      position:relative;
-      z-index:10;
-    }
-
-    .top-apply-wrap{
-      position:relative;
-      z-index:20;
-      display:flex;
-      align-items:center;
-      justify-content:flex-end;
-      gap:8px;
-      margin-left:auto;
-      flex:0 0 auto;
-    }
-
-    .top-apply{
-      position:relative;
-      z-index:21;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      width:88px !important;
-      min-width:88px !important;
-      height:32px !important;
-      min-height:32px !important;
-      padding:0 7px !important;
-      box-sizing:border-box;
-      border-radius:17px !important;
-      font-size:10.5px !important;
-      line-height:1 !important;
-      white-space:nowrap;
-      text-decoration:none;
-    }
-
-    /* ---------- Seller menu ---------- */
-
-    .seller-menu-toggle{
-      -webkit-appearance:none;
-      appearance:none;
-      outline:none;
-      box-shadow:none;
-
-      display:flex;
-      flex:0 0 32px;
-
-      align-items:center;
-      justify-content:center;
-      flex-direction:column;
-
-      gap:4px;
-      width:32px;
-      height:32px;
-
-      margin:0;
-      padding:0;
-
-      border:0;
-      border-radius:0;
-
-      background:transparent;
-
-      cursor:pointer;
-      -webkit-tap-highlight-color:transparent;
-    }
-
-    .seller-menu-toggle span{
-      display:block;
-      width:17px;
-      height:2px;
-      margin:0;
-      padding:0;
-
-      background:#e4b83d;
-      border:0;
-      border-radius:99px;
-
-      box-shadow:0 0 5px rgba(228,184,61,.16);
-
-      transition:
-        transform .2s ease,
-        opacity .15s ease,
-        width .2s ease;
-    }
-
-    .seller-menu-toggle:hover,
-    .seller-menu-toggle:active,
-    .seller-menu-toggle:focus{
-      background:transparent;
-      box-shadow:none;
-    }
-
-    .seller-menu-toggle:focus-visible{
-      outline:1px solid rgba(228,184,61,.55);
-      outline-offset:3px;
-    }
-
-    .seller-menu-toggle[aria-expanded="true"] span:nth-child(1){
-      transform:translateY(6px) rotate(45deg);
-    }
-
-    .seller-menu-toggle[aria-expanded="true"] span:nth-child(2){
-      opacity:0;
-      width:0;
-    }
-
-    .seller-menu-toggle[aria-expanded="true"] span:nth-child(3){
-      transform:translateY(-6px) rotate(-45deg);
-    }
-
-    .seller-menu{
-      position:absolute;
-      top:calc(100% + 10px);
-      right:0;
-
-      width:205px;
-      padding:8px;
-
-      border:1px solid rgba(228,184,61,.35);
-      border-radius:14px;
-
-      background:rgba(3,12,7,.98);
-
-      box-shadow:0 18px 45px rgba(0,0,0,.45);
-
-      display:none;
-      z-index:2000;
-    }
-
-    .seller-menu.open{
-      display:block;
-    }
-
-    .seller-menu a{
-      display:flex;
-      align-items:center;
-      gap:9px;
-
-      padding:11px 12px;
-
-      border-radius:9px;
-
-      color:#eafff2;
-      text-decoration:none;
-
-      font-size:12px;
-      font-weight:800;
-    }
-
-    .seller-menu a:hover{
-      background:rgba(228,184,61,.09);
-      color:#fff0a1;
-    }
-
-
-    /* ---------- Buy Diamond ---------- */
-
-    .buy-diamond-hero{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-
-      width:220px;
-      min-height:48px;
-
-      box-sizing:border-box;
-
-      padding:12px 20px;
-      margin:14px auto 22px;
-
-      border:1px solid rgba(228,184,61,.72);
-      border-radius:13px;
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(228,184,61,.16),
-          rgba(228,184,61,.06)
-        );
-
-      box-shadow:0 0 24px rgba(228,184,61,.10);
-
-      color:#fff0a1;
-
-      font-size:13px;
-      font-weight:900;
-
-      letter-spacing:.06em;
-
-      text-decoration:none;
-      white-space:nowrap;
-
-      transition:.2s ease;
-    }
-
-    .buy-diamond-hero:hover{
-      background:rgba(228,184,61,.18);
-      border-color:#e4b83d;
-      box-shadow:0 0 30px rgba(228,184,61,.18);
-      transform:translateY(-1px);
-    }
-
-
-    /* ---------- CTA Shine ---------- */
-
-    .hero .btn,
-    .hero .btn-primary,
-    .hero a.influencer-apply-btn{
-      position:relative;
-      overflow:hidden;
-      isolation:isolate;
-    }
-
-    .hero .btn::after,
-    .hero .btn-primary::after,
-    .hero a.influencer-apply-btn::after{
-      content:"";
-
-      position:absolute;
-
-      top:-30%;
-      left:-55%;
-
-      width:28%;
-      height:160%;
-
-      transform:skewX(-20deg);
-
-      background:
-        linear-gradient(
-          90deg,
-          transparent,
-          rgba(255,255,255,.55),
-          transparent
-        );
-
-      filter:blur(1px);
-
-      animation:merlinCtaShine 3.2s ease-in-out infinite;
-
-      pointer-events:none;
-    }
-
-    @keyframes merlinCtaShine{
-      0%,55%{
-        left:-55%;
-        opacity:0;
-      }
-
-      62%{
-        opacity:1;
-      }
-
-      82%,100%{
-        left:135%;
-        opacity:0;
-      }
-    }
-
-
-    /* ---------- Intro video ---------- */
-
-    #merlin-intro-overlay{
-      position:fixed;
-      inset:0;
-
-      z-index:2147483647;
-
-      background:rgba(0,0,0,.58);
-
-      display:flex;
-      align-items:center;
-      justify-content:center;
-
-      overflow:hidden;
-
-      opacity:1;
-      visibility:visible;
-
-      transition:
-        opacity .45s ease,
-        visibility .45s ease;
-    }
-
-    #merlin-intro-overlay video{
-      width:100vw;
-      height:100vh;
-
-      object-fit:cover;
-
-      display:block;
-
-      background:#000;
-    }
-
-    #merlin-intro-play{
-      position:absolute;
-
-      z-index:2;
-
-      left:50%;
-      top:50%;
-
-      transform:translate(-50%,-50%);
-
-      padding:14px 24px;
-
-      border:0;
-      border-radius:999px;
-
-      background:#fff;
-      color:#111;
-
-      font-size:16px;
-      font-weight:700;
-
-      display:none;
-
-      cursor:pointer;
-    }
-
-    #merlin-intro-overlay.merlin-show-play #merlin-intro-play{
-      display:block;
-    }
-
-    #merlin-intro-overlay.merlin-intro-hide{
-      opacity:0;
-      visibility:hidden;
-      pointer-events:none;
-    }
-
-    body.merlin-intro-active{
-      overflow:hidden;
-    }
-
-
-    /* ---------- Video carousel ---------- */
-
-    .video-carousel{
-      position:relative;
-      overflow:hidden;
-    }
-
-    .video-track{
-      display:flex;
-      transition:transform .45s ease;
-      will-change:transform;
-    }
-
-    .video-slide{
-      position:relative;
-      flex:0 0 100%;
-      overflow:hidden;
-    }
-
-    .feature-video{
-      display:block;
-      width:100%;
-      height:auto;
-      max-height:620px;
-      object-fit:cover;
-    }
-
-    .live-badge{
-      position:absolute;
-      top:15px;
-      left:15px;
-      z-index:5;
-
-      display:inline-flex;
-      align-items:center;
-      gap:7px;
-
-      padding:7px 11px;
-
-      border-radius:999px;
-
-      background:rgba(0,0,0,.72);
-
-      color:#fff;
-
-      font-size:11px;
-      font-weight:900;
-
-      letter-spacing:.05em;
-    }
-
-    .live-badge i{
-      width:7px;
-      height:7px;
-
-      border-radius:50%;
-
-      background:#35e77a;
-
-      box-shadow:0 0 10px #35e77a;
-    }
-
-    .slide-label{
-      position:absolute;
-
-      left:0;
-      right:0;
-      bottom:0;
-
-      display:flex;
-      flex-direction:column;
-      gap:3px;
-
-      padding:18px;
-
-      background:
-        linear-gradient(
-          transparent,
-          rgba(0,0,0,.88)
-        );
-
-      color:#fff;
-    }
-
-    .slide-label b{
-      font-size:13px;
-    }
-
-    .slide-label span{
-      font-size:11px;
-      opacity:.75;
-    }
-
-    .slider-arrow{
-      position:absolute;
-
-      top:50%;
-
-      width:42px;
-      height:42px;
-
-      transform:translateY(-50%);
-
-      border:1px solid rgba(228,184,61,.45);
-      border-radius:50%;
-
-      background:rgba(0,0,0,.65);
-
-      color:#fff0a1;
-
-      font-size:28px;
-      line-height:1;
-
-      cursor:pointer;
-
-      z-index:10;
-    }
-
-    .slider-arrow.prev{
-      left:12px;
-    }
-
-    .slider-arrow.next{
-      right:12px;
-    }
-
-    .dots{
-      position:absolute;
-
-      left:50%;
-      bottom:12px;
-
-      transform:translateX(-50%);
-
-      display:flex;
-      gap:6px;
-
-      z-index:12;
-    }
-
-    .dots button{
-      width:7px;
-      height:7px;
-
-      padding:0;
-
-      border:0;
-      border-radius:50%;
-
-      background:rgba(255,255,255,.4);
-
-      cursor:pointer;
-    }
-
-    .dots button.active{
-      background:#e4b83d;
-      transform:scale(1.25);
-    }
-
-
-    /* ---------- Portfolio modal ---------- */
-
-    .modal{
-      position:fixed;
-      inset:0;
-
-      z-index:99999;
-
-      display:none;
-      align-items:center;
-      justify-content:center;
-
-      padding:20px;
-
-      background:rgba(0,0,0,.82);
-    }
-
-    .modal.open{
-      display:flex;
-    }
-
-    .modal-content{
-      position:relative;
-
-      width:min(92vw,520px);
-
-      border:1px solid rgba(228,184,61,.3);
-      border-radius:18px;
-
-      overflow:hidden;
-
-      background:#020704;
-
-      box-shadow:0 25px 80px rgba(0,0,0,.6);
-    }
-
-    .modal-content video{
-      display:block;
-
-      width:100%;
-      max-height:82vh;
-
-      background:#000;
-    }
-
-    .modal-close{
-      position:absolute;
-
-      top:10px;
-      right:10px;
-
-      z-index:5;
-
-      width:36px;
-      height:36px;
-
-      border:1px solid rgba(255,255,255,.25);
-      border-radius:50%;
-
-      background:rgba(0,0,0,.7);
-
-      color:#fff;
-
-      font-size:22px;
-
-      cursor:pointer;
-    }
-
-
-    /* ---------- Mobile ---------- */
-
-    @media(max-width:700px){
-
-      .header{
-        min-height:70px;
-      }
-
-      .top-apply-wrap{
-        gap:5px;
-      }
-
-      .seller-menu-toggle{
-        width:30px;
-        height:30px;
-        flex-basis:30px;
-      }
-
-      .seller-menu-toggle span{
-        width:17px;
-      }
-
-      .seller-menu{
-        width:190px;
-      }
-
-      .buy-diamond-hero{
-        width:210px;
-        min-height:46px;
-
-        margin:12px auto 18px;
-
-        font-size:12px;
-      }
-
-      .slider-arrow{
-        width:36px;
-        height:36px;
-        font-size:23px;
-      }
-
-    }
-
-  </style>
-
-  <!-- =========================================================
-       STRUCTURED DATA
-       ========================================================= -->
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
+
+  <meta name="theme-color" content="#050807">
+
+  <title>BeGrow.in — Premium Domain For Sale | $4,500 USD</title>
+
+  <meta
+    name="description"
+    content="BeGrow.in is a premium, short and brandable domain name available for acquisition. Buy BeGrow.in for $4,500 USD."
+  >
+
+  <meta
+    name="keywords"
+    content="BeGrow.in, BeGrow domain, domain for sale, premium domain, brandable domain, buy BeGrow.in"
+  >
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://www.begrow.in/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.begrow.in/">
+  <meta property="og:title" content="BeGrow.in — Domain For Sale">
+  <meta
+    property="og:description"
+    content="BeGrow.in is available for acquisition for $4,500 USD."
+  >
+  <meta property="og:site_name" content="BeGrow.in">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="BeGrow.in — Domain For Sale">
+  <meta
+    name="twitter:description"
+    content="Premium brandable domain BeGrow.in available for $4,500 USD."
+  >
+
+  <!-- Favicon -->
+  <link
+    rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23050807'/%3E%3Ctext x='50' y='67' text-anchor='middle' font-family='Arial' font-size='55' font-weight='800' fill='%23dcb65b'%3EB%3C/text%3E%3C/svg%3E"
+  >
+
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"Merlin Agency",
-    "url":"https://merlinbigolive.github.io/Domain-Sell-For-Business-/",
-    "description":"Merlin Agency host recruitment platform for BIGO LIVE India."
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "BeGrow.in Domain Name",
+    "description": "Premium brandable domain name BeGrow.in available for acquisition.",
+    "url": "https://www.begrow.in/",
+    "offers": {
+      "@type": "Offer",
+      "price": "4500",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://www.begrow.in/"
+    }
   }
   </script>
 
-</head>
+  <style>
+    :root{
+      --bg:#050807;
+      --bg2:#08100b;
+      --card:rgba(13,22,16,.78);
+      --card2:rgba(18,29,21,.65);
+      --gold:#e0bb5b;
+      --gold2:#f3d77e;
+      --text:#f5f7f5;
+      --muted:#aeb8b0;
+      --green:#49d17d;
+      --green2:#23a95a;
+      --border:rgba(224,187,91,.22);
+      --border-soft:rgba(255,255,255,.08);
+      --shadow:0 30px 90px rgba(0,0,0,.45);
+      --radius:24px;
+    }
 
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      min-height:100vh;
+      background:
+        radial-gradient(circle at 50% -10%, rgba(58,130,77,.18), transparent 38%),
+        radial-gradient(circle at 0% 40%, rgba(224,187,91,.06), transparent 28%),
+        linear-gradient(180deg,#050807 0%,#07100a 48%,#050807 100%);
+      color:var(--text);
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    a{
+      color:inherit;
+    }
+
+    button,
+    a{
+      -webkit-tap-highlight-color:transparent;
+    }
+
+    .noise{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:-1;
+      opacity:.035;
+      background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+    }
+
+    .glow{
+      position:fixed;
+      width:500px;
+      height:500px;
+      border-radius:50%;
+      background:rgba(45,190,100,.07);
+      filter:blur(100px);
+      pointer-events:none;
+      z-index:-2;
+      top:10%;
+      left:50%;
+      transform:translateX(-50%);
+    }
+
+    .container{
+      width:min(1120px, calc(100% - 40px));
+      margin:0 auto;
+    }
+
+    /* HEADER */
+
+    header{
+      position:relative;
+      z-index:10;
+      width:min(1120px, calc(100% - 40px));
+      margin:0 auto;
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:11px;
+      text-decoration:none;
+    }
+
+    .brand-mark{
+      width:40px;
+      height:40px;
+      border-radius:12px;
+      display:grid;
+      place-items:center;
+      border:1px solid rgba(224,187,91,.45);
+      background:
+        linear-gradient(145deg,rgba(224,187,91,.18),rgba(224,187,91,.04));
+      color:var(--gold2);
+      font-size:20px;
+      font-weight:900;
+      box-shadow:0 0 25px rgba(224,187,91,.08);
+    }
+
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+      line-height:1;
+    }
+
+    .brand-text strong{
+      font-size:17px;
+      letter-spacing:.02em;
+    }
+
+    .brand-text span{
+      margin-top:4px;
+      color:#8f9a92;
+      font-size:8px;
+      letter-spacing:.25em;
+      text-transform:uppercase;
+    }
+
+    .header-status{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      color:#b8c1ba;
+      font-size:12px;
+    }
+
+    .status-dot{
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background:var(--green);
+      box-shadow:0 0 12px rgba(73,209,125,.75);
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:calc(100vh - 78px);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:90px 0 100px;
+    }
+
+    .hero-inner{
+      width:100%;
+      max-width:900px;
+      margin:auto;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 13px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      background:rgba(224,187,91,.045);
+      color:#d9c27e;
+      font-size:10px;
+      font-weight:800;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      margin-bottom:25px;
+    }
+
+    .eyebrow-dot{
+      width:6px;
+      height:6px;
+      border-radius:50%;
+      background:var(--gold);
+      box-shadow:0 0 10px rgba(224,187,91,.7);
+    }
+
+    h1{
+      font-size:clamp(48px,9vw,104px);
+      line-height:.95;
+      letter-spacing:-.055em;
+      font-weight:900;
+      margin-bottom:28px;
+    }
+
+    h1 .domain{
+      display:block;
+      background:
+        linear-gradient(
+          120deg,
+          #ffffff 5%,
+          #ffffff 42%,
+          #e0bb5b 72%,
+          #f5d87d 100%
+        );
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+
+    h1 .sale{
+      display:block;
+      color:#d7ded9;
+      font-size:.38em;
+      line-height:1.2;
+      letter-spacing:.02em;
+      margin-top:18px;
+      font-weight:700;
+    }
+
+    .hero-description{
+      width:min(680px,100%);
+      margin:0 auto;
+      color:var(--muted);
+      font-size:clamp(15px,2vw,18px);
+    }
+
+    /* PRICE */
+
+    .price-card{
+      width:min(570px,100%);
+      margin:42px auto 30px;
+      padding:28px;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      background:
+        linear-gradient(
+          145deg,
+          rgba(224,187,91,.085),
+          rgba(13,22,16,.8) 48%,
+          rgba(10,18,13,.92)
+        );
+      box-shadow:
+        var(--shadow),
+        inset 0 1px 0 rgba(255,255,255,.035);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .price-card::before{
+      content:"";
+      position:absolute;
+      width:220px;
+      height:220px;
+      border-radius:50%;
+      top:-140px;
+      right:-70px;
+      background:rgba(224,187,91,.1);
+      filter:blur(40px);
+    }
+
+    .price-label{
+      position:relative;
+      color:#9da69f;
+      font-size:10px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      font-weight:800;
+    }
+
+    .price{
+      position:relative;
+      margin:3px 0 2px;
+      font-size:clamp(44px,8vw,70px);
+      line-height:1;
+      font-weight:900;
+      letter-spacing:-.045em;
+      color:#fff;
+    }
+
+    .price small{
+      font-size:.38em;
+      color:#cfc5a6;
+      vertical-align:middle;
+      margin-right:5px;
+    }
+
+    .price-note{
+      position:relative;
+      color:#8f9b92;
+      font-size:12px;
+    }
+
+    /* BUTTONS */
+
+    .actions{
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:28px;
+    }
+
+    .btn{
+      min-height:52px;
+      padding:0 25px;
+      border-radius:14px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      text-decoration:none;
+      font-size:13px;
+      font-weight:900;
+      letter-spacing:.02em;
+      transition:.22s ease;
+    }
+
+    .btn-primary{
+      color:#081009;
+      background:linear-gradient(135deg,#f1d77d,#d5ad49);
+      border:1px solid #f1d77d;
+      box-shadow:
+        0 12px 35px rgba(224,187,91,.18),
+        inset 0 1px rgba(255,255,255,.5);
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-2px);
+      box-shadow:0 18px 42px rgba(224,187,91,.28);
+    }
+
+    .btn-secondary{
+      color:#e8eee9;
+      border:1px solid rgba(255,255,255,.13);
+      background:rgba(255,255,255,.035);
+    }
+
+    .btn-secondary:hover{
+      transform:translateY(-2px);
+      border-color:rgba(224,187,91,.4);
+      background:rgba(224,187,91,.06);
+    }
+
+    /* TRUST */
+
+    .trust{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:10px 22px;
+      margin-top:28px;
+      color:#879189;
+      font-size:11px;
+    }
+
+    .trust span{
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+    }
+
+    .trust i{
+      width:5px;
+      height:5px;
+      border-radius:50%;
+      background:#6e9c7c;
+    }
+
+    /* SECTIONS */
+
+    section{
+      padding:100px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:48px;
+    }
+
+    .section-kicker{
+      color:var(--gold);
+      font-size:10px;
+      font-weight:900;
+      letter-spacing:.2em;
+      text-transform:uppercase;
+      margin-bottom:12px;
+    }
+
+    .section-title h2{
+      font-size:clamp(30px,5vw,50px);
+      line-height:1.05;
+      letter-spacing:-.04em;
+      margin-bottom:13px;
+    }
+
+    .section-title p{
+      color:var(--muted);
+      max-width:650px;
+      margin:auto;
+      font-size:14px;
+    }
+
+    /* BENEFITS */
+
+    .benefits{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:15px;
+    }
+
+    .benefit{
+      padding:28px;
+      border:1px solid var(--border-soft);
+      border-radius:20px;
+      background:var(--card);
+      box-shadow:0 15px 50px rgba(0,0,0,.15);
+    }
+
+    .benefit-icon{
+      width:43px;
+      height:43px;
+      display:grid;
+      place-items:center;
+      border-radius:13px;
+      margin-bottom:20px;
+      border:1px solid rgba(224,187,91,.25);
+      color:var(--gold2);
+      background:rgba(224,187,91,.055);
+      font-weight:900;
+    }
+
+    .benefit h3{
+      font-size:17px;
+      margin-bottom:8px;
+    }
+
+    .benefit p{
+      color:#8f9991;
+      font-size:13px;
+      line-height:1.7;
+    }
+
+    /* BRAND VALUE */
+
+    .brand-box{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:18px;
+      align-items:stretch;
+    }
+
+    .brand-main,
+    .brand-side{
+      border:1px solid var(--border-soft);
+      border-radius:24px;
+      background:var(--card);
+    }
+
+    .brand-main{
+      padding:42px;
+    }
+
+    .brand-main h2{
+      font-size:clamp(28px,4vw,46px);
+      line-height:1.05;
+      letter-spacing:-.04em;
+      margin-bottom:18px;
+    }
+
+    .brand-main h2 em{
+      color:var(--gold2);
+      font-style:normal;
+    }
+
+    .brand-main p{
+      color:var(--muted);
+      font-size:14px;
+      max-width:650px;
+    }
+
+    .brand-points{
+      margin-top:28px;
+      display:grid;
+      gap:12px;
+    }
+
+    .brand-point{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      color:#d8ded9;
+      font-size:13px;
+    }
+
+    .check{
+      flex:0 0 auto;
+      width:22px;
+      height:22px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      color:#081009;
+      background:var(--gold2);
+      font-size:12px;
+      font-weight:900;
+    }
+
+    .brand-side{
+      padding:34px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .mini-label{
+      color:#8f9991;
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      font-size:9px;
+      font-weight:900;
+      margin-bottom:10px;
+    }
+
+    .mini-domain{
+      font-size:34px;
+      font-weight:900;
+      letter-spacing:-.04em;
+      color:#fff;
+      margin-bottom:18px;
+    }
+
+    .mini-domain span{
+      color:var(--gold2);
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+    }
+
+    .stat{
+      padding:16px;
+      border-radius:15px;
+      border:1px solid rgba(255,255,255,.07);
+      background:rgba(255,255,255,.025);
+    }
+
+    .stat strong{
+      display:block;
+      color:#fff;
+      font-size:16px;
+      margin-bottom:3px;
+    }
+
+    .stat span{
+      color:#7f8b83;
+      font-size:10px;
+    }
+
+    /* FAQ */
+
+    .faq{
+      width:min(760px,100%);
+      margin:auto;
+    }
+
+    details{
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+
+    details:last-child{
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+
+    summary{
+      list-style:none;
+      cursor:pointer;
+      padding:22px 5px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      font-size:14px;
+      font-weight:800;
+    }
+
+    summary::-webkit-details-marker{
+      display:none;
+    }
+
+    summary span{
+      color:var(--gold2);
+      font-size:22px;
+      font-weight:400;
+      transition:.2s;
+    }
+
+    details[open] summary span{
+      transform:rotate(45deg);
+    }
+
+    details p{
+      color:#8f9991;
+      font-size:13px;
+      line-height:1.8;
+      padding:0 35px 22px 5px;
+    }
+
+    /* FINAL CTA */
+
+    .cta{
+      padding:0 0 110px;
+    }
+
+    .cta-box{
+      position:relative;
+      overflow:hidden;
+      text-align:center;
+      padding:65px 25px;
+      border:1px solid var(--border);
+      border-radius:28px;
+      background:
+        radial-gradient(circle at 50% 0%,rgba(224,187,91,.11),transparent 45%),
+        linear-gradient(145deg,rgba(14,25,18,.9),rgba(7,13,9,.95));
+    }
+
+    .cta-box h2{
+      font-size:clamp(30px,6vw,56px);
+      line-height:1;
+      letter-spacing:-.045em;
+      margin-bottom:14px;
+    }
+
+    .cta-box h2 span{
+      color:var(--gold2);
+    }
+
+    .cta-box p{
+      color:#919b94;
+      max-width:550px;
+      margin:0 auto 25px;
+      font-size:14px;
+    }
+
+    /* FOOTER */
+
+    footer{
+      border-top:1px solid rgba(255,255,255,.07);
+      padding:30px 0;
+    }
+
+    .footer-inner{
+      width:min(1120px,calc(100% - 40px));
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+    }
+
+    .footer-copy{
+      color:#68736b;
+      font-size:10px;
+    }
+
+    .footer-domain{
+      color:#9ca59e;
+      font-size:11px;
+      font-weight:800;
+    }
+
+    /* ANIMATION */
+
+    .fade{
+      opacity:0;
+      transform:translateY(18px);
+      animation:fadeUp .7s ease forwards;
+    }
+
+    .delay1{
+      animation-delay:.12s;
+    }
+
+    .delay2{
+      animation-delay:.24s;
+    }
+
+    @keyframes fadeUp{
+      to{
+        opacity:1;
+        transform:none;
+      }
+    }
+
+    /* MOBILE */
+
+    @media(max-width:800px){
+
+      .container{
+        width:min(100% - 28px,1120px);
+      }
+
+      header{
+        width:calc(100% - 28px);
+        min-height:68px;
+      }
+
+      .header-status{
+        font-size:10px;
+      }
+
+      .hero{
+        min-height:auto;
+        padding:75px 0 80px;
+      }
+
+      h1{
+        font-size:clamp(48px,15vw,80px);
+      }
+
+      .price-card{
+        margin-top:32px;
+        padding:24px 18px;
+      }
+
+      section{
+        padding:75px 0;
+      }
+
+      .benefits{
+        grid-template-columns:1fr;
+      }
+
+      .brand-box{
+        grid-template-columns:1fr;
+      }
+
+      .brand-main{
+        padding:30px 24px;
+      }
+
+      .brand-side{
+        padding:28px 24px;
+      }
+
+      .cta{
+        padding-bottom:80px;
+      }
+
+      .cta-box{
+        padding:50px 20px;
+      }
+
+      .footer-inner{
+        width:calc(100% - 28px);
+        flex-direction:column;
+        align-items:flex-start;
+      }
+    }
+
+    @media(max-width:480px){
+
+      .brand-text strong{
+        font-size:15px;
+      }
+
+      .header-status{
+        display:none;
+      }
+
+      .eyebrow{
+        font-size:8px;
+        letter-spacing:.12em;
+      }
+
+      .hero-description{
+        font-size:14px;
+      }
+
+      .price{
+        font-size:49px;
+      }
+
+      .actions{
+        flex-direction:column;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .trust{
+        gap:9px;
+        font-size:9px;
+      }
+
+      .stats{
+        grid-template-columns:1fr;
+      }
+
+      .mini-domain{
+        font-size:28px;
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      html{
+        scroll-behavior:auto;
+      }
+
+      .fade{
+        opacity:1;
+        transform:none;
+        animation:none;
+      }
+
+      *{
+        transition:none !important;
+      }
+    }
+  </style>
+</head>
 
 <body>
 
-  <!-- =========================================================
-       INTRO VIDEO
-       ========================================================= -->
+  <div class="noise"></div>
+  <div class="glow"></div>
 
-  <div id="merlin-intro-overlay" aria-hidden="true">
+  <!-- HEADER -->
 
-    <button
-      id="merlin-intro-play"
-      type="button"
-      aria-label="Play intro video"
-    >
-      Tap to play
-    </button>
+  <header>
 
-    <video
-      id="merlin-intro-video"
-      autoplay
-      muted
-      playsinline
-      webkit-playsinline
-      preload="auto"
-      poster="./intro-poster.jpg"
-      controlslist="nodownload noplaybackrate"
-    >
-      <source src="./intro.mp4" type="video/mp4">
-    </video>
+    <a class="brand" href="/" aria-label="BeGrow.in">
 
-  </div>
+      <span class="brand-mark">B</span>
 
+      <span class="brand-text">
+        <strong>BeGrow.in</strong>
+        <span>Premium Domain</span>
+      </span>
 
-  <div class="bg-glow"></div>
+    </a>
 
-  <div
-    class="particles"
-    aria-hidden="true"
-  ></div>
-
-
-  <!-- =========================================================
-       HEADER
-       ========================================================= -->
-
-  <header class="header">
-
-    <div class="brand-wrap">
-
-      <a
-        class="logo"
-        href="index.html"
-        aria-label="Merlin Agency home"
-      >
-
-        <span class="logo-m">M</span>
-
-        <span>
-          <b>MERLIN</b>
-          <small>AGENCY</small>
-        </span>
-
-      </a>
-
-    </div>
-
-
-    <nav aria-label="Main navigation">
-
-      <a href="#earnings">Earnings</a>
-
-      <a href="#how">How It Works</a>
-
-      <a href="#portfolio">Portfolio</a>
-
-      <a href="#faq">FAQ</a>
-
-    </nav>
-
-
-    <div class="top-apply-wrap">
-
-      <a
-        class="top-apply"
-        href="apply.html"
-      >
-        Become a Host ↗
-      </a>
-
-
-      <button
-        class="seller-menu-toggle"
-        id="sellerMenuToggle"
-        type="button"
-        aria-label="Open menu"
-        aria-expanded="false"
-        aria-controls="sellerMenu"
-      >
-
-        <span></span>
-        <span></span>
-        <span></span>
-
-      </button>
-
-
-      <div
-        class="seller-menu"
-        id="sellerMenu"
-      >
-
-        <a href="#earnings">
-          💰 Earnings
-        </a>
-
-        <a href="#how">
-          ✦ How It Works
-        </a>
-
-        <a href="#portfolio">
-          ▶ Portfolio
-        </a>
-
-        <a href="#faq">
-          ❓ FAQ
-        </a>
-
-        <a href="apply.html">
-          ↗ Become a Host
-        </a>
-
-      </div>
-
+    <div class="header-status">
+      <span class="status-dot"></span>
+      Available for acquisition
     </div>
 
   </header>
 
 
-  <!-- =========================================================
-       MAIN
-       ========================================================= -->
-
   <main>
 
+    <!-- HERO -->
 
-    <!-- ================= HERO ================= -->
+    <section class="hero">
 
-    <section class="hero wrap">
+      <div class="hero-inner container">
 
-      <div class="hero-copy reveal">
-
-        <div class="eyebrow">
-
-          <i></i>
-
-          BIGO LIVE INDIA · HOST RECRUITMENT
-
+        <div class="eyebrow fade">
+          <span class="eyebrow-dot"></span>
+          PREMIUM DOMAIN FOR SALE
         </div>
 
-
-        <h1>
-
-          Go LIVE.<br>
-
-          <em>Build Your Empire.</em>
-
+        <h1 class="fade delay1">
+          <span class="domain">BeGrow.in</span>
+          <span class="sale">Build a brand that grows.</span>
         </h1>
 
-
-        <p>
-
-          Join Merlin Agency and turn your live presence into a serious
-          earning opportunity with structured targets, bonuses and
-          dedicated support.
-
+        <p class="hero-description fade delay2">
+          A short, memorable and highly brandable domain name for
+          businesses, startups, platforms and digital brands.
         </p>
 
 
-        <div class="actions">
+        <div class="price-card fade delay2">
 
-          <a
-            class="btn green"
-            href="apply.html"
-          >
+          <div class="price-label">
+            Asking Price
+          </div>
 
-            Become a Host
+          <div class="price">
+            <small>$</small>4,500
+          </div>
 
-            <b>→</b>
+          <div class="price-note">
+            USD · One-time domain acquisition
+          </div>
 
-          </a>
+          <div class="actions">
+
+            <!-- Replace this URL with your exact Sedo Buy Now listing URL if available -->
+            <a
+              class="btn btn-primary"
+              href="https://sedo.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Buy BeGrow.in
+              <span>↗</span>
+            </a>
+
+            <a
+              class="btn btn-secondary"
+              href="mailto:domain@begrow.in?subject=Inquiry%20for%20BeGrow.in"
+            >
+              Make an Offer
+            </a>
+
+          </div>
 
         </div>
 
 
         <div class="trust">
 
-          <span>✦ 2026 Salary Plan</span>
-
-          <span>✦ Flexible Live Schedule</span>
-
-          <span>✦ WhatsApp Support</span>
-
-        </div>
-
-      </div>
-
-
-      <div class="hero-card reveal delay1">
-
-        <div class="hero-card-top">
-
-          <b>BIGO LIVE</b>
+          <span>
+            <i></i>
+            Short & memorable
+          </span>
 
           <span>
             <i></i>
-            LIVE NOW
+            Brandable name
+          </span>
+
+          <span>
+            <i></i>
+            .in domain
+          </span>
+
+          <span>
+            <i></i>
+            Secure transfer
           </span>
 
         </div>
 
-
-        <div class="crest">
-
-          <strong>M</strong>
-
-        </div>
-
-
-        <h3>
-
-          OFFICIAL<br>
-
-          <span>HOST AGENCY</span>
-
-        </h3>
-
-
-        <div class="hero-stat">
-
-          <div>
-
-            <b>1M+</b>
-
-            <small>Target Tier</small>
-
-          </div>
-
-
-          <div>
-
-            <b>₹7.6L</b>
-
-            <small>Monthly Plan</small>
-
-          </div>
-
-        </div>
-
       </div>
 
     </section>
 
 
-    <!-- ================= VIDEO ================= -->
+    <!-- WHY BEGROW -->
 
-    <section class="video-section wrap reveal">
+    <section>
 
-      <div class="section-head">
+      <div class="container">
 
-        <span class="kicker">
-          FEATURED LIVE MOMENTS
-        </span>
-
-        <h2>
-          Feel the <em>LIVE energy.</em>
-        </h2>
-
-        <p>
-          Portrait videos, medium-sized and optimized for fast loading.
-          The showcase slides smoothly and auto-plays muted.
-        </p>
-
-      </div>
-
-
-      <div
-        class="video-carousel"
-        id="videoCarousel"
-      >
-
-        <div class="video-track">
-
-
-          <!-- VIDEO 1 -->
-
-          <div class="video-slide active">
-
-            <span class="live-badge">
-
-              <i></i>
-              MERLIN LIVE
-
-            </span>
-
-
-            <video
-              class="feature-video"
-              muted
-              autoplay
-              playsinline
-              loop
-              preload="auto"
-              poster="05-featured.jpg"
-            >
-
-              <source
-                src="01-featured-24s.mp4"
-                type="video/mp4"
-              >
-
-            </video>
-
-
-            <div class="slide-label">
-
-              <b>FEATURED · 24 SEC</b>
-
-              <span>
-                Portrait preview
-              </span>
-
-            </div>
-
-          </div>
-
-
-          <!-- VIDEO 2 -->
-
-          <div class="video-slide">
-
-            <span class="live-badge">
-
-              <i></i>
-              PORTFOLIO 01
-
-            </span>
-
-
-            <video
-              class="feature-video"
-              muted
-              playsinline
-              loop
-              preload="none"
-              poster="06-p1.jpg"
-            >
-
-              <source
-                src="02-portfolio-1.mp4"
-                type="video/mp4"
-              >
-
-            </video>
-
-
-            <div class="slide-label">
-
-              <b>HOST MOMENT</b>
-
-              <span>
-                Beauty · Chat · Energy
-              </span>
-
-            </div>
-
-          </div>
-
-
-          <!-- VIDEO 3 -->
-
-          <div class="video-slide">
-
-            <span class="live-badge">
-
-              <i></i>
-              PORTFOLIO 02
-
-            </span>
-
-
-            <video
-              class="feature-video"
-              muted
-              playsinline
-              loop
-              preload="none"
-              poster="07-p2.jpg"
-            >
-
-              <source
-                src="03-portfolio-2.mp4"
-                type="video/mp4"
-              >
-
-            </video>
-
-
-            <div class="slide-label">
-
-              <b>HOST STYLE</b>
-
-              <span>
-                On-camera presence
-              </span>
-
-            </div>
-
-          </div>
-
-
-          <!-- VIDEO 4 -->
-
-          <div class="video-slide">
-
-            <span class="live-badge">
-
-              <i></i>
-              PORTFOLIO 03
-
-            </span>
-
-
-            <video
-              class="feature-video"
-              muted
-              playsinline
-              loop
-              preload="none"
-              poster="08-p3.jpg"
-            >
-
-              <source
-                src="04-portfolio-3.mp4"
-                type="video/mp4"
-              >
-
-            </video>
-
-
-            <div class="slide-label">
-
-              <b>LIVE HOST MOMENT</b>
-
-              <span>
-                Live · Chat · Energy
-              </span>
-
-            </div>
-
-          </div>
-
-
-        </div>
-
-
-        <button
-          class="slider-arrow prev"
-          type="button"
-          aria-label="Previous video"
-        >
-          ‹
-        </button>
-
-
-        <button
-          class="slider-arrow next"
-          type="button"
-          aria-label="Next video"
-        >
-          ›
-        </button>
-
-
-        <div
-          class="dots"
-          aria-label="Video slides"
-        ></div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= EARNINGS ================= -->
-
-    <section
-      id="earnings"
-      class="section wrap"
-    >
-
-      <div class="section-head">
-
-        <span class="kicker">
-          2026 EARNING PLAN
-        </span>
-
-        <h2>
-          Your target. <em>Your earning.</em>
-        </h2>
-
-        <p>
-          Salary and commission figures from the supplied Merlin Agency
-          2026 chart.
-        </p>
-
-      </div>
-
-
-      <div
-        class="salary-grid"
-        id="salaryGrid"
-      ></div>
-
-
-      <div class="note">
-
-        <b>Extra bonuses:</b>
-
-        Pack Streaks + Daily Stars.
-        Sitting at least 2 hours daily counts as one day;
-        up to 5 hours/day can count in live data.
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= HOW IT WORKS ================= -->
-
-    <section
-      id="how"
-      class="section wra
+ 
