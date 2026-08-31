@@ -431,6 +431,28 @@
       margin-bottom: 16px;
     }
 
+    .secondary-price-wrap {
+      margin-top: 22px;
+      text-align: center;
+    }
+
+    .secondary-price {
+      font-size: clamp(44px, 6vw, 64px);
+      line-height: 1;
+      font-weight: 950;
+      letter-spacing: -2px;
+      color: #fff;
+    }
+
+    .secondary-price-label {
+      margin-top: 10px;
+      color: #777782;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 22px;
+    }
+
     .secondary-domain .shine-btn {
       min-width: 220px;
     }
@@ -946,7 +968,11 @@
 
       <div class="secondary-domain">
         <div class="secondary-domain-name">DropMeNow.xyz</div>
-        <div class="secondary-domain-price">$100 USD</div>
+
+        <div class="secondary-price-wrap">
+          <div class="secondary-price">$100 USD</div>
+          <div class="secondary-price-label">USD • Asking Price</div>
+        </div>
         <a
           class="shine-btn"
           href="https://dropmenow.xyz/"
